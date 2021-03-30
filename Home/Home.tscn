@@ -1,0 +1,82 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Home/InstructionButton.gd" type="Script" id=1]
+[ext_resource path="res://Home/Home.gd" type="Script" id=2]
+[ext_resource path="res://Home/StartButton.gd" type="Script" id=3]
+[ext_resource path="res://data/startButtonLight.png" type="Texture" id=4]
+[ext_resource path="res://data/startButton.PNG" type="Texture" id=5]
+[ext_resource path="res://data/phonto.PNG" type="Texture" id=6]
+[ext_resource path="res://data/instructionButtonLight.png" type="Texture" id=7]
+[ext_resource path="res://data/instructionButton.PNG" type="Texture" id=8]
+
+[node name="Home" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="homeScreenBackground" type="Sprite" parent="."]
+position = Vector2( 512, 300 )
+scale = Vector2( 0.555314, 0.555556 )
+texture = ExtResource( 6 )
+
+[node name="StartButton" type="Button" parent="."]
+margin_left = 424.0
+margin_top = 368.0
+margin_right = 600.0
+margin_bottom = 416.0
+focus_mode = 0
+flat = true
+expand_icon = true
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="startButtonSprite" type="Sprite" parent="StartButton"]
+position = Vector2( 88, 24 )
+scale = Vector2( 0.150556, 0.157895 )
+texture = ExtResource( 5 )
+
+[node name="startButtonLight" type="Sprite" parent="StartButton"]
+position = Vector2( 88, 24 )
+scale = Vector2( 0.512756, 0.545454 )
+texture = ExtResource( 4 )
+
+[node name="startButtonLightSmall" type="Sprite" parent="StartButton"]
+position = Vector2( 88, 24 )
+scale = Vector2( 0.466472, 0.363637 )
+texture = ExtResource( 4 )
+
+[node name="InstructionButton" type="Button" parent="."]
+margin_left = 424.0
+margin_top = 432.0
+margin_right = 600.0
+margin_bottom = 480.0
+focus_mode = 0
+flat = true
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="instructionButtonSprite" type="Sprite" parent="InstructionButton"]
+position = Vector2( 88, 24 )
+scale = Vector2( 0.1506, 0.154485 )
+texture = ExtResource( 8 )
+
+[node name="instructionButtonLight" type="Sprite" parent="InstructionButton"]
+position = Vector2( 88, 24 )
+scale = Vector2( 0.513119, 0.525 )
+texture = ExtResource( 7 )
+
+[node name="instructionButtonLightSmall" type="Sprite" parent="InstructionButton"]
+position = Vector2( 88, 24 )
+scale = Vector2( 0.466472, 0.355556 )
+texture = ExtResource( 7 )
+[connection signal="button_down" from="StartButton" to="StartButton" method="_on_StartButton_button_down"]
+[connection signal="mouse_entered" from="StartButton" to="StartButton" method="_on_StartButton_mouse_entered"]
+[connection signal="mouse_exited" from="StartButton" to="StartButton" method="_on_StartButton_mouse_exited"]
+[connection signal="pressed" from="StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="button_down" from="InstructionButton" to="InstructionButton" method="_on_InstructionButton_button_down"]
+[connection signal="button_up" from="InstructionButton" to="InstructionButton" method="_on_InstructionButton_button_up"]
+[connection signal="mouse_entered" from="InstructionButton" to="InstructionButton" method="_on_InstructionButton_mouse_entered"]
+[connection signal="mouse_exited" from="InstructionButton" to="InstructionButton" method="_on_InstructionButton_mouse_exited"]
+[connection signal="pressed" from="InstructionButton" to="." method="_on_InstructionButton_pressed"]
