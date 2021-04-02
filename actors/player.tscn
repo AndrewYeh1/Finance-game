@@ -17,6 +17,7 @@ script = ExtResource( 2 )
 position = Vector2( -5.46486, -69.9551 )
 scale = Vector2( 0.231021, 0.231021 )
 texture = ExtResource( 1 )
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0.668182, -77.0769 )
@@ -35,20 +36,11 @@ smoothing_enabled = true
 drag_margin_left = 0.0
 drag_margin_right = 0.0
 
-[node name="bankDetector" type="Area2D" parent="."]
+[node name="buildingDetector" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="bankDetector"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="buildingDetector"]
 position = Vector2( 0, -77 )
 shape = SubResource( 2 )
-
-[node name="schoolDetector" type="Area2D" parent="."]
-collision_layer = 0
-collision_mask = 2147483652
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="schoolDetector"]
-position = Vector2( 0, -77 )
-shape = SubResource( 2 )
-[connection signal="area_shape_entered" from="bankDetector" to="." method="_on_bankDetector_area_shape_entered"]
-[connection signal="area_shape_entered" from="schoolDetector" to="." method="_on_schoolDetector_area_shape_entered"]
+[connection signal="area_shape_entered" from="buildingDetector" to="." method="_on_buildingDetector_area_shape_entered"]

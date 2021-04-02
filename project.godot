@@ -23,6 +23,10 @@ _global_script_class_icons={
 config/name="Finance game"
 run/main_scene="res://Home/Home.tscn"
 
+[autoload]
+
+GameManager="*res://GameManager.gd"
+
 [input]
 
 move_right={
@@ -45,10 +49,7 @@ jump={
 
 2d_render/layer_1="player"
 2d_physics/layer_1="player"
-2d_physics/layer_2="bank"
-2d_physics/layer_3="school"
-2d_physics/layer_4="home"
-2d_physics/layer_5="job"
+2d_physics/layer_2="buildings"
 
 [rendering]
 
