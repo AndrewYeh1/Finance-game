@@ -42,6 +42,8 @@ func calculate_move_velocity(
 		else:
 			new_velocity.y -= 5.0
 	
+	#fdjsdfk
+	
 	return new_velocity
 
 func calculate_stomp_velocity(linear_velocity: Vector2, impulse: float) -> Vector2:
