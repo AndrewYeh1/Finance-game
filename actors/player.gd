@@ -61,4 +61,11 @@ func ChangeDirection():
 	elif Input.get_action_strength("move_left"):
 		get_node( "playerskin" ).set_flip_h( false )
 
+	
+# DETECTS WHICH BUILDING PLAYER CAN ENTER
 
+func _on_bankDetector_area_shape_entered(area_id: int, area: Area2D, area_shape: int, self_shape: int) -> void:
+	print("bank")
+
+func _on_schoolDetector_area_shape_entered(area_id: int, area: Area2D, area_shape: int, self_shape: int) -> void:
+	print("school")
