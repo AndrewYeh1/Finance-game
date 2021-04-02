@@ -64,8 +64,9 @@ func ChangeDirection():
 	
 # DETECTS WHICH BUILDING PLAYER CAN ENTER
 
-func _on_bankDetector_area_shape_entered(area_id: int, area: Area2D, area_shape: int, self_shape: int) -> void:
-	print("bank")
 
-func _on_schoolDetector_area_shape_entered(area_id: int, area: Area2D, area_shape: int, self_shape: int) -> void:
-	print("school")
+func _on_buildingDetector_area_shape_entered(area_id: int, area: Area2D, area_shape: int, self_shape: int) -> void:
+	print(area.get_name())
+	if area.get_name() == "Bank":
+		GameManager.money += 1
+		print(GameManager.money)
