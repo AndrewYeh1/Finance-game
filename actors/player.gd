@@ -32,10 +32,16 @@ func calculate_move_velocity(
 	var new_velocity: = linear_velocity
 	new_velocity.x = speed.x * direction.x
 	new_velocity.y += gravity * get_physics_process_delta_time()
+	
 	if direction.y == -1.0:
 		new_velocity.y = speed.y * direction.y
-	if is_jump_interrupted:
-		new_velocity.y = 0.0
+	
+	if new_velocity.y < 0:
+		if not Input.get_action_strength("jump"):
+			new_velocity.y += 20.0
+		else:
+			new_velocity.y -= 5.0
+	
 	return new_velocity
 
 func calculate_stomp_velocity(linear_velocity: Vector2, impulse: float) -> Vector2:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Home/InstructionButton.gd" type="Script" id=1]
 [ext_resource path="res://Home/Home.gd" type="Script" id=2]
@@ -8,12 +8,16 @@
 [ext_resource path="res://data/phonto.PNG" type="Texture" id=6]
 [ext_resource path="res://data/instructionButtonLight.png" type="Texture" id=7]
 [ext_resource path="res://data/instructionButton.PNG" type="Texture" id=8]
+[ext_resource path="res://Home/KinematicBody2D.gd" type="Script" id=9]
 
 [node name="Home" type="Node2D"]
 script = ExtResource( 2 )
 
-[node name="homeScreenBackground" type="Sprite" parent="."]
-position = Vector2( 512, 300.25 )
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+script = ExtResource( 9 )
+
+[node name="homeScreenBackground" type="Sprite" parent="KinematicBody2D"]
+position = Vector2( 512, 301.194 )
 scale = Vector2( 0.555314, 0.555556 )
 texture = ExtResource( 6 )
 

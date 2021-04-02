@@ -33,6 +33,7 @@ points = PoolVector2Array( 0, 0, 80, 0, 80, 80, 0, 80 )
 
 [node name="player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 274.341, 500.518 )
+gravity = 3000.0
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 2 )
