@@ -12,6 +12,7 @@ func _on_EnemyDetector_body_entered(body: Node) -> void:
 func _physics_process(delta: float) -> void:
 	var is_jump_interrupted: = Input.is_action_just_released("jump") and _velocity.y < 0.0
 	var direction: = get_direction()
+	ChangeDirection()
 	_velocity = calculate_move_velocity(_velocity, direction, speed, is_jump_interrupted)
 	_velocity = move_and_slide(_velocity, FLOOR_NORMAL)
 	
@@ -49,7 +50,15 @@ func calculate_move_velocity(
 func calculate_stomp_velocity(linear_velocity: Vector2, impulse: float) -> Vector2:
 	var out: = linear_velocity
 	out.y = -impulse
+
 	return out
 
+#dfdsfjnkfds
+
+func ChangeDirection():
+	if Input.get_action_strength("move_right"):
+		get_node( "playerskin" ).set_flip_h( true )
+	elif Input.get_action_strength("move_left"):
+		get_node( "playerskin" ).set_flip_h( false )
 
 
