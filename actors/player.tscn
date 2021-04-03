@@ -44,3 +44,4 @@ collision_mask = 2
 position = Vector2( 0, -77 )
 shape = SubResource( 2 )
 [connection signal="area_shape_entered" from="buildingDetector" to="." method="_on_buildingDetector_area_shape_entered"]
+[connection signal="area_shape_exited" from="buildingDetector" to="." method="_on_buildingDetector_area_shape_exited"]
