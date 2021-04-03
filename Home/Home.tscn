@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Home/InstructionButton.gd" type="Script" id=1]
 [ext_resource path="res://Home/Home.gd" type="Script" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://data/instructionButtonLight.png" type="Texture" id=7]
 [ext_resource path="res://data/instructionButton.PNG" type="Texture" id=8]
 [ext_resource path="res://Home/KinematicBody2D.gd" type="Script" id=9]
+[ext_resource path="res://data/titletext.PNG" type="Texture" id=10]
+[ext_resource path="res://data/backgroundwnotext.PNG" type="Texture" id=11]
 
 [node name="Home" type="Node2D"]
 script = ExtResource( 2 )
@@ -17,9 +19,36 @@ script = ExtResource( 2 )
 script = ExtResource( 9 )
 
 [node name="homeScreenBackground" type="Sprite" parent="KinematicBody2D"]
-position = Vector2( 512, 301.194 )
+visible = false
+position = Vector2( 1665, 555 )
 scale = Vector2( 0.555314, 0.555556 )
 texture = ExtResource( 6 )
+
+[node name="backgroundwnotext" type="Sprite" parent="KinematicBody2D"]
+position = Vector2( -142, 446 )
+scale = Vector2( 0.555314, 0.555556 )
+texture = ExtResource( 11 )
+offset = Vector2( 1177.71, -262.8 )
+
+[node name="backgroundwnotext2" type="Sprite" parent="KinematicBody2D"]
+position = Vector2( -142, 444 )
+scale = Vector2( 0.555314, 0.555556 )
+texture = ExtResource( 11 )
+offset = Vector2( -666.29, -259.2 )
+flip_h = true
+
+[node name="backgroundwnotext3" type="Sprite" parent="KinematicBody2D"]
+position = Vector2( -2189, 446 )
+scale = Vector2( 0.555314, 0.555556 )
+texture = ExtResource( 11 )
+offset = Vector2( 1177.71, -262.8 )
+
+[node name="backgroundwnotext4" type="Sprite" parent="KinematicBody2D"]
+position = Vector2( -2189, 444 )
+scale = Vector2( 0.555314, 0.555556 )
+texture = ExtResource( 11 )
+offset = Vector2( -666.29, -259.2 )
+flip_h = true
 
 [node name="StartButton" type="Button" parent="."]
 margin_left = 424.0
@@ -75,6 +104,11 @@ texture = ExtResource( 7 )
 position = Vector2( 90, 21.5 )
 scale = Vector2( 0.466472, 0.355556 )
 texture = ExtResource( 7 )
+
+[node name="titletext" type="Sprite" parent="."]
+position = Vector2( 517.011, 213.967 )
+scale = Vector2( 0.595139, 0.565143 )
+texture = ExtResource( 10 )
 [connection signal="button_down" from="StartButton" to="StartButton" method="_on_StartButton_button_down"]
 [connection signal="mouse_entered" from="StartButton" to="StartButton" method="_on_StartButton_mouse_entered"]
 [connection signal="mouse_exited" from="StartButton" to="StartButton" method="_on_StartButton_mouse_exited"]
