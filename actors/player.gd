@@ -2,6 +2,8 @@ extends Actor
 
 export var stomp_impulse: = 1000.0
 
+var location = null
+
 func _on_EnemyDetector_area_entered(area: Area2D) -> void:
 	_velocity = calculate_stomp_velocity(_velocity, stomp_impulse)
 	
@@ -64,9 +66,23 @@ func ChangeDirection():
 	
 # DETECTS WHICH BUILDING PLAYER CAN ENTER
 
-
+# detects the person entering
 func _on_buildingDetector_area_shape_entered(area_id: int, area: Area2D, area_shape: int, self_shape: int) -> void:
 	print(area.get_name())
 	if area.get_name() == "Bank":
-		GameManager.money += 1
-		print(GameManager.money)
+		location = "bank"
+	if area.get_name() == "School":
+		location = "school"
+	
+
+# detects the person exiting
+func _on_buildingDetector_area_shape_exited(area_id: int, area: Area2D, area_shape: int, self_shape: int) -> void:
+	location = null
+
+# detects key pressed
+func _input(ev):
+	if Input.is_key_pressed(KEY_SPACE):
+		if location == "bank":
+			GameManager.money += 1
+		elif location == "school":
+			GameManager.money += 2
