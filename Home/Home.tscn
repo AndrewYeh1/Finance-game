@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Home/InstructionButton.gd" type="Script" id=1]
 [ext_resource path="res://Home/Home.gd" type="Script" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Home/KinematicBody2D.gd" type="Script" id=9]
 [ext_resource path="res://data/titletext.PNG" type="Texture" id=10]
 [ext_resource path="res://data/backgroundwnotext.PNG" type="Texture" id=11]
+[ext_resource path="res://fade/fade.tscn" type="PackedScene" id=12]
 
 [node name="Home" type="Node2D"]
 script = ExtResource( 2 )
@@ -109,6 +110,9 @@ texture = ExtResource( 7 )
 position = Vector2( 517.011, 213.967 )
 scale = Vector2( 0.595139, 0.565143 )
 texture = ExtResource( 10 )
+
+[node name="TransitionScene" parent="." instance=ExtResource( 12 )]
+visible = false
 [connection signal="button_down" from="StartButton" to="StartButton" method="_on_StartButton_button_down"]
 [connection signal="mouse_entered" from="StartButton" to="StartButton" method="_on_StartButton_mouse_entered"]
 [connection signal="mouse_exited" from="StartButton" to="StartButton" method="_on_StartButton_mouse_exited"]
@@ -118,3 +122,4 @@ texture = ExtResource( 10 )
 [connection signal="mouse_entered" from="InstructionButton" to="InstructionButton" method="_on_InstructionButton_mouse_entered"]
 [connection signal="mouse_exited" from="InstructionButton" to="InstructionButton" method="_on_InstructionButton_mouse_exited"]
 [connection signal="pressed" from="InstructionButton" to="." method="_on_InstructionButton_pressed"]
+[connection signal="transitioned" from="TransitionScene" to="." method="_on_TransitionScene_transitioned"]
