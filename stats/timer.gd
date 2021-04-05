@@ -5,6 +5,8 @@ extends Node2D
 # var a: int = 2
 # var b: String = "text"
 
+signal timeout
+
 onready var timer = get_node("Timer")
 onready var box = get_node("PanelContainer/VBoxContainer")
 
@@ -21,6 +23,15 @@ func _process(delta: float) -> void:
 	
 
 func _on_Timer_timeout() -> void:
-	GameManager.second -= 1
-	print(GameManager.second)
+	if GameManager.second > 0:
+		GameManager.second -= 1
+		print(GameManager.second)
+	
 	box.get_node("Time").text = str(GameManager.second) + " seconds"
+	
+	if GameManager.second <= 0:
+		emit_signal("timeout")
+
+func _on_newyeartransition_transitioned() -> void:
+	GameManager.second = 60
+	GameManager.year += 1
