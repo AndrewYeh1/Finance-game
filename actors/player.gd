@@ -83,6 +83,6 @@ func _on_buildingDetector_area_shape_exited(area_id: int, area: Area2D, area_sha
 func _input(ev):
 	if Input.is_key_pressed(KEY_SPACE):
 		if location == "bank":
-			GameManager.money += 1
+			get_tree().change_scene("res://BuildingInterior/BankInt.tscn")
 		elif location == "school":
 			GameManager.money += 2
