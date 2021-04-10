@@ -14,7 +14,6 @@ func _process(delta: float) -> void:
 	position += velocity
 	if position.x >= get_viewport_rect().size.x*2 or position.x <= 0:
 		position.x = 0
-	print(get_node("backgroundwnotext").position.x)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
