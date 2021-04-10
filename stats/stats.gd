@@ -7,3 +7,4 @@ extends MarginContainer
 
 func _process(delta: float) -> void:
 	$PanelContainer/VBoxContainer/Money.text = "Money: $" + str(GameManager.money)
+	$PanelContainer/VBoxContainer/BankMoney.text = "Bank Money: $" + str(GameManager.bankMoney)

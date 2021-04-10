@@ -17,5 +17,6 @@ func _ready() -> void:
 
 
 func _on_time_timeout() -> void:
+	GameManager.bankMoney = stepify(1.024695077 * GameManager.bankMoney, 0.01)
 	$CanvasLayer/newyeartransition.show()
 	$CanvasLayer/newyeartransition._transition()
