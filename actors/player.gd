@@ -4,6 +4,8 @@ export var stomp_impulse: = 1000.0
 
 var location = null
 
+
+
 func _on_EnemyDetector_area_entered(area: Area2D) -> void:
 	_velocity = calculate_stomp_velocity(_velocity, stomp_impulse)
 	
@@ -69,20 +71,25 @@ func ChangeDirection():
 # detects the person entering
 func _on_buildingDetector_area_shape_entered(area_id: int, area: Area2D, area_shape: int, self_shape: int) -> void:
 	print(area.get_name())
-	if area.get_name() == "Bank":
-		location = "bank"
-	if area.get_name() == "School":
-		location = "school"
+	
+	if ["Bank", "School", "Jobs", "Home"].has(area.get_name()):
+		location = area.get_name()
+		$enter.show()
+	
+		
 	
 
 # detects the person exiting
 func _on_buildingDetector_area_shape_exited(area_id: int, area: Area2D, area_shape: int, self_shape: int) -> void:
 	location = null
+	$enter.hide()
 
 # detects key pressed
 func _input(ev):
 	if Input.is_key_pressed(KEY_SPACE):
-		if location == "bank":
+		if location == "Bank":
 			get_tree().change_scene("res://BuildingInterior/BankInt.tscn")
-		elif location == "school":
-			GameManager.money += 2
+		elif location == "School":
+			get_tree().change_scene("res://building_interior/school.tscn")
+			
+

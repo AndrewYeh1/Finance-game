@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://data/gerald.PNG" type="Texture" id=1]
 [ext_resource path="res://actors/player.gd" type="Script" id=2]
+[ext_resource path="res://data/arrow1.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 37.1594, 77.2719 )
@@ -43,5 +44,12 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="buildingDetector"]
 position = Vector2( 0, -77 )
 shape = SubResource( 2 )
+
+[node name="enter" type="Sprite" parent="."]
+visible = false
+position = Vector2( 0.668182, -250.628 )
+rotation = 3.14159
+scale = Vector2( 0.518659, 0.547853 )
+texture = ExtResource( 3 )
 [connection signal="area_shape_entered" from="buildingDetector" to="." method="_on_buildingDetector_area_shape_entered"]
 [connection signal="area_shape_exited" from="buildingDetector" to="." method="_on_buildingDetector_area_shape_exited"]
