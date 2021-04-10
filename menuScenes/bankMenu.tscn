@@ -31,9 +31,9 @@ __meta__ = {
 
 [node name="depWithBut" type="Button" parent="depWith"]
 margin_left = -124.0
-margin_top = -223.0
+margin_top = -223.488
 margin_right = 27.0
-margin_bottom = -198.0
+margin_bottom = -198.488
 focus_mode = 0
 flat = true
 __meta__ = {
