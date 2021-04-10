@@ -12,6 +12,10 @@ onready var box = get_node("PanelContainer/VBoxContainer")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	print("asdasdad")
+	box.get_node("Year").text = "Year " + str(GameManager.year)
+	box.get_node("Time").text = str(GameManager.second) + " seconds"
+	box.get_node("Age").text = str(GameManager.year + 18) + " years old"
 	timer.set_wait_time(1)
 	timer.start()
 
