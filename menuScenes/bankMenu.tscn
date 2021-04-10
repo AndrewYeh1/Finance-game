@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://menuScenes/bankMenu.gd" type="Script" id=1]
 [ext_resource path="res://data/menu/menuTab2.PNG" type="Texture" id=2]
 [ext_resource path="res://data/menu/menuTab.PNG" type="Texture" id=3]
 [ext_resource path="res://data/menu/menuBase.PNG" type="Texture" id=4]
 [ext_resource path="res://data/menu/menuSpace.PNG" type="Texture" id=5]
+[ext_resource path="res://theme.tres" type="Theme" id=6]
 
 [node name="bankMenu" type="Node2D"]
 script = ExtResource( 1 )
@@ -105,10 +106,9 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 800, 300 )
 
 [node name="depWithMenu" type="Sprite" parent="."]
-visible = false
 
 [node name="dep" type="Sprite" parent="depWithMenu"]
-position = Vector2( 450, 80 )
+position = Vector2( 449.999, 80 )
 scale = Vector2( 1.54478, 1 )
 texture = ExtResource( 5 )
 
@@ -251,6 +251,23 @@ margin_top = 232.0
 margin_right = 512.0
 margin_bottom = 252.0
 text = "Deposit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+theme = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TabContainer" type="TabContainer" parent="Control"]
+margin_left = 224.0
+margin_top = 248.0
+margin_right = 1152.0
+margin_bottom = 776.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
