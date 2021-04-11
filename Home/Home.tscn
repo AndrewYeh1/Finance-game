@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Home/Home.gd" type="Script" id=2]
+[ext_resource path="res://Home/Home.gd" type="Script" id=1]
 [ext_resource path="res://theme.tres" type="Theme" id=4]
 [ext_resource path="res://data/phonto.PNG" type="Texture" id=6]
 [ext_resource path="res://Home/KinematicBody2D.gd" type="Script" id=9]
@@ -9,7 +9,7 @@
 [ext_resource path="res://fade/fade.tscn" type="PackedScene" id=12]
 
 [node name="Home" type="Node2D"]
-script = ExtResource( 2 )
+script = ExtResource( 1 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
 script = ExtResource( 9 )
@@ -51,9 +51,6 @@ position = Vector2( 517.011, 213.967 )
 scale = Vector2( 0.595139, 0.565143 )
 texture = ExtResource( 10 )
 
-[node name="TransitionScene" parent="." instance=ExtResource( 12 )]
-visible = false
-
 [node name="Buttons" type="Control" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
@@ -84,6 +81,9 @@ text = "INSTRUCTIONS"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="transitioned" from="TransitionScene" to="." method="_on_TransitionScene_transitioned"]
+
+[node name="TransitionScene" parent="." instance=ExtResource( 12 )]
+visible = false
 [connection signal="pressed" from="Buttons/StartButton" to="." method="_on_StartButton_pressed"]
 [connection signal="pressed" from="Buttons/InstructionButton" to="." method="_on_InstructionButton_pressed"]
+[connection signal="transitioned" from="TransitionScene" to="." method="_on_TransitionScene_transitioned"]

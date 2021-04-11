@@ -1,0 +1,184 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://theme.tres" type="Theme" id=1]
+[ext_resource path="res://menuScenes/Enroll.gd" type="Script" id=2]
+[ext_resource path="res://renner-small.tres" type="DynamicFont" id=3]
+[ext_resource path="res://menuScenes/Classes.gd" type="Script" id=4]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_scale = Vector2( 1.01193, 1.07188 )
+rect_pivot_offset = Vector2( -746.284, -57.9041 )
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TabContainer" type="TabContainer" parent="."]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 821.0
+margin_bottom = 555.0
+tab_align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Enroll" type="Tabs" parent="TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 43.0
+script = ExtResource( 2 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Enroll"]
+anchor_right = 0.301
+margin_left = 61.0
+margin_top = 29.0
+margin_right = 517.986
+margin_bottom = 478.0
+custom_constants/separation = 50
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Enroll/HBoxContainer"]
+margin_right = 303.0
+margin_bottom = 449.0
+custom_constants/separation = 34
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Associates" type="Button" parent="TabContainer/Enroll/HBoxContainer/VBoxContainer"]
+margin_top = 87.0
+margin_right = 303.0
+margin_bottom = 130.0
+text = "Associates (2 years)"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bachelors" type="Button" parent="TabContainer/Enroll/HBoxContainer/VBoxContainer"]
+margin_top = 164.0
+margin_right = 303.0
+margin_bottom = 207.0
+text = "Bachelors (4 years) "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Masters" type="Button" parent="TabContainer/Enroll/HBoxContainer/VBoxContainer"]
+margin_top = 241.0
+margin_right = 303.0
+margin_bottom = 284.0
+text = "Masters (2 years)"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="phD" type="Button" parent="TabContainer/Enroll/HBoxContainer/VBoxContainer"]
+margin_top = 318.0
+margin_right = 303.0
+margin_bottom = 361.0
+text = "phD (4-6 years)"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="TabContainer/Enroll/HBoxContainer"]
+margin_left = 353.0
+margin_right = 702.0
+margin_bottom = 449.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Title" type="Label" parent="TabContainer/Enroll/HBoxContainer/VBoxContainer2"]
+margin_top = 177.0
+margin_right = 349.0
+margin_bottom = 210.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Info" type="Label" parent="TabContainer/Enroll/HBoxContainer/VBoxContainer2"]
+margin_top = 214.0
+margin_right = 349.0
+margin_bottom = 271.0
+custom_fonts/font = ExtResource( 3 )
+text = "
+"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Attend Class" type="Tabs" parent="TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 43.0
+margin_right = -659.0
+margin_bottom = -141.0
+
+[node name="Classes" type="Tabs" parent="TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 43.0
+script = ExtResource( 4 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Classes"]
+anchor_right = 0.052
+anchor_bottom = 0.127
+margin_left = 19.0
+margin_top = 35.0
+margin_right = 906.104
+margin_bottom = 398.865
+custom_constants/separation = 9
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Classes/VBoxContainer"]
+margin_right = 939.0
+margin_bottom = 33.0
+custom_constants/separation = 400
+
+[node name="Degree" type="Label" parent="TabContainer/Classes/VBoxContainer/HBoxContainer"]
+margin_right = 184.0
+margin_bottom = 33.0
+size_flags_vertical = 1
+text = "Not Enrolled"
+
+[node name="Year" type="Label" parent="TabContainer/Classes/VBoxContainer/HBoxContainer"]
+margin_left = 584.0
+margin_right = 584.0
+margin_bottom = 33.0
+
+[node name="ReportCard" type="VBoxContainer" parent="TabContainer/Classes/VBoxContainer"]
+margin_top = 42.0
+margin_right = 939.0
+margin_bottom = 75.0
+
+[node name="Grades" type="Label" parent="TabContainer/Classes/VBoxContainer/ReportCard"]
+margin_right = 939.0
+margin_bottom = 33.0
+text = "Grades"
+
+[node name="Degrees" type="VBoxContainer" parent="TabContainer/Classes/VBoxContainer"]
+margin_top = 84.0
+margin_right = 939.0
+margin_bottom = 117.0
+
+[node name="Degrees" type="Label" parent="TabContainer/Classes/VBoxContainer/Degrees"]
+margin_right = 939.0
+margin_bottom = 33.0
+text = "Degrees"
+[connection signal="mouse_entered" from="TabContainer/Enroll/HBoxContainer/VBoxContainer/Associates" to="TabContainer/Enroll" method="_on_Associates_mouse_entered"]
+[connection signal="pressed" from="TabContainer/Enroll/HBoxContainer/VBoxContainer/Associates" to="TabContainer/Enroll" method="_on_Associates_pressed"]
+[connection signal="mouse_entered" from="TabContainer/Enroll/HBoxContainer/VBoxContainer/Bachelors" to="TabContainer/Enroll" method="_on_Bachelors_mouse_entered"]
+[connection signal="mouse_entered" from="TabContainer/Enroll/HBoxContainer/VBoxContainer/Masters" to="TabContainer/Enroll" method="_on_Masters_mouse_entered"]
+[connection signal="mouse_entered" from="TabContainer/Enroll/HBoxContainer/VBoxContainer/phD" to="TabContainer/Enroll" method="_on_phD_mouse_entered"]
