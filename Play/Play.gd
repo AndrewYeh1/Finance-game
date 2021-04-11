@@ -1,10 +1,7 @@
 extends Node2D
 
 
-# Declare member variables here. Examples:
-# var a: int = 2
-# var b: String = "text"
-
+var menuOpen = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -15,6 +12,17 @@ func _ready() -> void:
 #func _process(delta: float) -> void:
 #	pass
 
+func _input(ev):
+	if Input.is_key_pressed(KEY_ESCAPE) and menuOpen == false:
+		get_tree().change_scene("res://Play/Play.tscn")
+	if Input.is_key_pressed(KEY_SPACE):
+		if menuOpen == false:
+			if $player.location == "LeftDoor":
+				$"CanvasLayer/schoolMenu".visible = true
+				menuOpen = not menuOpen
+		else:
+			$"CanvasLayer/schoolMenu".visible = false
+			menuOpen = not menuOpen
 
 func _on_time_timeout() -> void:
 	GameManager.bankMoney = stepify(1.024695077 * GameManager.bankMoney, 0.01)
