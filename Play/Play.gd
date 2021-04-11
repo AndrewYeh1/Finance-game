@@ -33,6 +33,6 @@ func set_camera_limits():
 	var map_limits = $TileMap.get_used_rect()
 	var map_cellsize = $TileMap.cell_size
 	$player/Camera2D.limit_left = map_limits.position.x+0.1 * map_cellsize.x
-	$player/Camera2D.limit_right = map_limits.end.x * map_cellsize.x
+	$player/Camera2D.limit_right = map_limits.end.x * map_cellsize.x - 25
 	$player/Camera2D.limit_top = map_limits.position.y * map_cellsize.y
 	$player/Camera2D.limit_bottom = map_limits.end.y * map_cellsize.y
