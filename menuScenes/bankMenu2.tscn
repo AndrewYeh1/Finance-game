@@ -10,7 +10,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TabContainer" type="TabContainer" parent="."]
+[node name="BankContainer" type="TabContainer" parent="."]
 margin_left = 16.0
 margin_right = 1040.0
 margin_bottom = 600.0
@@ -19,7 +19,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Deposit and Withdraw" type="Tabs" parent="TabContainer"]
+[node name="Deposit and Withdraw" type="Tabs" parent="BankContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 43.0
@@ -28,16 +28,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Loan" type="Tabs" parent="TabContainer"]
+[node name="Loan" type="Tabs" parent="BankContainer"]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = 24.0
+margin_top = 43.0
 
-[node name="Pay" type="Tabs" parent="TabContainer"]
+[node name="Pay" type="Tabs" parent="BankContainer"]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = 24.0
-margin_right = -984.0
-margin_bottom = -552.0
+margin_top = 43.0
