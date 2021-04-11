@@ -63,8 +63,11 @@ gravity = 2500.0
 
 [node name="bankMenu" parent="CanvasLayer" instance=ExtResource( 6 )]
 visible = false
-position = Vector2( 64, 32 )
-scale = Vector2( 1, 0.9 )
+margin_left = 48.0
+margin_top = 40.0
+margin_right = 48.0
+margin_bottom = 40.0
+rect_scale = Vector2( 0.9, 0.9 )
 
 [node name="BankTeller" type="Area2D" parent="."]
 collision_layer = 2

@@ -2,7 +2,7 @@ extends Node
 
 # THESE ARE GLOBAL VARIABLES (goes across scenes)
 
-var money = 0
+var money = 50
 var bankMoney = 0
 var happiness = 50
 var credit = 50
