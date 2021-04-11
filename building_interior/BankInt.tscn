@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://actors/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://data/buildings/ground.png" type="Texture" id=2]
@@ -9,9 +9,6 @@
 [ext_resource path="res://stats/money.tscn" type="PackedScene" id=7]
 [ext_resource path="res://fade/newyear.tscn" type="PackedScene" id=8]
 [ext_resource path="res://stats/timer.tscn" type="PackedScene" id=9]
-[ext_resource path="res://stats/stats.gd" type="Script" id=10]
-[ext_resource path="res://stats/timer.gd" type="Script" id=11]
-[ext_resource path="res://fade/newyear.gd" type="Script" id=12]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 80, 0, 80, 80, 0, 80 )
@@ -63,35 +60,23 @@ texture = ExtResource( 2 )
 [node name="player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 360, 744 )
 scale = Vector2( 2.5, 2.5 )
-gravity = 2500.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="statsBar" type="MarginContainer" parent="CanvasLayer" instance=ExtResource( 7 )]
+[node name="statsBar" parent="CanvasLayer" instance=ExtResource( 7 )]
 margin_left = 14.4442
 margin_top = 15.1285
 margin_right = 233.444
 margin_bottom = 258.129
-script = ExtResource( 10 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="time" type="Node2D" parent="CanvasLayer" instance=ExtResource( 9 )]
+[node name="time" parent="CanvasLayer" instance=ExtResource( 9 )]
 position = Vector2( 833.622, 13.6557 )
-script = ExtResource( 11 )
 
-[node name="newyeartransition" type="Control" parent="CanvasLayer" instance=ExtResource( 8 )]
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="newyeartransition" parent="CanvasLayer" instance=ExtResource( 8 )]
 margin_left = 1.33484
 margin_top = 14.6039
 margin_right = 1.33484
 margin_bottom = 14.6039
-script = ExtResource( 12 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="bankMenu" parent="CanvasLayer" instance=ExtResource( 6 )]
 visible = false
