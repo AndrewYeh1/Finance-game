@@ -1,282 +1,185 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://menuScenes/bankMenu.gd" type="Script" id=1]
-[ext_resource path="res://data/menu/menuTab2.PNG" type="Texture" id=2]
-[ext_resource path="res://data/menu/menuTab.PNG" type="Texture" id=3]
-[ext_resource path="res://data/menu/menuBase.PNG" type="Texture" id=4]
-[ext_resource path="res://data/menu/menuSpace.PNG" type="Texture" id=5]
+[ext_resource path="res://menuScenes/Deposit and Withdraw.gd" type="Script" id=1]
 [ext_resource path="res://theme.tres" type="Theme" id=6]
 
-[node name="bankMenu" type="Node2D"]
-script = ExtResource( 1 )
-
-[node name="depWith" type="Sprite" parent="."]
-position = Vector2( 208, 264 )
-scale = Vector2( 1.47917, 1.29167 )
-texture = ExtResource( 2 )
-
-[node name="label" type="RichTextLabel" parent="depWith"]
-anchor_left = 0.197
-anchor_top = 0.226
-anchor_right = 0.197
-anchor_bottom = 0.226
-margin_left = -254.057
-margin_top = -390.342
-margin_right = -97.0566
-margin_bottom = -377.342
-visible_characters = 100
-text = "Deposit/Withdraw"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="depWithBut" type="Button" parent="depWith"]
-margin_left = -124.0
-margin_top = -223.488
-margin_right = 27.0
-margin_bottom = -198.488
-focus_mode = 0
-flat = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="loan" type="Sprite" parent="."]
-position = Vector2( 672, 224 )
-scale = Vector2( 1.48958, 1.11458 )
-texture = ExtResource( 3 )
-
-[node name="label" type="RichTextLabel" parent="loan"]
-margin_left = -231.0
-margin_top = -215.0
-margin_right = 40.0
-margin_bottom = 40.0
-text = "Loans"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="loanBut" type="Button" parent="loan"]
-margin_left = -285.0
-margin_top = -223.0
-margin_right = -134.0
-margin_bottom = -194.0
-focus_mode = 0
-flat = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="pay" type="Sprite" parent="."]
-position = Vector2( 664, 232 )
-scale = Vector2( 1.55208, 1.14583 )
-texture = ExtResource( 2 )
-
-[node name="label" type="RichTextLabel" parent="pay"]
-margin_left = -77.0
-margin_top = -216.0
-margin_right = 40.0
-margin_bottom = 40.0
-text = "Pay Bills"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="payBut" type="Button" parent="pay"]
-margin_left = -124.0
-margin_top = -223.0
-margin_right = 25.0
-margin_bottom = -195.0
-focus_mode = 0
-flat = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="menuBase" type="Sprite" parent="."]
-position = Vector2( 448, 304 )
-scale = Vector2( 1.48603, 1.41316 )
-texture = ExtResource( 4 )
-
-[node name="menuBaseMenuCover" type="Sprite" parent="menuBase"]
-position = Vector2( 5.38348, 101.899 )
-scale = Vector2( 0.672936, 0.701778 )
-texture = ExtResource( 4 )
-region_enabled = true
-region_rect = Rect2( 0, 0, 800, 300 )
-
-[node name="depWithMenu" type="Sprite" parent="."]
-
-[node name="dep" type="Sprite" parent="depWithMenu"]
-position = Vector2( 449.999, 80 )
-scale = Vector2( 1.54478, 1 )
-texture = ExtResource( 5 )
-
-[node name="depBut" type="Button" parent="depWithMenu/dep"]
-margin_left = -265.0
-margin_top = -40.0
-margin_right = 268.0
-margin_bottom = 40.0
-focus_mode = 0
-flat = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="with" type="Sprite" parent="depWithMenu"]
-position = Vector2( 450, 192 )
-scale = Vector2( 1.54478, 1 )
-texture = ExtResource( 5 )
-
-[node name="withBut" type="Button" parent="depWithMenu/with"]
-margin_left = -265.0
-margin_top = -40.0
-margin_right = 268.0
-margin_bottom = 40.0
-focus_mode = 0
-flat = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="loanMenu" type="Sprite" parent="."]
-visible = false
-
-[node name="loan" type="Sprite" parent="loanMenu"]
-position = Vector2( 450, 80 )
-scale = Vector2( 1.54478, 1 )
-texture = ExtResource( 5 )
-
-[node name="loanBut" type="Button" parent="loanMenu/loan"]
-margin_left = -265.0
-margin_top = -40.0
-margin_right = 268.0
-margin_bottom = 40.0
-flat = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="creditScore" type="Sprite" parent="loanMenu"]
-position = Vector2( 450, 192 )
-scale = Vector2( 1.54478, 1 )
-texture = ExtResource( 5 )
-
-[node name="creditScoreButton" type="Button" parent="loanMenu/creditScore"]
-margin_left = -265.0
-margin_top = -40.0
-margin_right = 268.0
-margin_bottom = 40.0
-flat = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="payMenu" type="Sprite" parent="."]
-visible = false
-
-[node name="payBill" type="Sprite" parent="payMenu"]
-position = Vector2( 450, 80 )
-scale = Vector2( 1.54478, 1 )
-texture = ExtResource( 5 )
-
-[node name="payBillBut" type="Button" parent="payMenu/payBill"]
-margin_left = -265.0
-margin_top = -40.0
-margin_right = 268.0
-margin_bottom = 40.0
-flat = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="deposit" type="Sprite" parent="."]
-visible = false
-
-[node name="depositLabel" type="RichTextLabel" parent="deposit"]
-margin_left = 336.0
-margin_top = 168.0
-margin_right = 576.0
-margin_bottom = 208.0
-text = "Enter amount of money to deposit"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="depositSpinBox" type="SpinBox" parent="deposit"]
-margin_left = 344.0
-margin_top = 192.0
-margin_right = 552.0
-margin_bottom = 216.0
-max_value = 1e+06
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="depositButton" type="Button" parent="deposit"]
-margin_left = 384.0
-margin_top = 232.0
-margin_right = 512.0
-margin_bottom = 252.0
-text = "Deposit"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="withdraw" type="Sprite" parent="."]
-visible = false
-
-[node name="withdrawLabel" type="RichTextLabel" parent="withdraw"]
-margin_left = 336.0
-margin_top = 168.0
-margin_right = 576.0
-margin_bottom = 208.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="withdrawSpinBox" type="SpinBox" parent="withdraw"]
-margin_left = 344.0
-margin_top = 192.0
-margin_right = 552.0
-margin_bottom = 216.0
-max_value = 1e+06
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="withdrawButton" type="Button" parent="withdraw"]
-margin_left = 384.0
-margin_top = 232.0
-margin_right = 512.0
-margin_bottom = 252.0
-text = "Deposit"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Control" type="Control" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 theme = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TabContainer" type="TabContainer" parent="Control"]
-margin_left = 224.0
-margin_top = 248.0
-margin_right = 1152.0
-margin_bottom = 776.0
+[node name="BankContainer" type="TabContainer" parent="."]
+margin_left = 16.0
+margin_right = 1040.0
+margin_bottom = 600.0
+tab_align = 0
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="depWith/depWithBut" to="." method="_on_depWithBut_pressed"]
-[connection signal="pressed" from="loan/loanBut" to="." method="_on_loanBut_pressed"]
-[connection signal="pressed" from="pay/payBut" to="." method="_on_payBut_pressed"]
-[connection signal="pressed" from="depWithMenu/dep/depBut" to="." method="_on_depBut_pressed"]
-[connection signal="pressed" from="depWithMenu/with/withBut" to="." method="_on_withBut_pressed"]
-[connection signal="value_changed" from="deposit/depositSpinBox" to="." method="_on_depositSpinBox_value_changed"]
-[connection signal="pressed" from="deposit/depositButton" to="." method="_on_depositButton_pressed"]
-[connection signal="value_changed" from="withdraw/withdrawSpinBox" to="." method="_on_withdrawSpinBox_value_changed"]
-[connection signal="pressed" from="withdraw/withdrawButton" to="." method="_on_withdrawButton_pressed"]
+
+[node name="Deposit and Withdraw" type="Tabs" parent="BankContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 43.0
+size_flags_horizontal = 0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Deposit" type="Button" parent="BankContainer/Deposit and Withdraw"]
+margin_left = 72.0
+margin_top = 53.0
+margin_right = 936.0
+margin_bottom = 109.0
+text = "DEPOSIT"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Withdraw" type="Button" parent="BankContainer/Deposit and Withdraw"]
+margin_left = 72.0
+margin_top = 149.0
+margin_right = 936.0
+margin_bottom = 205.0
+text = "WITHDRAW"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DepositPage" type="Control" parent="BankContainer/Deposit and Withdraw"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DepLabel" type="Label" parent="BankContainer/Deposit and Withdraw/DepositPage"]
+margin_left = 248.0
+margin_top = 85.0
+margin_right = 742.0
+margin_bottom = 118.0
+text = "Enter amount of money to deposit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DepSpinBox" type="SpinBox" parent="BankContainer/Deposit and Withdraw/DepositPage"]
+margin_left = 424.0
+margin_top = 149.0
+margin_right = 570.0
+margin_bottom = 192.0
+max_value = 1e+06
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DepBut" type="Button" parent="BankContainer/Deposit and Withdraw/DepositPage"]
+margin_left = 424.0
+margin_top = 229.0
+margin_right = 568.0
+margin_bottom = 272.0
+text = "DEPOSIT"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackBut" type="Button" parent="BankContainer/Deposit and Withdraw/DepositPage"]
+margin_left = 424.0
+margin_top = 301.0
+margin_right = 568.0
+margin_bottom = 344.0
+text = "BACK"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SuccessLabel" type="Label" parent="BankContainer/Deposit and Withdraw/DepositPage"]
+margin_left = 120.0
+margin_top = 389.0
+margin_right = 872.0
+margin_bottom = 422.0
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WithdrawPage" type="Control" parent="BankContainer/Deposit and Withdraw"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WithLabel" type="Label" parent="BankContainer/Deposit and Withdraw/WithdrawPage"]
+margin_left = 232.0
+margin_top = 85.0
+margin_right = 760.0
+margin_bottom = 118.0
+text = "Enter amount of money to withdraw"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WithSpinBox" type="SpinBox" parent="BankContainer/Deposit and Withdraw/WithdrawPage"]
+margin_left = 424.0
+margin_top = 149.0
+margin_right = 570.0
+margin_bottom = 192.0
+max_value = 1e+06
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WithBut" type="Button" parent="BankContainer/Deposit and Withdraw/WithdrawPage"]
+margin_left = 400.0
+margin_top = 229.0
+margin_right = 591.0
+margin_bottom = 272.0
+text = "WITHDRAW"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WithBackBut" type="Button" parent="BankContainer/Deposit and Withdraw/WithdrawPage"]
+margin_left = 424.0
+margin_top = 301.0
+margin_right = 568.0
+margin_bottom = 344.0
+text = "BACK"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WithSuccessLabel" type="Label" parent="BankContainer/Deposit and Withdraw/WithdrawPage"]
+margin_left = 120.0
+margin_top = 389.0
+margin_right = 872.0
+margin_bottom = 422.0
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Loan" type="Tabs" parent="BankContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 43.0
+
+[node name="Pay" type="Tabs" parent="BankContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 43.0
+[connection signal="pressed" from="BankContainer/Deposit and Withdraw/Deposit" to="BankContainer/Deposit and Withdraw" method="_on_Deposit_pressed"]
+[connection signal="pressed" from="BankContainer/Deposit and Withdraw/Withdraw" to="BankContainer/Deposit and Withdraw" method="_on_Withdraw_pressed"]
+[connection signal="pressed" from="BankContainer/Deposit and Withdraw/DepositPage/DepBut" to="BankContainer/Deposit and Withdraw" method="_on_DepBut_pressed"]
+[connection signal="pressed" from="BankContainer/Deposit and Withdraw/DepositPage/BackBut" to="BankContainer/Deposit and Withdraw" method="_on_BackBut_pressed"]
+[connection signal="pressed" from="BankContainer/Deposit and Withdraw/WithdrawPage/WithBut" to="BankContainer/Deposit and Withdraw" method="_on_WithBut_pressed"]
+[connection signal="pressed" from="BankContainer/Deposit and Withdraw/WithdrawPage/WithBackBut" to="BankContainer/Deposit and Withdraw" method="_on_WithBackBut_pressed"]
