@@ -18,9 +18,11 @@ func _ready():
 
 func _on_View_Bills_pressed():
 	$"View Bills".visible = false
+	$details.visible = false
 	$viewBillsScreen.visible = true
 
 
 func _on_back_pressed():
 	$"View Bills".visible = true
 	$viewBillsScreen.visible = false
+	$details.visible = true

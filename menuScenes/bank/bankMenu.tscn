@@ -23,6 +23,7 @@ __meta__ = {
 }
 
 [node name="Deposit and Withdraw" type="Tabs" parent="BankContainer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 43.0
@@ -174,8 +175,34 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 43.0
 
+[node name="studentAid" type="Button" parent="BankContainer/Loan"]
+margin_left = 72.0
+margin_top = 53.0
+margin_right = 936.0
+margin_bottom = 109.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mortgage" type="Button" parent="BankContainer/Loan"]
+margin_left = 72.0
+margin_top = 149.0
+margin_right = 936.0
+margin_bottom = 205.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="personalLoan" type="Button" parent="BankContainer/Loan"]
+margin_left = 72.0
+margin_top = 245.0
+margin_right = 936.0
+margin_bottom = 301.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Liabilities" type="Tabs" parent="BankContainer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 43.0
@@ -376,6 +403,23 @@ margin_top = 405.0
 margin_right = 952.0
 margin_bottom = 438.0
 align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="details" type="Button" parent="BankContainer/Liabilities"]
+margin_left = 72.0
+margin_top = 149.0
+margin_right = 936.0
+margin_bottom = 205.0
+text = "DETAILS & INFO"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="detailsScreen" type="Control" parent="BankContainer/Liabilities"]
+margin_right = 40.0
+margin_bottom = 40.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
