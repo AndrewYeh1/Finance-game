@@ -8,7 +8,7 @@
 [ext_resource path="res://stats/timer.tscn" type="PackedScene" id=6]
 [ext_resource path="res://fade/newyear.tscn" type="PackedScene" id=7]
 [ext_resource path="res://actors/player.tscn" type="PackedScene" id=8]
-[ext_resource path="res://menuScenes/schoolMenu.tscn" type="PackedScene" id=9]
+[ext_resource path="res://menuScenes/school/schoolMenu.tscn" type="PackedScene" id=9]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 80, 0, 80, 80, 0, 80 )
