@@ -21,18 +21,23 @@ func _reset_bills() -> void:
 	$bills/taxes.disabled = false
 	if GameManager.houseRent == 0:
 		$bills/rent.disabled = true
+		$bills/rent.pressed = false
 	$bills/rentLabel.text = "$" + str(GameManager.houseRent) 
 	if GameManager.houseMain == 0:
 		$bills/houseFees.disabled = true
+		$bills/houseFees.pressed = false
 	$bills/houseFeesLabel.text = "$" + str(GameManager.houseMain) 
 	if GameManager.loans == 0:
 		$bills/loans.disabled = true
+		$bills/loans.pressed = false
 	$bills/loansLabel.text = "$" + str(GameManager.loans) 
 	if GameManager.taxes == 0:
 		$bills/taxes.disabled = true
+		$bills/taxes.pressed = false
 	$bills/taxesLabel.text = "$" + str(GameManager.taxes)
 	if $bills/rent.disabled == true and $bills/houseFees.disabled == true and $bills/loans.disabled == true and $bills/taxes.disabled == true:
 		$bills/all.disabled = true
+		$bills/all.pressed = false
 
 
 
