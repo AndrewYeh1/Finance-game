@@ -91,8 +91,8 @@ func _on_buildingDetector_area_shape_exited(area_id: int, area: Area2D, area_sha
 func _input(ev):
 	if Input.is_key_pressed(KEY_SPACE):
 		if location == "Bank":
-			get_tree().change_scene("res://building_interior/BankInt.tscn")
+			get_tree().change_scene("res://building_interior/bank/BankInt.tscn")
 		elif location == "School":
-			get_tree().change_scene("res://building_interior/school.tscn")
+			get_tree().change_scene("res://building_interior/school/school.tscn")
 			
 
