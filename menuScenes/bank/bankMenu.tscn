@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://menuScenes/Deposit and Withdraw.gd" type="Script" id=1]
+[ext_resource path="res://menuScenes/bank/Deposit and Withdraw.gd" type="Script" id=1]
 [ext_resource path="res://theme.tres" type="Theme" id=6]
 
 [node name="Control" type="Control"]
@@ -172,11 +172,165 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 43.0
 
-[node name="Pay" type="Tabs" parent="BankContainer"]
+[node name="Liabilities" type="Tabs" parent="BankContainer"]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 43.0
+
+[node name="View Bills" type="Button" parent="BankContainer/Liabilities"]
+visible = false
+margin_left = 72.0
+margin_top = 53.0
+margin_right = 936.0
+margin_bottom = 109.0
+text = "VIEW BILLS"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="viewBillsScreen" type="Control" parent="BankContainer/Liabilities"]
+margin_right = 1000.0
+margin_bottom = 557.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bills" type="Control" parent="BankContainer/Liabilities/viewBillsScreen"]
+margin_top = -3.0
+margin_right = 1000.0
+margin_bottom = 554.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="all" type="CheckBox" parent="BankContainer/Liabilities/viewBillsScreen/bills"]
+margin_left = 72.0
+margin_top = 53.0
+margin_right = 936.0
+margin_bottom = 96.0
+text = "ALL BILLS"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="rentLabel" type="Label" parent="BankContainer/Liabilities/viewBillsScreen/bills"]
+margin_left = 56.0
+margin_top = 120.0
+margin_right = 192.0
+margin_bottom = 153.0
+text = "$"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="rent" type="CheckBox" parent="BankContainer/Liabilities/viewBillsScreen/bills"]
+margin_left = 224.0
+margin_top = 117.0
+margin_right = 768.0
+margin_bottom = 160.0
+text = "RENT"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="rentInfo" type="Button" parent="BankContainer/Liabilities/viewBillsScreen/bills"]
+margin_left = 816.0
+margin_top = 117.0
+margin_right = 936.0
+margin_bottom = 160.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="houseFeesLabel" type="Label" parent="BankContainer/Liabilities/viewBillsScreen/bills"]
+margin_left = 56.0
+margin_top = 184.0
+margin_right = 192.0
+margin_bottom = 217.0
+text = "$"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="houseFees" type="CheckBox" parent="BankContainer/Liabilities/viewBillsScreen/bills"]
+margin_left = 224.0
+margin_top = 181.0
+margin_right = 768.0
+margin_bottom = 224.0
+text = "HOUSE MAINTENANCE"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="houseFeesInfo" type="Button" parent="BankContainer/Liabilities/viewBillsScreen/bills"]
+margin_left = 816.0
+margin_top = 181.0
+margin_right = 936.0
+margin_bottom = 224.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="loans" type="CheckBox" parent="BankContainer/Liabilities/viewBillsScreen/bills"]
+margin_left = 224.0
+margin_top = 245.0
+margin_right = 768.0
+margin_bottom = 288.0
+text = "LOANS"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="loansLabel" type="Label" parent="BankContainer/Liabilities/viewBillsScreen/bills"]
+margin_left = 56.0
+margin_top = 248.0
+margin_right = 192.0
+margin_bottom = 281.0
+text = "$"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="loansInfo" type="Button" parent="BankContainer/Liabilities/viewBillsScreen/bills"]
+margin_left = 816.0
+margin_top = 245.0
+margin_right = 936.0
+margin_bottom = 288.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="taxesLabel" type="Label" parent="BankContainer/Liabilities/viewBillsScreen/bills"]
+margin_left = 56.0
+margin_top = 312.0
+margin_right = 192.0
+margin_bottom = 345.0
+text = "$"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="taxes" type="CheckBox" parent="BankContainer/Liabilities/viewBillsScreen/bills"]
+margin_left = 224.0
+margin_top = 309.0
+margin_right = 768.0
+margin_bottom = 352.0
+text = "TAXES"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="taxesInfo" type="Button" parent="BankContainer/Liabilities/viewBillsScreen/bills"]
+margin_left = 816.0
+margin_top = 309.0
+margin_right = 936.0
+margin_bottom = 352.0
 [connection signal="pressed" from="BankContainer/Deposit and Withdraw/Deposit" to="BankContainer/Deposit and Withdraw" method="_on_Deposit_pressed"]
 [connection signal="pressed" from="BankContainer/Deposit and Withdraw/Withdraw" to="BankContainer/Deposit and Withdraw" method="_on_Withdraw_pressed"]
 [connection signal="pressed" from="BankContainer/Deposit and Withdraw/DepositPage/DepBut" to="BankContainer/Deposit and Withdraw" method="_on_DepBut_pressed"]
