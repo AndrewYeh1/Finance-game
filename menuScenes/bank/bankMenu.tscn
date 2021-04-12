@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://menuScenes/bank/Deposit and Withdraw.gd" type="Script" id=1]
 [ext_resource path="res://menuScenes/bank/Liabilities.gd" type="Script" id=2]
 [ext_resource path="res://menuScenes/bank/viewBillsScreen.gd" type="Script" id=3]
+[ext_resource path="res://menuScenes/bank/Loan.gd" type="Script" id=4]
+[ext_resource path="res://menuScenes/bank/studentAidScreen.gd" type="Script" id=5]
 [ext_resource path="res://theme.tres" type="Theme" id=6]
 
 [node name="Control" type="Control"]
@@ -23,6 +25,7 @@ __meta__ = {
 }
 
 [node name="Deposit and Withdraw" type="Tabs" parent="BankContainer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 43.0
@@ -169,16 +172,17 @@ __meta__ = {
 }
 
 [node name="Loan" type="Tabs" parent="BankContainer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 43.0
+script = ExtResource( 4 )
 
 [node name="studentAid" type="Button" parent="BankContainer/Loan"]
 margin_left = 72.0
 margin_top = 53.0
 margin_right = 936.0
 margin_bottom = 109.0
+text = "STUDENT AID"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -188,6 +192,7 @@ margin_left = 72.0
 margin_top = 149.0
 margin_right = 936.0
 margin_bottom = 205.0
+text = "MORTGAGE"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -197,6 +202,122 @@ margin_left = 72.0
 margin_top = 245.0
 margin_right = 936.0
 margin_bottom = 301.0
+text = "PERSONAL LOAN"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="studentAidScreen" type="Control" parent="BankContainer/Loan"]
+visible = false
+margin_top = -3.0
+margin_right = 1000.0
+margin_bottom = 554.0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="title" type="Label" parent="BankContainer/Loan/studentAidScreen"]
+margin_left = 392.0
+margin_top = 21.0
+margin_right = 597.0
+margin_bottom = 54.0
+text = "STUDENT AID"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="infoLabel" type="Label" parent="BankContainer/Loan/studentAidScreen"]
+margin_left = 576.0
+margin_top = 72.0
+margin_right = 984.0
+margin_bottom = 357.0
+text = "Money received from applying for student aid can only be used for schooling, so please consider how much money you need before applying. Refer to glossary for more information."
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="instructionLabel" type="Label" parent="BankContainer/Loan/studentAidScreen"]
+margin_left = 104.0
+margin_top = 80.0
+margin_right = 448.0
+margin_bottom = 149.0
+text = "Enter amount of money to pay/apply for."
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="applySpinBox" type="SpinBox" parent="BankContainer/Loan/studentAidScreen"]
+margin_left = 152.0
+margin_top = 176.0
+margin_right = 408.0
+margin_bottom = 219.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="applyBut" type="Button" parent="BankContainer/Loan/studentAidScreen"]
+margin_left = 216.0
+margin_top = 256.0
+margin_right = 328.0
+margin_bottom = 299.0
+text = "APPLY"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="doneBut" type="Button" parent="BankContainer/Loan/studentAidScreen"]
+margin_left = 376.0
+margin_top = 256.0
+margin_right = 488.0
+margin_bottom = 299.0
+text = "DONE"
+
+[node name="messageLabel" type="Label" parent="BankContainer/Loan/studentAidScreen"]
+margin_left = 48.0
+margin_top = 384.0
+margin_right = 960.0
+margin_bottom = 417.0
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="currentLoanLable" type="Label" parent="BankContainer/Loan/studentAidScreen"]
+margin_left = 48.0
+margin_top = 440.0
+margin_right = 960.0
+margin_bottom = 473.0
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="payApplyBut" type="OptionButton" parent="BankContainer/Loan/studentAidScreen"]
+margin_left = 48.0
+margin_top = 256.0
+margin_right = 168.0
+margin_bottom = 299.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mortgageScreen" type="Control" parent="BankContainer/Loan"]
+visible = false
+margin_right = 1000.0
+margin_bottom = 557.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="personalLoanScreen" type="Control" parent="BankContainer/Loan"]
+visible = false
+margin_right = 1000.0
+margin_bottom = 557.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -429,6 +550,13 @@ __meta__ = {
 [connection signal="pressed" from="BankContainer/Deposit and Withdraw/DepositPage/BackBut" to="BankContainer/Deposit and Withdraw" method="_on_BackBut_pressed"]
 [connection signal="pressed" from="BankContainer/Deposit and Withdraw/WithdrawPage/WithBut" to="BankContainer/Deposit and Withdraw" method="_on_WithBut_pressed"]
 [connection signal="pressed" from="BankContainer/Deposit and Withdraw/WithdrawPage/WithBackBut" to="BankContainer/Deposit and Withdraw" method="_on_WithBackBut_pressed"]
+[connection signal="pressed" from="BankContainer/Loan/studentAid" to="BankContainer/Loan" method="_on_studentAid_pressed"]
+[connection signal="pressed" from="BankContainer/Loan/studentAid" to="BankContainer/Loan/studentAidScreen" method="_on_studentAid_pressed"]
+[connection signal="pressed" from="BankContainer/Loan/mortgage" to="BankContainer/Loan" method="_on_mortgage_pressed"]
+[connection signal="pressed" from="BankContainer/Loan/personalLoan" to="BankContainer/Loan" method="_on_personalLoan_pressed"]
+[connection signal="pressed" from="BankContainer/Loan/studentAidScreen/applyBut" to="BankContainer/Loan/studentAidScreen" method="_on_applyBut_pressed"]
+[connection signal="pressed" from="BankContainer/Loan/studentAidScreen/doneBut" to="BankContainer/Loan" method="_on_doneBut_pressed"]
+[connection signal="item_selected" from="BankContainer/Loan/studentAidScreen/payApplyBut" to="BankContainer/Loan/studentAidScreen" method="_on_payApplyBut_item_selected"]
 [connection signal="pressed" from="BankContainer/Liabilities/View Bills" to="BankContainer/Liabilities" method="_on_View_Bills_pressed"]
 [connection signal="pressed" from="BankContainer/Liabilities/View Bills" to="BankContainer/Liabilities/viewBillsScreen" method="_on_View_Bills_pressed"]
 [connection signal="toggled" from="BankContainer/Liabilities/viewBillsScreen/bills/all" to="BankContainer/Liabilities/viewBillsScreen" method="_on_all_toggled"]
