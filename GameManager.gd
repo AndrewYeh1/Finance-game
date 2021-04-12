@@ -9,6 +9,7 @@ var bankMoney = 0
 var happiness = 50
 var credit = 50
 var health = 50
+var netWorth = 0
 
 # TIME
 
@@ -21,9 +22,15 @@ var degrees = []
 var marks = [[], [], [], []]
 var education = ""
 var edyear = 0
+var studentAid = 0
 
 # BILLS
 var houseRent = 1
 var houseMain = 2
 var loans = 3
 var taxes = 4
+
+# LOANS
+var loanStudent = 20
+var loanMortgage = 0
+var loanPersonal
