@@ -36,6 +36,24 @@ func _on_Timer_timeout() -> void:
 	if GameManager.second <= 0:
 		emit_signal("timeout")
 
+# NEW YEAR
 func _on_newyeartransition_transitioned() -> void:
-	GameManager.second = 60
+	GameManager.second = 10
 	GameManager.year += 1
+	
+	var degrees = {"Associate's": 0, "Bachelor's": 1, "Master's": 2, "phD": 3}
+	if GameManager.education != "":
+		print("asdads")
+		print(GameManager.marks[degrees[GameManager.education]][GameManager.edyear-1])
+		if GameManager.marks[degrees[GameManager.education]][GameManager.edyear-1] >= 50:
+			print("worked")
+			if (GameManager.edyear == 2 and ["Associate's", "Master's"].has(GameManager.education)) or (GameManager.edyear == 4 and ["Bachelor's", "phD"].has(GameManager.education)):
+				if !GameManager.degrees.has(GameManager.education):
+					print("yes")
+					GameManager.degrees.append(GameManager.education)
+					GameManager.edyear = 0
+					GameManager.education = ""
+					print(GameManager.degrees)
+			else:
+				GameManager.edyear += 1
+				GameManager.marks[degrees[GameManager.education]].append(0)

@@ -1,13 +1,19 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://theme.tres" type="Theme" id=1]
 [ext_resource path="res://menuScenes/Enroll.gd" type="Script" id=2]
 [ext_resource path="res://renner-small.tres" type="DynamicFont" id=3]
 [ext_resource path="res://menuScenes/Classes.gd" type="Script" id=4]
+[ext_resource path="res://menuScenes/Attend Class.gd" type="Script" id=5]
+[ext_resource path="res://menuScenes/TabContainer.gd" type="Script" id=6]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = -0.841004
+margin_top = -0.943878
+margin_right = -0.841003
+margin_bottom = -0.943848
 rect_scale = Vector2( 1.01193, 1.07188 )
 rect_pivot_offset = Vector2( -746.284, -57.9041 )
 theme = ExtResource( 1 )
@@ -21,11 +27,13 @@ margin_top = 7.0
 margin_right = 821.0
 margin_bottom = 555.0
 tab_align = 0
+script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Enroll" type="Tabs" parent="TabContainer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 43.0
@@ -43,7 +51,7 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Enroll/HBoxContainer"]
-margin_right = 303.0
+margin_right = 309.0
 margin_bottom = 449.0
 custom_constants/separation = 34
 alignment = 1
@@ -51,44 +59,54 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Label" type="Label" parent="TabContainer/Enroll/HBoxContainer/VBoxContainer"]
+margin_top = 12.0
+margin_right = 309.0
+margin_bottom = 129.0
+custom_fonts/font = ExtResource( 3 )
+text = "Degrees allow you to
+get better jobs. Get >50%
+when attending class to
+move to the next year."
+
 [node name="Associates" type="Button" parent="TabContainer/Enroll/HBoxContainer/VBoxContainer"]
-margin_top = 87.0
-margin_right = 303.0
-margin_bottom = 130.0
+margin_top = 163.0
+margin_right = 309.0
+margin_bottom = 206.0
 text = "Associates (2 years)"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Bachelors" type="Button" parent="TabContainer/Enroll/HBoxContainer/VBoxContainer"]
-margin_top = 164.0
-margin_right = 303.0
-margin_bottom = 207.0
+margin_top = 240.0
+margin_right = 309.0
+margin_bottom = 283.0
 text = "Bachelors (4 years) "
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Masters" type="Button" parent="TabContainer/Enroll/HBoxContainer/VBoxContainer"]
-margin_top = 241.0
-margin_right = 303.0
-margin_bottom = 284.0
+margin_top = 317.0
+margin_right = 309.0
+margin_bottom = 360.0
 text = "Masters (2 years)"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="phD" type="Button" parent="TabContainer/Enroll/HBoxContainer/VBoxContainer"]
-margin_top = 318.0
-margin_right = 303.0
-margin_bottom = 361.0
+margin_top = 394.0
+margin_right = 309.0
+margin_bottom = 437.0
 text = "phD (4-6 years)"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="TabContainer/Enroll/HBoxContainer"]
-margin_left = 353.0
+margin_left = 359.0
 margin_right = 702.0
 margin_bottom = 449.0
 size_flags_horizontal = 3
@@ -97,7 +115,7 @@ alignment = 1
 
 [node name="Title" type="Label" parent="TabContainer/Enroll/HBoxContainer/VBoxContainer2"]
 margin_top = 177.0
-margin_right = 349.0
+margin_right = 343.0
 margin_bottom = 210.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -105,7 +123,7 @@ __meta__ = {
 
 [node name="Info" type="Label" parent="TabContainer/Enroll/HBoxContainer/VBoxContainer2"]
 margin_top = 214.0
-margin_right = 349.0
+margin_right = 343.0
 margin_bottom = 271.0
 custom_fonts/font = ExtResource( 3 )
 text = "
@@ -116,12 +134,116 @@ __meta__ = {
 }
 
 [node name="Attend Class" type="Tabs" parent="TabContainer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 43.0
-margin_right = -659.0
-margin_bottom = -141.0
+script = ExtResource( 5 )
+
+[node name="Unavailible" type="Label" parent="TabContainer/Attend Class"]
+visible = false
+margin_right = 796.0
+margin_bottom = 505.0
+text = "You are not enrolled in any classes"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="QuestionContainer" type="VBoxContainer" parent="TabContainer/Attend Class"]
+margin_left = 84.0
+margin_top = 19.0
+margin_right = 709.0
+margin_bottom = 398.0
+custom_constants/separation = 10
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MultipleChoice" type="VBoxContainer" parent="TabContainer/Attend Class/QuestionContainer"]
+margin_top = 50.0
+margin_right = 625.0
+margin_bottom = 329.0
+custom_constants/separation = 20
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="question" type="Label" parent="TabContainer/Attend Class/QuestionContainer/MultipleChoice"]
+margin_right = 625.0
+margin_bottom = 27.0
+custom_fonts/font = ExtResource( 3 )
+align = 1
+valign = 1
+autowrap = true
+
+[node name="answer" type="Button" parent="TabContainer/Attend Class/QuestionContainer/MultipleChoice"]
+margin_top = 47.0
+margin_right = 625.0
+margin_bottom = 90.0
+text = "answer"
+
+[node name="answer2" type="Button" parent="TabContainer/Attend Class/QuestionContainer/MultipleChoice"]
+margin_top = 110.0
+margin_right = 625.0
+margin_bottom = 153.0
+text = "answer"
+
+[node name="answer3" type="Button" parent="TabContainer/Attend Class/QuestionContainer/MultipleChoice"]
+margin_top = 173.0
+margin_right = 625.0
+margin_bottom = 216.0
+text = "answer"
+
+[node name="answer4" type="Button" parent="TabContainer/Attend Class/QuestionContainer/MultipleChoice"]
+margin_top = 236.0
+margin_right = 625.0
+margin_bottom = 279.0
+text = "answer"
+
+[node name="MathQuestion" type="VBoxContainer" parent="TabContainer/Attend Class/QuestionContainer"]
+visible = false
+margin_top = 202.0
+margin_right = 490.0
+margin_bottom = 303.0
+custom_constants/separation = 25
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="question" type="Label" parent="TabContainer/Attend Class/QuestionContainer/MathQuestion"]
+margin_right = 490.0
+margin_bottom = 33.0
+text = "1 + 1"
+align = 1
+
+[node name="answer" type="LineEdit" parent="TabContainer/Attend Class/QuestionContainer/MathQuestion"]
+margin_top = 58.0
+margin_right = 490.0
+margin_bottom = 101.0
+placeholder_text = "answer"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="correct" type="Label" parent="TabContainer/Attend Class"]
+margin_left = 164.0
+margin_top = 402.0
+margin_right = 654.0
+margin_bottom = 435.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mark" type="Label" parent="TabContainer/Attend Class"]
+margin_left = 164.0
+margin_top = 454.641
+margin_right = 654.0
+margin_bottom = 487.641
+text = "MARK:"
 
 [node name="Classes" type="Tabs" parent="TabContainer"]
 visible = false
@@ -143,7 +265,7 @@ __meta__ = {
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Classes/VBoxContainer"]
-margin_right = 939.0
+margin_right = 929.0
 margin_bottom = 33.0
 custom_constants/separation = 400
 
@@ -160,25 +282,34 @@ margin_bottom = 33.0
 
 [node name="ReportCard" type="VBoxContainer" parent="TabContainer/Classes/VBoxContainer"]
 margin_top = 42.0
-margin_right = 939.0
-margin_bottom = 75.0
+margin_right = 929.0
+margin_bottom = 79.0
 
 [node name="Grades" type="Label" parent="TabContainer/Classes/VBoxContainer/ReportCard"]
-margin_right = 939.0
+margin_right = 929.0
 margin_bottom = 33.0
 text = "Grades"
 
-[node name="Degrees" type="VBoxContainer" parent="TabContainer/Classes/VBoxContainer"]
-margin_top = 84.0
-margin_right = 939.0
-margin_bottom = 117.0
-
-[node name="Degrees" type="Label" parent="TabContainer/Classes/VBoxContainer/Degrees"]
-margin_right = 939.0
-margin_bottom = 33.0
-text = "Degrees"
+[node name="marks" type="VBoxContainer" parent="TabContainer/Classes/VBoxContainer/ReportCard"]
+margin_top = 37.0
+margin_right = 929.0
+margin_bottom = 37.0
+[connection signal="tab_changed" from="TabContainer" to="TabContainer" method="_on_TabContainer_tab_changed"]
+[connection signal="tab_selected" from="TabContainer" to="TabContainer" method="_on_TabContainer_tab_selected"]
 [connection signal="mouse_entered" from="TabContainer/Enroll/HBoxContainer/VBoxContainer/Associates" to="TabContainer/Enroll" method="_on_Associates_mouse_entered"]
 [connection signal="pressed" from="TabContainer/Enroll/HBoxContainer/VBoxContainer/Associates" to="TabContainer/Enroll" method="_on_Associates_pressed"]
 [connection signal="mouse_entered" from="TabContainer/Enroll/HBoxContainer/VBoxContainer/Bachelors" to="TabContainer/Enroll" method="_on_Bachelors_mouse_entered"]
+[connection signal="pressed" from="TabContainer/Enroll/HBoxContainer/VBoxContainer/Bachelors" to="TabContainer/Enroll" method="_on_Bachelors_pressed"]
 [connection signal="mouse_entered" from="TabContainer/Enroll/HBoxContainer/VBoxContainer/Masters" to="TabContainer/Enroll" method="_on_Masters_mouse_entered"]
+[connection signal="pressed" from="TabContainer/Enroll/HBoxContainer/VBoxContainer/Masters" to="TabContainer/Enroll" method="_on_Masters_pressed"]
 [connection signal="mouse_entered" from="TabContainer/Enroll/HBoxContainer/VBoxContainer/phD" to="TabContainer/Enroll" method="_on_phD_mouse_entered"]
+[connection signal="pressed" from="TabContainer/Enroll/HBoxContainer/VBoxContainer/phD" to="TabContainer/Enroll" method="_on_phD_pressed"]
+[connection signal="tab_clicked" from="TabContainer/Attend Class" to="TabContainer/Attend Class" method="_on_Attend_Class_tab_clicked"]
+[connection signal="pressed" from="TabContainer/Attend Class/QuestionContainer/MultipleChoice/answer" to="TabContainer/Attend Class" method="_on_answer_pressed"]
+[connection signal="pressed" from="TabContainer/Attend Class/QuestionContainer/MultipleChoice/answer2" to="TabContainer" method="_on_answer2_pressed"]
+[connection signal="pressed" from="TabContainer/Attend Class/QuestionContainer/MultipleChoice/answer2" to="TabContainer/Attend Class" method="_on_answer2_pressed"]
+[connection signal="pressed" from="TabContainer/Attend Class/QuestionContainer/MultipleChoice/answer3" to="TabContainer" method="_on_answer3_pressed"]
+[connection signal="pressed" from="TabContainer/Attend Class/QuestionContainer/MultipleChoice/answer3" to="TabContainer/Attend Class" method="_on_answer3_pressed"]
+[connection signal="pressed" from="TabContainer/Attend Class/QuestionContainer/MultipleChoice/answer4" to="TabContainer" method="_on_answer4_pressed"]
+[connection signal="pressed" from="TabContainer/Attend Class/QuestionContainer/MultipleChoice/answer4" to="TabContainer/Attend Class" method="_on_answer4_pressed"]
+[connection signal="text_entered" from="TabContainer/Attend Class/QuestionContainer/MathQuestion/answer" to="TabContainer/Attend Class" method="_on_answer_text_entered"]

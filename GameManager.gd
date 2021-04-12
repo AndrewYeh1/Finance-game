@@ -13,11 +13,11 @@ var health = 50
 # TIME
 
 var year = 1
-var second = 60
+var second = 10
 
 # SCHOOL STUFF
 
 var degrees = []
-var marks = [10, 30]
+var marks = [[], [], [], []]
 var education = ""
 var edyear = 0
