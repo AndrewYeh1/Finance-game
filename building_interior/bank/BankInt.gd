@@ -6,7 +6,7 @@ var menuOpen = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$player/Camera2D.limit_left = 0
+	$player/Camera2D.limit_left = 5
 	$player/Camera2D.limit_right = 1425
 	$player/Camera2D.limit_top = 0
 	$player/Camera2D.limit_bottom = 0
