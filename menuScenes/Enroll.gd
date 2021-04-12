@@ -35,12 +35,82 @@ func _on_Associates_pressed() -> void:
 	title.text = ""
 	var cost = 0
 	if GameManager.money > cost:
-		if GameManager.education != "Associate's":
+		if GameManager.education == "":
 			info.text = "Sucessfully enrolled!"
 			GameManager.money -= cost
 			GameManager.education = "Associate's"
+			GameManager.edyear = 1
+			
+			GameManager.marks[0].clear()
+			GameManager.marks[0].append(0)
+			
+			print(GameManager.marks[0])
 			
 		else:
-			info.text = "You are already enrolled."
+			info.text = "You are already enrolled in a class."
+	else:
+		info.text = "Failed, not enough money. :("
+
+
+func _on_Bachelors_pressed() -> void:
+	title.text = ""
+	var cost = 0
+	if GameManager.money > cost:
+		if GameManager.education == "":
+			info.text = "Sucessfully enrolled!"
+			GameManager.money -= cost
+			GameManager.education = "Bachelor's"
+			GameManager.edyear = 1
+			GameManager.marks[1].clear()
+			GameManager.marks[1].append(0)
+			
+			print(GameManager.marks[1])
+			
+		else:
+			info.text = "You are already enrolled in a class."
+	else:
+		info.text = "Failed, not enough money. :("
+
+
+func _on_Masters_pressed() -> void:
+	title.text = ""
+	var cost = 0
+	if GameManager.money > cost:
+		if GameManager.degrees.has("Bachelor's"):
+			if GameManager.education == "":
+				info.text = "Sucessfully enrolled!"
+				GameManager.money -= cost
+				GameManager.education = "Master's"
+				GameManager.edyear = 1
+				GameManager.marks[2].clear()
+				GameManager.marks[2].append(0)
+				
+				print(GameManager.marks[1])
+			else:
+				info.text = "You are already enrolled in a class."
+		else:
+			info.text = "You do not have a Bachelor's."
+	else:
+		info.text = "Failed, not enough money. :("
+
+
+func _on_phD_pressed() -> void:
+	title.text = ""
+	var cost = 0
+	if GameManager.money > cost:
+		if GameManager.degrees.has("Bachelor's"):
+			if GameManager.education == "":
+				info.text = "Sucessfully enrolled!"
+				GameManager.money -= cost
+				GameManager.education = "phD"
+				GameManager.edyear = 1
+				GameManager.marks[3].clear()
+				GameManager.marks[3].append(0)
+				
+				print(GameManager.marks[1])
+			else:
+				info.text = "You are already enrolled in a class."
+		else:
+			info.text = "You do not have a Bachelor's."
 	else:
 		info.text = "Failed, not enough money. :("
