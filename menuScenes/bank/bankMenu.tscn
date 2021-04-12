@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://menuScenes/bank/Deposit and Withdraw.gd" type="Script" id=1]
+[ext_resource path="res://menuScenes/bank/Liabilities.gd" type="Script" id=2]
+[ext_resource path="res://menuScenes/bank/viewBillsScreen.gd" type="Script" id=3]
 [ext_resource path="res://theme.tres" type="Theme" id=6]
 
 [node name="Control" type="Control"]
@@ -177,9 +179,9 @@ visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 43.0
+script = ExtResource( 2 )
 
 [node name="View Bills" type="Button" parent="BankContainer/Liabilities"]
-visible = false
 margin_left = 72.0
 margin_top = 53.0
 margin_right = 936.0
@@ -190,16 +192,28 @@ __meta__ = {
 }
 
 [node name="viewBillsScreen" type="Control" parent="BankContainer/Liabilities"]
+visible = false
 margin_right = 1000.0
 margin_bottom = 557.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="billsLabel" type="Label" parent="BankContainer/Liabilities/viewBillsScreen"]
+margin_left = 456.0
+margin_top = 21.0
+margin_right = 534.0
+margin_bottom = 54.0
+text = "BILLS"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="bills" type="Control" parent="BankContainer/Liabilities/viewBillsScreen"]
-margin_top = -3.0
+margin_top = 21.0
 margin_right = 1000.0
-margin_bottom = 554.0
+margin_bottom = 541.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -241,6 +255,7 @@ margin_left = 816.0
 margin_top = 117.0
 margin_right = 936.0
 margin_bottom = 160.0
+text = "INFO"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -271,6 +286,17 @@ margin_left = 816.0
 margin_top = 181.0
 margin_right = 936.0
 margin_bottom = 224.0
+text = "INFO"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="loansLabel" type="Label" parent="BankContainer/Liabilities/viewBillsScreen/bills"]
+margin_left = 56.0
+margin_top = 248.0
+margin_right = 192.0
+margin_bottom = 281.0
+text = "$"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -286,21 +312,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="loansLabel" type="Label" parent="BankContainer/Liabilities/viewBillsScreen/bills"]
-margin_left = 56.0
-margin_top = 248.0
-margin_right = 192.0
-margin_bottom = 281.0
-text = "$"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="loansInfo" type="Button" parent="BankContainer/Liabilities/viewBillsScreen/bills"]
 margin_left = 816.0
 margin_top = 245.0
 margin_right = 936.0
 margin_bottom = 288.0
+text = "INFO"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -331,9 +348,53 @@ margin_left = 816.0
 margin_top = 309.0
 margin_right = 936.0
 margin_bottom = 352.0
+text = "INFO"
+
+[node name="pay" type="Button" parent="BankContainer/Liabilities/viewBillsScreen"]
+margin_left = 72.0
+margin_top = 477.0
+margin_right = 472.0
+margin_bottom = 520.0
+text = "PAY"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="back" type="Button" parent="BankContainer/Liabilities/viewBillsScreen"]
+margin_left = 520.0
+margin_top = 477.0
+margin_right = 936.0
+margin_bottom = 520.0
+text = "DONE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="infoLabel" type="Label" parent="BankContainer/Liabilities/viewBillsScreen"]
+margin_left = 56.0
+margin_top = 405.0
+margin_right = 952.0
+margin_bottom = 438.0
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="BankContainer/Deposit and Withdraw/Deposit" to="BankContainer/Deposit and Withdraw" method="_on_Deposit_pressed"]
 [connection signal="pressed" from="BankContainer/Deposit and Withdraw/Withdraw" to="BankContainer/Deposit and Withdraw" method="_on_Withdraw_pressed"]
 [connection signal="pressed" from="BankContainer/Deposit and Withdraw/DepositPage/DepBut" to="BankContainer/Deposit and Withdraw" method="_on_DepBut_pressed"]
 [connection signal="pressed" from="BankContainer/Deposit and Withdraw/DepositPage/BackBut" to="BankContainer/Deposit and Withdraw" method="_on_BackBut_pressed"]
 [connection signal="pressed" from="BankContainer/Deposit and Withdraw/WithdrawPage/WithBut" to="BankContainer/Deposit and Withdraw" method="_on_WithBut_pressed"]
 [connection signal="pressed" from="BankContainer/Deposit and Withdraw/WithdrawPage/WithBackBut" to="BankContainer/Deposit and Withdraw" method="_on_WithBackBut_pressed"]
+[connection signal="pressed" from="BankContainer/Liabilities/View Bills" to="BankContainer/Liabilities/viewBillsScreen" method="_on_View_Bills_pressed"]
+[connection signal="pressed" from="BankContainer/Liabilities/View Bills" to="BankContainer/Liabilities" method="_on_View_Bills_pressed"]
+[connection signal="toggled" from="BankContainer/Liabilities/viewBillsScreen/bills/all" to="BankContainer/Liabilities/viewBillsScreen" method="_on_all_toggled"]
+[connection signal="toggled" from="BankContainer/Liabilities/viewBillsScreen/bills/rent" to="BankContainer/Liabilities/viewBillsScreen" method="_on_rent_toggled"]
+[connection signal="pressed" from="BankContainer/Liabilities/viewBillsScreen/bills/rentInfo" to="BankContainer/Liabilities/viewBillsScreen" method="_on_rentInfo_pressed"]
+[connection signal="toggled" from="BankContainer/Liabilities/viewBillsScreen/bills/houseFees" to="BankContainer/Liabilities/viewBillsScreen" method="_on_houseFees_toggled"]
+[connection signal="pressed" from="BankContainer/Liabilities/viewBillsScreen/bills/houseFeesInfo" to="BankContainer/Liabilities/viewBillsScreen" method="_on_houseFeesInfo_pressed"]
+[connection signal="toggled" from="BankContainer/Liabilities/viewBillsScreen/bills/loans" to="BankContainer/Liabilities/viewBillsScreen" method="_on_loans_toggled"]
+[connection signal="pressed" from="BankContainer/Liabilities/viewBillsScreen/bills/loansInfo" to="BankContainer/Liabilities/viewBillsScreen" method="_on_loansInfo_pressed"]
+[connection signal="toggled" from="BankContainer/Liabilities/viewBillsScreen/bills/taxes" to="BankContainer/Liabilities/viewBillsScreen" method="_on_taxes_toggled"]
+[connection signal="pressed" from="BankContainer/Liabilities/viewBillsScreen/bills/taxesInfo" to="BankContainer/Liabilities/viewBillsScreen" method="_on_taxesInfo_pressed"]
+[connection signal="pressed" from="BankContainer/Liabilities/viewBillsScreen/pay" to="BankContainer/Liabilities/viewBillsScreen" method="_on_pay_pressed"]
+[connection signal="pressed" from="BankContainer/Liabilities/viewBillsScreen/back" to="BankContainer/Liabilities" method="_on_back_pressed"]

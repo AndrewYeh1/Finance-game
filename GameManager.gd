@@ -21,3 +21,9 @@ var degrees = []
 var marks = [10, 30]
 var education = ""
 var edyear = 0
+
+# BILLS
+var houseRent = 1
+var houseMain = 2
+var loans = 3
+var taxes = 4

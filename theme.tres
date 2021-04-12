@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=11 format=2]
+[gd_resource type="Theme" load_steps=12 format=2]
 
 [ext_resource path="res://data/menu/menuTab2.PNG" type="Texture" id=1]
 [ext_resource path="res://data/menu/menuTab.PNG" type="Texture" id=2]
@@ -69,6 +69,9 @@ region_rect = Rect2( 97.925, 160.933, 153.862, 29.3716 )
 margin_left = 15.0
 margin_right = 15.0
 
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.682353, 0.788235, 0.945098, 1 )
+
 [resource]
 default_font = ExtResource( 3 )
 Button/colors/font_color = Color( 0, 0, 0, 1 )
@@ -82,8 +85,6 @@ Button/styles/focus = SubResource( 1 )
 Button/styles/hover = SubResource( 2 )
 Button/styles/normal = SubResource( 3 )
 Button/styles/pressed = SubResource( 4 )
-Dialogs/constants/button_margin = 32
-Dialogs/constants/margin = 8
 SpinBox/icons/updown = null
 TabContainer/colors/font_color_bg = Color( 1, 1, 1, 1 )
 TabContainer/colors/font_color_disabled = Color( 1, 1, 1, 0.2 )
@@ -104,3 +105,12 @@ TabContainer/styles/panel = SubResource( 5 )
 TabContainer/styles/tab_bg = SubResource( 6 )
 TabContainer/styles/tab_disabled = null
 TabContainer/styles/tab_fg = SubResource( 7 )
+WindowDialog/colors/title_color = Color( 0, 0, 0, 1 )
+WindowDialog/constants/close_h_ofs = 18
+WindowDialog/constants/close_v_ofs = 18
+WindowDialog/constants/scaleborder_size = 4
+WindowDialog/constants/title_height = 15
+WindowDialog/fonts/title_font = null
+WindowDialog/icons/close = null
+WindowDialog/icons/close_highlight = null
+WindowDialog/styles/panel = SubResource( 8 )
