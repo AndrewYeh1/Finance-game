@@ -23,7 +23,6 @@ __meta__ = {
 }
 
 [node name="Deposit and Withdraw" type="Tabs" parent="BankContainer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 43.0
@@ -203,6 +202,7 @@ __meta__ = {
 }
 
 [node name="Liabilities" type="Tabs" parent="BankContainer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 43.0
@@ -429,8 +429,8 @@ __meta__ = {
 [connection signal="pressed" from="BankContainer/Deposit and Withdraw/DepositPage/BackBut" to="BankContainer/Deposit and Withdraw" method="_on_BackBut_pressed"]
 [connection signal="pressed" from="BankContainer/Deposit and Withdraw/WithdrawPage/WithBut" to="BankContainer/Deposit and Withdraw" method="_on_WithBut_pressed"]
 [connection signal="pressed" from="BankContainer/Deposit and Withdraw/WithdrawPage/WithBackBut" to="BankContainer/Deposit and Withdraw" method="_on_WithBackBut_pressed"]
-[connection signal="pressed" from="BankContainer/Liabilities/View Bills" to="BankContainer/Liabilities/viewBillsScreen" method="_on_View_Bills_pressed"]
 [connection signal="pressed" from="BankContainer/Liabilities/View Bills" to="BankContainer/Liabilities" method="_on_View_Bills_pressed"]
+[connection signal="pressed" from="BankContainer/Liabilities/View Bills" to="BankContainer/Liabilities/viewBillsScreen" method="_on_View_Bills_pressed"]
 [connection signal="toggled" from="BankContainer/Liabilities/viewBillsScreen/bills/all" to="BankContainer/Liabilities/viewBillsScreen" method="_on_all_toggled"]
 [connection signal="toggled" from="BankContainer/Liabilities/viewBillsScreen/bills/rent" to="BankContainer/Liabilities/viewBillsScreen" method="_on_rent_toggled"]
 [connection signal="pressed" from="BankContainer/Liabilities/viewBillsScreen/bills/rentInfo" to="BankContainer/Liabilities/viewBillsScreen" method="_on_rentInfo_pressed"]

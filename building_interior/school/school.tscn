@@ -4,7 +4,7 @@
 [ext_resource path="res://data/tileset.png" type="Texture" id=2]
 [ext_resource path="res://data/buildingInterior/LEFTDOOR.PNG" type="Texture" id=3]
 [ext_resource path="res://data/buildingInterior/SCHOOLINTERIORBACKGROUND.PNG" type="Texture" id=4]
-[ext_resource path="res://menuScenes/schoolMenu.tscn" type="PackedScene" id=5]
+[ext_resource path="res://menuScenes/school/schoolMenu.tscn" type="PackedScene" id=5]
 [ext_resource path="res://stats/timer.tscn" type="PackedScene" id=6]
 [ext_resource path="res://fade/newyear.tscn" type="PackedScene" id=7]
 [ext_resource path="res://actors/player.tscn" type="PackedScene" id=8]
@@ -99,11 +99,12 @@ margin_top = 15.1285
 margin_right = 233.444
 margin_bottom = 159.129
 
-[node name="schoolMenu" parent="CanvasLayer" instance=ExtResource( 5 )]
+[node name="Control" parent="CanvasLayer" instance=ExtResource( 5 )]
 visible = false
-margin_left = 88.0
-margin_top = -8.0
-margin_right = 152.406
-margin_bottom = -7.99994
+margin_left = 120.0
+margin_top = 56.0
+margin_right = 120.0
+margin_bottom = 56.0
+rect_scale = Vector2( 0.9, 0.9 )
 [connection signal="timeout" from="CanvasLayer/time" to="." method="_on_time_timeout"]
 [connection signal="transitioned" from="CanvasLayer/newyeartransition" to="CanvasLayer/time" method="_on_newyeartransition_transitioned"]
