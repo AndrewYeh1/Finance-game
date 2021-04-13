@@ -29,6 +29,7 @@ var houseRent = 1
 var houseMain = 2
 var loans = 3
 var taxes = 4
+var tuition = 0
 
 # LOANS
 var loanStudent = 20

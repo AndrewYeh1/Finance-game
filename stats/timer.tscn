@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://renner-bold.tres" type="DynamicFont" id=1]
 [ext_resource path="res://stats.tres" type="StyleBox" id=2]
 [ext_resource path="res://stats/timer.gd" type="Script" id=3]
+[ext_resource path="res://stats/warnings.tscn" type="PackedScene" id=4]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 3 )
@@ -50,4 +51,11 @@ margin_bottom = 106.0
 text = "20 years old"
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="bills" parent="." instance=ExtResource( 4 )]
+visible = false
+margin_left = -30.7993
+margin_top = -5.49722
+margin_right = -30.7993
+margin_bottom = -5.49722
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

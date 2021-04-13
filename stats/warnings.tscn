@@ -1,0 +1,76 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://theme.tres" type="Theme" id=1]
+[ext_resource path="res://stats/warnings.gd" type="Script" id=2]
+
+[node name="unpaid" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = -8.0
+margin_right = 16.0
+margin_bottom = -8.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+margin_left = 176.0
+margin_top = 96.0
+margin_right = 880.0
+margin_bottom = 489.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="PanelContainer"]
+margin_right = 704.0
+margin_bottom = 393.0
+
+[node name="bills" type="Label" parent="PanelContainer/Control"]
+margin_top = 26.0
+margin_right = 688.0
+margin_bottom = 59.0
+text = "Unpaid Bills"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="PanelContainer/Control"]
+margin_left = 176.0
+margin_top = 328.0
+margin_right = 528.0
+margin_bottom = 371.0
+text = "Understood"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelContainer2" type="Control" parent="."]
+margin_left = 240.0
+margin_top = 176.0
+margin_right = 816.0
+margin_bottom = 392.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer2"]
+margin_right = 576.0
+margin_bottom = 216.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="PanelContainer2/ScrollContainer"]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer2/ScrollContainer/Control"]
+margin_right = 550.0
+margin_bottom = 2301.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="PanelContainer/Control/Button" to="." method="_on_Button_pressed"]
