@@ -9,8 +9,7 @@ onready var bills = get_node("PanelContainer2/ScrollContainer/Control/VBoxContai
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	create_unpaid_bill(6500, "School Tuition", "You have been unenrolled from school.")
-	
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -10,10 +10,10 @@
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -0.841004
-margin_top = -0.943878
-margin_right = -0.841003
-margin_bottom = -0.943848
+margin_left = -1.0
+margin_top = -1.0
+margin_right = -92.0
+margin_bottom = -1.0
 rect_scale = Vector2( 1.01193, 1.07188 )
 rect_pivot_offset = Vector2( -746.284, -57.9041 )
 theme = ExtResource( 1 )

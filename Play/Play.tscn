@@ -100,5 +100,6 @@ margin_bottom = 159.129
 position = Vector2( 833.622, 13.6557 )
 
 [node name="newyeartransition" parent="CanvasLayer" instance=ExtResource( 11 )]
+visible = false
 [connection signal="timeout" from="CanvasLayer/time" to="." method="_on_time_timeout"]
 [connection signal="transitioned" from="CanvasLayer/newyeartransition" to="CanvasLayer/time" method="_on_newyeartransition_transitioned"]

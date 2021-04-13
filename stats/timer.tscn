@@ -54,8 +54,8 @@ text = "20 years old"
 
 [node name="bills" parent="." instance=ExtResource( 4 )]
 visible = false
-margin_left = -30.7993
-margin_top = -5.49722
-margin_right = -30.7993
-margin_bottom = -5.49722
+margin_left = -944.0
+margin_top = 0.0
+margin_right = -944.0
+margin_bottom = 0.0
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
