@@ -12,7 +12,6 @@ onready var box = get_node("PanelContainer/VBoxContainer")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	print("asdasdad")
 	box.get_node("Year").text = "Year " + str(GameManager.year)
 	box.get_node("Time").text = str(GameManager.second) + " seconds"
 	box.get_node("Age").text = str(GameManager.year + 18) + " years old"
@@ -41,6 +40,7 @@ func _on_newyeartransition_transitioned() -> void:
 	GameManager.second = 10
 	GameManager.year += 1
 	
+	# education
 	var degrees = {"Associate's": 0, "Bachelor's": 1, "Master's": 2, "phD": 3}
 	if GameManager.education != "":
 		print("asdads")
@@ -57,3 +57,4 @@ func _on_newyeartransition_transitioned() -> void:
 			else:
 				GameManager.edyear += 1
 				GameManager.marks[degrees[GameManager.education]].append(0)
+	

@@ -33,4 +33,11 @@ var taxes = 4
 # LOANS
 var loanStudent = 20
 var loanMortgage = 0
-var loanPersonal
+var loanPersonal = 0
+var creditScore = 200
+var loanPersonalInterest = 0
+var loanMortgageInterest = 0
+
+#
+var houseRentCost = 5
+var houseMainCost = 5

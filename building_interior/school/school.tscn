@@ -99,7 +99,7 @@ margin_top = 15.1285
 margin_right = 233.444
 margin_bottom = 159.129
 
-[node name="Control" parent="CanvasLayer" instance=ExtResource( 5 )]
+[node name="schoolMenu" parent="CanvasLayer" instance=ExtResource( 5 )]
 visible = false
 margin_left = 120.0
 margin_top = 56.0
