@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/phonto.PNG-7758e31ca486ab58850100d1e5b23dca.stex"
+path="res://.import/instructionButtonLight.png-8c7d87d5c3424826a85c22e60c0880b4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://data/phonto.PNG"
-dest_files=[ "res://.import/phonto.PNG-7758e31ca486ab58850100d1e5b23dca.stex" ]
+source_file="res://data/others/instructionButtonLight.png"
+dest_files=[ "res://.import/instructionButtonLight.png-8c7d87d5c3424826a85c22e60c0880b4.stex" ]
 
 [params]
 

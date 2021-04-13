@@ -12,6 +12,7 @@ position = Vector2( -384.019, -270.495 )
 texture = ExtResource( 1 )
 
 [node name="Insurance" type="Area2D" parent="."]
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Insurance"]
 position = Vector2( -2, -55.125 )

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/backgroundwnotext.PNG-74bb68566d22e834f4efd97ce6dd31f2.stex"
+path="res://.import/instructionButton.PNG-8ea91f92a436086ff96f3f938a5ab74e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://data/backgroundwnotext.PNG"
-dest_files=[ "res://.import/backgroundwnotext.PNG-74bb68566d22e834f4efd97ce6dd31f2.stex" ]
+source_file="res://data/others/instructionButton.PNG"
+dest_files=[ "res://.import/instructionButton.PNG-8ea91f92a436086ff96f3f938a5ab74e.stex" ]
 
 [params]
 
