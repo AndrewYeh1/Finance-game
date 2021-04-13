@@ -29,6 +29,7 @@ var houseRent = 1
 var houseMain = 2
 var loans = 3
 var taxes = 4
+var tuition = 0
 
 # LOANS
 var loanStudent = 20
@@ -37,6 +38,7 @@ var loanPersonal = 0
 var creditScore = 200
 var loanPersonalInterest = 0
 var loanMortgageInterest = 0
+var studentLoanPayback = 0
 
 #
 var houseRentCost = 5

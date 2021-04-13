@@ -58,3 +58,10 @@ func _on_newyeartransition_transitioned() -> void:
 				GameManager.edyear += 1
 				GameManager.marks[degrees[GameManager.education]].append(0)
 	
+	# finance
+	GameManager.houseMain = GameManager.houseMainCost
+	GameManager.houseeRent = GameManager.houseRentCost
+	if GameManager.education == "":
+		GameManager.loanStudent = GameManager.studenLoanPayback
+		GameManager.loanStudent -= GameManager.studentLoanPayback
+	

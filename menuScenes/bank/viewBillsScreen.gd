@@ -19,6 +19,7 @@ func _reset_bills() -> void:
 	$bills/houseFees.disabled = false
 	$bills/loans.disabled = false
 	$bills/taxes.disabled = false
+	$bills/tuition.disabled = false
 	if GameManager.houseRent == 0:
 		$bills/rent.disabled = true
 		$bills/rent.pressed = false
@@ -34,6 +35,10 @@ func _reset_bills() -> void:
 	if GameManager.taxes == 0:
 		$bills/taxes.disabled = true
 		$bills/taxes.pressed = false
+	$bills/tuitionLabel.text = "$" + str(GameManager.tuition)
+	if GameManager.tuition == 0:
+		$bills/tuition.disabled = true
+		$bills/tuition.pressed = false
 	$bills/taxesLabel.text = "$" + str(GameManager.taxes)
 	if $bills/rent.disabled == true and $bills/houseFees.disabled == true and $bills/loans.disabled == true and $bills/taxes.disabled == true:
 		$bills/all.disabled = true
@@ -43,10 +48,16 @@ func _reset_bills() -> void:
 
 func _on_all_toggled(button_pressed):
 	if $bills/all.has_focus() == true:
-		$bills/rent.pressed = button_pressed
-		$bills/houseFees.pressed = button_pressed
-		$bills/loans.pressed = button_pressed
-		$bills/taxes.pressed = button_pressed
+		if $bills/rent.disabled == false:
+			$bills/rent.pressed = button_pressed
+		if $bills/houseFees.disabled == false:
+			$bills/houseFees.pressed = button_pressed
+		if $bills/loans.disabled == false:
+			$bills/loans.pressed = button_pressed
+		if $bills/taxes.disabled == false:
+			$bills/taxes.pressed = button_pressed
+		if $bills/tuition.disabled == false:
+			$bills/tuition.pressed = button_pressed
 
 
 func _on_rent_toggled(button_pressed):
@@ -107,6 +118,8 @@ func _on_pay_pressed():
 		total += GameManager.loans
 	if $bills/taxes.pressed == true:
 		total += GameManager.taxes
+	if $bills/tuition.pressed == true:
+		total += GameManager.tuition
 	if GameManager.money >= total:
 		GameManager.money -= total
 		if $bills/rent.pressed == true:
@@ -117,6 +130,8 @@ func _on_pay_pressed():
 			GameManager.loans = 0
 		if $bills/taxes.pressed == true:
 			GameManager.taxes = 0
+		if $bills/tuition.pressed == true:
+			GameManager.tuition = 0
 		$infoLabel.text = "You paid $" + str(total) + " in fees."
 	else:
 		$infoLabel.text = "Not enough money! TIP: Withdraw money from bank"
@@ -126,4 +141,16 @@ func _on_pay_pressed():
 func _on_View_Bills_pressed():
 	_reset_bills()
 	$infoLabel.text = ""
-	
+
+
+
+func _on_tuitionInfo_pressed():
+	if GameManager.tuition == 0:
+		$infoLabel.text = "Your currently do not have to pay any tuition."
+	else:
+		$infoLabel.text = ("Tuition: You have to pay $" + str(GameManager.taxes) + " in tuition this year.")
+
+
+func _on_tuition_toggled(button_pressed):
+	if button_pressed == false:
+		$bills/all.pressed = false
