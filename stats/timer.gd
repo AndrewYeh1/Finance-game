@@ -10,6 +10,7 @@ signal timeout
 onready var timer = get_node("Timer")
 onready var box = get_node("PanelContainer/VBoxContainer")
 
+onready var bills = get_node("bills")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	box.get_node("Year").text = "Year " + str(GameManager.year)
@@ -45,16 +46,21 @@ func _on_newyeartransition_transitioned() -> void:
 	if GameManager.education != "":
 		print("asdads")
 		print(GameManager.marks[degrees[GameManager.education]][GameManager.edyear-1])
-		if GameManager.marks[degrees[GameManager.education]][GameManager.edyear-1] >= 50:
-			print("worked")
-			if (GameManager.edyear == 2 and ["Associate's", "Master's"].has(GameManager.education)) or (GameManager.edyear == 4 and ["Bachelor's", "phD"].has(GameManager.education)):
-				if !GameManager.degrees.has(GameManager.education):
-					print("yes")
-					GameManager.degrees.append(GameManager.education)
-					GameManager.edyear = 0
-					GameManager.education = ""
-					print(GameManager.degrees)
-			else:
-				GameManager.edyear += 1
-				GameManager.marks[degrees[GameManager.education]].append(0)
-	
+		if GameManager.tuition <= 0:
+			if GameManager.marks[degrees[GameManager.education]][GameManager.edyear-1] >= 50:
+				print("worked")
+				if (GameManager.edyear == 2 and ["Associate's", "Master's"].has(GameManager.education)) or (GameManager.edyear == 4 and ["Bachelor's", "phD"].has(GameManager.education)):
+					if !GameManager.degrees.has(GameManager.education):
+						print("yes")
+						GameManager.degrees.append(GameManager.education)
+						GameManager.edyear = 0
+						GameManager.education = ""
+						print(GameManager.degrees)
+				else:
+					GameManager.edyear += 1
+					GameManager.marks[degrees[GameManager.education]].append(0)
+		else:
+			# didnt pay tuition
+			GameManager.edyear = 0
+			bills.create_unpaid_bill(GameManager.tuition, "School Tuition", " | You have been unenrolled from school.")
+			GameManager.education = ""

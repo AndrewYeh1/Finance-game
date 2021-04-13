@@ -89,22 +89,21 @@ position = Vector2( 653.166, 575.163 )
 [node name="time" parent="CanvasLayer" instance=ExtResource( 6 )]
 position = Vector2( 833.622, 13.6557 )
 
-[node name="newyeartransition" parent="CanvasLayer" instance=ExtResource( 7 )]
-margin_top = -2.37842
-margin_bottom = -2.37842
-
 [node name="statsBar" parent="CanvasLayer" instance=ExtResource( 9 )]
 margin_left = 14.4442
 margin_top = 15.1285
 margin_right = 233.444
-margin_bottom = 159.129
+margin_bottom = 258.129
 
 [node name="schoolMenu" parent="CanvasLayer" instance=ExtResource( 5 )]
-visible = false
-margin_left = 120.0
-margin_top = 56.0
-margin_right = 120.0
-margin_bottom = 56.0
+margin_left = 169.901
+margin_top = 41.5876
+margin_right = 169.901
+margin_bottom = 41.5876
 rect_scale = Vector2( 0.9, 0.9 )
+
+[node name="newyeartransition" parent="CanvasLayer" instance=ExtResource( 7 )]
+margin_top = -2.37842
+margin_bottom = -2.37842
 [connection signal="timeout" from="CanvasLayer/time" to="." method="_on_time_timeout"]
 [connection signal="transitioned" from="CanvasLayer/newyeartransition" to="CanvasLayer/time" method="_on_newyeartransition_transitioned"]

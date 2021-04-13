@@ -265,7 +265,7 @@ __meta__ = {
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Classes/VBoxContainer"]
-margin_right = 929.0
+margin_right = 938.0
 margin_bottom = 33.0
 custom_constants/separation = 400
 
@@ -282,17 +282,17 @@ margin_bottom = 33.0
 
 [node name="ReportCard" type="VBoxContainer" parent="TabContainer/Classes/VBoxContainer"]
 margin_top = 42.0
-margin_right = 929.0
+margin_right = 938.0
 margin_bottom = 79.0
 
 [node name="Grades" type="Label" parent="TabContainer/Classes/VBoxContainer/ReportCard"]
-margin_right = 929.0
+margin_right = 938.0
 margin_bottom = 33.0
 text = "Grades"
 
 [node name="marks" type="VBoxContainer" parent="TabContainer/Classes/VBoxContainer/ReportCard"]
 margin_top = 37.0
-margin_right = 929.0
+margin_right = 938.0
 margin_bottom = 37.0
 [connection signal="tab_changed" from="TabContainer" to="TabContainer" method="_on_TabContainer_tab_changed"]
 [connection signal="tab_selected" from="TabContainer" to="TabContainer" method="_on_TabContainer_tab_selected"]
@@ -306,10 +306,10 @@ margin_bottom = 37.0
 [connection signal="pressed" from="TabContainer/Enroll/HBoxContainer/VBoxContainer/phD" to="TabContainer/Enroll" method="_on_phD_pressed"]
 [connection signal="tab_clicked" from="TabContainer/Attend Class" to="TabContainer/Attend Class" method="_on_Attend_Class_tab_clicked"]
 [connection signal="pressed" from="TabContainer/Attend Class/QuestionContainer/MultipleChoice/answer" to="TabContainer/Attend Class" method="_on_answer_pressed"]
-[connection signal="pressed" from="TabContainer/Attend Class/QuestionContainer/MultipleChoice/answer2" to="TabContainer" method="_on_answer2_pressed"]
 [connection signal="pressed" from="TabContainer/Attend Class/QuestionContainer/MultipleChoice/answer2" to="TabContainer/Attend Class" method="_on_answer2_pressed"]
-[connection signal="pressed" from="TabContainer/Attend Class/QuestionContainer/MultipleChoice/answer3" to="TabContainer" method="_on_answer3_pressed"]
+[connection signal="pressed" from="TabContainer/Attend Class/QuestionContainer/MultipleChoice/answer2" to="TabContainer" method="_on_answer2_pressed"]
 [connection signal="pressed" from="TabContainer/Attend Class/QuestionContainer/MultipleChoice/answer3" to="TabContainer/Attend Class" method="_on_answer3_pressed"]
-[connection signal="pressed" from="TabContainer/Attend Class/QuestionContainer/MultipleChoice/answer4" to="TabContainer" method="_on_answer4_pressed"]
+[connection signal="pressed" from="TabContainer/Attend Class/QuestionContainer/MultipleChoice/answer3" to="TabContainer" method="_on_answer3_pressed"]
 [connection signal="pressed" from="TabContainer/Attend Class/QuestionContainer/MultipleChoice/answer4" to="TabContainer/Attend Class" method="_on_answer4_pressed"]
+[connection signal="pressed" from="TabContainer/Attend Class/QuestionContainer/MultipleChoice/answer4" to="TabContainer" method="_on_answer4_pressed"]
 [connection signal="text_entered" from="TabContainer/Attend Class/QuestionContainer/MathQuestion/answer" to="TabContainer/Attend Class" method="_on_answer_text_entered"]
