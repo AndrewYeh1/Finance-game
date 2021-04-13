@@ -3,7 +3,7 @@
 [ext_resource path="res://data/buildings/bank.png" type="Texture" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 33.8823, 64.2079 )
+extents = Vector2( 32.7706, 55.125 )
 
 [node name="bank" type="Node2D"]
 
