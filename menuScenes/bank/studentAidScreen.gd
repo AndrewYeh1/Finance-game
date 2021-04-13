@@ -22,6 +22,7 @@ func _on_applyBut_pressed():
 		GameManager.studentAid += $applySpinBox.value
 		GameManager.loanStudent += $applySpinBox.value
 		$messageLabel.text = "Succesfully applied for $" + str($applySpinBox.value) + " in student aid."
+		GameManager.studentLoanPayback += $applySpinBox.value * 0.1
 	else:
 		if GameManager.money + GameManager.studentAid >= $applySpinBox.value:
 			$messageLabel.text = "Succesfully paid for $" + str($applySpinBox.value) + " in student aid."
