@@ -1,8 +1,9 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Instructions/Instructions.gd" type="Script" id=1]
-[ext_resource path="res://data/instructionScreen.PNG" type="Texture" id=2]
-[ext_resource path="res://data/backButton.PNG" type="Texture" id=3]
+[ext_resource path="res://data/others/instructionScreen.PNG" type="Texture" id=2]
+[ext_resource path="res://data/others/backButton.PNG" type="Texture" id=3]
+
 
 [node name="Instructions" type="Node2D"]
 script = ExtResource( 1 )

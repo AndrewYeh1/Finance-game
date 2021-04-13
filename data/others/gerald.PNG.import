@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/startButtonLight.png-351a8c389769efcff52b1d232d65f5e6.stex"
+path="res://.import/gerald.PNG-0149665f18cf7660066f7988f3f0655c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://data/startButtonLight.png"
-dest_files=[ "res://.import/startButtonLight.png-351a8c389769efcff52b1d232d65f5e6.stex" ]
+source_file="res://data/others/gerald.PNG"
+dest_files=[ "res://.import/gerald.PNG-0149665f18cf7660066f7988f3f0655c.stex" ]
 
 [params]
 

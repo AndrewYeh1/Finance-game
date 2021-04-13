@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/instructionScreen.PNG-a6efa96b152c44b968f8f7940dd53b2c.stex"
+path="res://.import/phonto.PNG-630889adf873960c34af9eeae9a4076a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://data/instructionScreen.PNG"
-dest_files=[ "res://.import/instructionScreen.PNG-a6efa96b152c44b968f8f7940dd53b2c.stex" ]
+source_file="res://data/others/phonto.PNG"
+dest_files=[ "res://.import/phonto.PNG-630889adf873960c34af9eeae9a4076a.stex" ]
 
 [params]
 
