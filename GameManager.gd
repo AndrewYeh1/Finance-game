@@ -4,7 +4,7 @@ extends Node
 
 # STATS
 
-var money = 50
+var money = 1000
 var bankMoney = 0
 var happiness = 50
 var credit = 50
