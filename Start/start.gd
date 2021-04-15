@@ -28,5 +28,5 @@ func _on_next_pressed():
 		$backstory4.show()
 		$next.text = "PLAY"
 	if page == 5:
-		get_tree().change_scene("res://Home/Home.tscn")
+		get_tree().change_scene("res://Instructions/Instructions.tscn")
 	page += 1
