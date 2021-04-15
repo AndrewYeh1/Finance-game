@@ -2,7 +2,10 @@ extends Node2D
 
 
 func _ready():
-	pass
+	if GameManager.first == true:
+		GameManager.first = false
+		get_tree().change_scene("res://Start/start.tscn")
+		
 
 
 func _on_StartButton_pressed():
