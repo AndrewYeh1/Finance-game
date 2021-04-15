@@ -16,7 +16,6 @@ func _ready():
 
 
 func _on_blueShirtBut_pressed():
-	print("HI")
 	item = "Blue Shirt"
 	price = 30
 	_purchase()
@@ -65,23 +64,55 @@ func _on_largeHouseBut_pressed():
 
 
 func _purchase():
-	$notif.visible = true
-	if GameManager.money >= price:
-		$notif/confirmation.visible = true
-		$notif/confirmation/confirmationMsg.text = "Buy " + item + " for $" + str(price) + "?"
+	if item == "Blue Shirt" or item == "Rainbow Shirt" or item == "Sunglasses" or item == "Black Pants" or item == "Rainbow Shirt" or item == "Dog":
+		$notif.visible = true
+		if GameManager.money >= price:
+			$notif/confirmation.visible = true
+			$notif/confirmation/confirmationMsg.text = "Buy " + item + " for $" + str(price) + "?"
+		else:
+			$notif/money.visible = true
 	else:
-		$notif/money.visible = true
+		if GameManager.money >= price:
+			$notif/confirmation.visible = true
+			$notif/confirmation/confirmationMsg.text = "Buy " + item + " for $" + str(price) + "?"
+		else:
+			$TabContainer/Houses/mortgage.visible = true
+			if item == "Small House":
+				print("HI")
+				if GameManager.money >= 25000 and GameManager.creditScore >= 200:
+					$TabContainer/Houses/mortgage/mortgagePanel/title.text = "MORTGAGE (ACCEPTED)"
+					$TabContainer/Houses/mortgage/mortgagePanel/confirm.disabled = false
+					$TabContainer/Houses/mortgage/mortgagePanel/percentSpinBox.editable = true
+					$TabContainer/Houses/mortgage/mortgagePanel/moneyLabel.text = "Credit score and/or money too low to apply for mortgage."
+					$TabContainer/Houses/mortgage/mortgagePanel/percentSpinBox.min_value = 100 - stepify(float(GameManager.money) / price * 100, 1)
+				else:
+					$TabContainer/Houses/mortgage/mortgagePanel/title.text = "MORTGAGE (DENIED)"
+					$TabContainer/Houses/mortgage/mortgagePanel/confirm.disabled = true
+					$TabContainer/Houses/mortgage/mortgagePanel/percentSpinBox.editable = false
+					$TabContainer/Houses/mortgage/mortgagePanel/moneyLabel.text = "You do not have enough money, please apply for mortgage."
 	
 
 
 func _on_confirmBut_pressed():
 	GameManager.money -= price
-	if item == "Blue Shirt" or item == "Rainbow Shirt" or item == "Sunglasses" or item == "Black Pants":
+	if item == "Blue Shirt":
 		GameManager.happiness += 1
+		GameManager.blueshirt = true
+	elif item == "Rainbow Shirt":
+		GameManager.happiness += 1
+		GameManager.rainbowShirt = true
+	elif item == "Sunglasses":
+		GameManager.happiness += 1
+		GameManager.sunglasses = true
+	elif item == "Black Pants":
+		GameManager.happiness += 1
+		GameManager.blackPants = true
 	elif item == "Rainbow Shirt":
 		GameManager.happiness += 2
+		GameManager.rainbowShirt = true
 	elif item == "Dog":
 		GameManager.happiness += 5
+		GameManager.dog = true
 	$notif/confirmation.hide()
 	$notif.hide()
 
@@ -99,3 +130,13 @@ func _on_cancelBut_pressed():
 func _input(ev):
 	if Input.is_key_pressed(KEY_ESCAPE):
 		get_tree().change_scene("res://Play/Play.tscn")
+
+
+func _on_cancel_pressed():
+	$TabContainer/Houses/mortgage.hide()
+
+
+func _on_confirm_pressed():
+	$TabContainer/Houses/mortgage.hide()
+	GameManager.loanMortgage += ($TabContainer/Houses/mortgage/mortgagePanel/percentSpinBox.value / 100) * price
+	GameManager.money -= ((100 - $TabContainer/Houses/mortgage/mortgagePanel/percentSpinBox.value) / 100) * price

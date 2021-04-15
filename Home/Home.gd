@@ -6,6 +6,11 @@ func _ready():
 
 
 func _on_StartButton_pressed():
+	GameManager.netWorth = GameManager.money + GameManager.bankMoney
+	if GameManager.largeHouse:
+		GameManager.netWorth += GameManager.largeHouseValue
+	if GameManager.smallHouse:
+		GameManager.netWorth += GameManager.smallHouseValue
 	$TransitionScene.show()
 	$TransitionScene._transition()
 	

@@ -4,7 +4,7 @@ extends Node
 
 # STATS
 
-var money = 1000
+var money = 149999
 var bankMoney = 0
 var happiness = 50
 var credit = 50
@@ -40,6 +40,18 @@ var loanPersonalInterest = 0
 var loanMortgageInterest = 0
 var studentLoanPayback = 0
 
-#
-var houseRentCost = 5
-var houseMainCost = 5
+# HOUSE COSTS
+var houseRentCost = 0
+var houseMainCost = 0
+
+# ITEMS OWNED
+var blueShirt = false
+var heartShirt = false
+var rainbowShirt = false
+var blackPants = false
+var sunglasses = false
+var dog = false
+var smallHouse = false
+var largeHouse = false
+var largeHouseValue = 800000
+var smallHouseValue = 150000

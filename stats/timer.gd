@@ -46,9 +46,14 @@ func _on_newyeartransition_transitioned() -> void:
 	GameManager.houseMain = GameManager.houseMainCost
 	GameManager.houseRent = GameManager.houseRentCost
 	if GameManager.education == "":
-		GameManager.loanStudent = GameManager.studenLoanPayback
+		GameManager.loanStudent = GameManager.studentLoanPayback
 		GameManager.loanStudent -= GameManager.studentLoanPayback
 	GameManager.bankMoney = stepify(1.05 * GameManager.bankMoney, 0.01)
+	GameManager.netWorth = GameManager.money + GameManager.bankMoney
+	if GameManager.largeHouse:
+		GameManager.netWorth += GameManager.largeHouseValue
+	if GameManager.smallHouse:
+		GameManager.netWorth += GameManager.smallHouseValue
   
 	# education
 	var degrees = {"Associate's": 0, "Bachelor's": 1, "Master's": 2, "phD": 3}
