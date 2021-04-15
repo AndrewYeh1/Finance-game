@@ -97,7 +97,7 @@ func _on_confirmBut_pressed():
 	GameManager.money -= price
 	if item == "Blue Shirt":
 		GameManager.happiness += 1
-		GameManager.blueshirt = true
+		GameManager.blueShirt = true
 	elif item == "Rainbow Shirt":
 		GameManager.happiness += 1
 		GameManager.rainbowShirt = true
@@ -113,6 +113,12 @@ func _on_confirmBut_pressed():
 	elif item == "Dog":
 		GameManager.happiness += 5
 		GameManager.dog = true
+	elif item == "Small House":
+		GameManager.residence = "SHouse"
+		GameManager.houseMainCost = 2500
+	elif item == "Large House":
+		GameManager.residence = "LHouse"
+		GameManager.houseMainCost = 3000
 	$notif/confirmation.hide()
 	$notif.hide()
 
@@ -130,6 +136,8 @@ func _on_cancelBut_pressed():
 func _input(ev):
 	if Input.is_key_pressed(KEY_ESCAPE):
 		get_tree().change_scene("res://Play/Play.tscn")
+	if Input.is_key_pressed(KEY_SPACE):
+		$TabContainer.show()
 
 
 func _on_cancel_pressed():
@@ -140,3 +148,33 @@ func _on_confirm_pressed():
 	$TabContainer/Houses/mortgage.hide()
 	GameManager.loanMortgage += ($TabContainer/Houses/mortgage/mortgagePanel/percentSpinBox.value / 100) * price
 	GameManager.money -= ((100 - $TabContainer/Houses/mortgage/mortgagePanel/percentSpinBox.value) / 100) * price
+	if price == 150000:
+		GameManager.houseMainCost = 2500
+	if price == 800000:
+		GameManager.houseMainCost = 3000
+
+
+func _on_smallApartmentBut_pressed():
+	$TabContainer/Houses/rent.show()
+	$TabContainer/Houses/rent/rentPanel/msg.text = "The rent will be $430/month, bills will be paid yearly."
+
+
+func _on_largeApartmentBut_pressed():
+	$TabContainer/Houses/rent.show()
+	$TabContainer/Houses/rent/rentPanel/msg.text = "The rent will be $1200/month, bills will be paid yearly."
+
+
+func _on_CONFIRM_pressed():
+	if $TabContainer/Houses/rent/rentPanel/msg.text == "The rent will be $430/month, bills will be paid yearly.":
+		GameManager.houseRentCost = 5160
+		GameManager.houseMainCost = 1500
+		GameManager.residence = "SApartment"
+	else:
+		GameManager.houseRentCost = 14400
+		GameManager.houseMainCost = 2000
+		GameManager.residence = "LApartment"
+	$TabContainer/Houses/rent.hide()
+
+
+func _on_CANCEL_pressed():
+	$TabContainer/Houses/rent.hide()
