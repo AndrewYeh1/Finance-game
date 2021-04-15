@@ -2,6 +2,8 @@ extends Node
 
 # THESE ARE GLOBAL VARIABLES (goes across scenes)
 
+var first = true
+
 # STATS
 
 var money = 150000
