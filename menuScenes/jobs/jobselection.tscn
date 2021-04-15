@@ -1,0 +1,142 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://theme.tres" type="Theme" id=1]
+[ext_resource path="res://menuScenes/jobs/TabContainer.gd" type="Script" id=2]
+[ext_resource path="res://renner-small.tres" type="DynamicFont" id=3]
+
+[node name="jobselect" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TabContainer" type="TabContainer" parent="."]
+margin_left = 40.0
+margin_top = 8.0
+margin_right = 968.0
+margin_bottom = 513.0
+tab_align = 0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Apply" type="Tabs" parent="TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 43.0
+tab_align = 0
+
+[node name="Control" type="Control" parent="TabContainer/Apply"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="TabContainer/Apply"]
+margin_left = 88.0
+margin_top = 45.0
+margin_right = 390.0
+margin_bottom = 78.0
+text = "Apply for a job"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="jobs" type="VBoxContainer" parent="TabContainer/Apply"]
+margin_left = 64.0
+margin_top = 109.0
+margin_right = 408.0
+margin_bottom = 404.0
+custom_constants/separation = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="job1" type="Button" parent="TabContainer/Apply/jobs"]
+margin_right = 344.0
+margin_bottom = 43.0
+text = "job1"
+
+[node name="job2" type="Button" parent="TabContainer/Apply/jobs"]
+margin_top = 63.0
+margin_right = 344.0
+margin_bottom = 106.0
+text = "job1"
+
+[node name="job3" type="Button" parent="TabContainer/Apply/jobs"]
+margin_top = 126.0
+margin_right = 344.0
+margin_bottom = 169.0
+text = "job1"
+
+[node name="job4" type="Button" parent="TabContainer/Apply/jobs"]
+margin_top = 189.0
+margin_right = 344.0
+margin_bottom = 232.0
+text = "job1"
+
+[node name="job5" type="Button" parent="TabContainer/Apply/jobs"]
+margin_top = 252.0
+margin_right = 344.0
+margin_bottom = 295.0
+text = "job1"
+
+[node name="job" type="Control" parent="TabContainer/Apply"]
+margin_left = 408.0
+margin_top = 93.0
+margin_right = 728.0
+margin_bottom = 421.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="TabContainer/Apply/job"]
+margin_left = 96.0
+margin_top = 56.0
+margin_right = 297.0
+margin_bottom = 89.0
+text = "This is the job"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="info" type="Label" parent="TabContainer/Apply/job"]
+margin_left = 96.0
+margin_top = 120.0
+margin_right = 277.0
+margin_bottom = 189.0
+custom_fonts/font = ExtResource( 3 )
+text = "Experience: 
+Degrees:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="TabContainer/Apply/job"]
+margin_left = 232.0
+margin_top = 256.0
+margin_right = 331.0
+margin_bottom = 299.0
+text = "Apply"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Work" type="Tabs" parent="TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 43.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="mouse_entered" from="TabContainer/Apply/jobs/job1" to="TabContainer" method="_on_job1_mouse_entered"]
+[connection signal="mouse_entered" from="TabContainer/Apply/jobs/job2" to="TabContainer" method="_on_job2_mouse_entered"]
+[connection signal="mouse_entered" from="TabContainer/Apply/jobs/job3" to="TabContainer" method="_on_job3_mouse_entered"]
+[connection signal="mouse_entered" from="TabContainer/Apply/jobs/job4" to="TabContainer" method="_on_job4_mouse_entered"]
+[connection signal="mouse_entered" from="TabContainer/Apply/jobs/job5" to="TabContainer" method="_on_job5_mouse_entered"]
