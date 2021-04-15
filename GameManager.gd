@@ -40,6 +40,7 @@ var creditScore = 200
 var loanPersonalInterest = 0
 var loanMortgageInterest = 0
 var studentLoanPayback = 0
+var personalLoanPayback = 0
 
 # HOUSE COSTS
 var houseRentCost = 0
