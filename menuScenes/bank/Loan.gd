@@ -18,27 +18,18 @@ func _ready():
 
 func _on_studentAid_pressed():
 	$studentAid.visible = false
-	$mortgage.visible = false
 	$personalLoan.visible = false
 	$studentAidScreen.visible = true
 
 
-func _on_mortgage_pressed():
-	$studentAid.visible = false
-	$mortgage.visible = false
-	$personalLoan.visible = false
-	$mortgageScreen.visible = true
-
-
 func _on_personalLoan_pressed():
 	$studentAid.visible = false
-	$mortgage.visible = false
 	$personalLoan.visible = false
 	$personalLoanScreen.visible = true
 
 
 func _on_doneBut_pressed():
 	$studentAid.visible = true
-	$mortgage.visible = true
 	$personalLoan.visible = true
 	$studentAidScreen.visible = false
+	$personalLoanScreen.visible = false
