@@ -35,3 +35,7 @@ func set_camera_limits():
 	$player/Camera2D.limit_right = map_limits.end.x * map_cellsize.x - 50
 	$player/Camera2D.limit_top = map_limits.position.y * map_cellsize.y
 	$player/Camera2D.limit_bottom = map_limits.end.y * map_cellsize.y
+
+
+func _on_guide_pressed():
+	get_tree().change_scene("res://guide/guide.tscn")
