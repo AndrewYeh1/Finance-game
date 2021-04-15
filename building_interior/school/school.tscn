@@ -99,9 +99,9 @@ margin_bottom = 40.0
 rect_scale = Vector2( 0.9, 0.9 )
 
 [node name="newyeartransition" parent="CanvasLayer" instance=ExtResource( 7 )]
-visible = false
-margin_top = -2.37842
-margin_bottom = -2.37842
+margin_top = -2.0
+margin_right = 116.0
+margin_bottom = 68.0
 rect_scale = Vector2( 0.9, 0.9 )
 
 [node name="statsBar" type="MarginContainer" parent="CanvasLayer" instance=ExtResource( 9 )]
@@ -113,5 +113,7 @@ script = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="timeout" from="CanvasLayer/time" to="." method="_on_time_timeout"]
+
+[connection signal="timeout" from="CanvasLayer/time" to="CanvasLayer/newyeartransition" method="_on_time_timeout"]
+
 [connection signal="transitioned" from="CanvasLayer/newyeartransition" to="CanvasLayer/time" method="_on_newyeartransition_transitioned"]
