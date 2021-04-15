@@ -16,7 +16,8 @@ __meta__ = {
 }
 
 [node name="background" type="Sprite" parent="."]
-position = Vector2( 552, 304 )
+position = Vector2( 512, 300 )
+scale = Vector2( 0.666667, 0.666667 )
 texture = ExtResource( 5 )
 
 [node name="TabContainer" type="TabContainer" parent="."]
@@ -137,6 +138,74 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="mortgage" type="Control" parent="TabContainer/Houses"]
+visible = false
+margin_top = -3.0
+margin_right = 984.0
+margin_bottom = 554.0
+
+[node name="mortgagePanel" type="Panel" parent="TabContainer/Houses/mortgage"]
+margin_left = 112.0
+margin_top = 128.0
+margin_right = 880.0
+margin_bottom = 480.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="title" type="Label" parent="TabContainer/Houses/mortgage/mortgagePanel"]
+margin_left = 192.0
+margin_top = 24.0
+margin_right = 576.0
+margin_bottom = 57.0
+text = "MORTGAGE (ACCEPTED)"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="moneyLabel" type="Label" parent="TabContainer/Houses/mortgage/mortgagePanel"]
+margin_left = 144.0
+margin_top = 72.0
+margin_right = 624.0
+margin_bottom = 144.0
+text = "You do not have enough money, please apply for mortgage."
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="confirm" type="Button" parent="TabContainer/Houses/mortgage/mortgagePanel"]
+margin_left = 200.0
+margin_top = 280.0
+margin_right = 320.0
+margin_bottom = 323.0
+text = "CONFIRM"
+
+[node name="cancel" type="Button" parent="TabContainer/Houses/mortgage/mortgagePanel"]
+margin_left = 408.0
+margin_top = 280.0
+margin_right = 560.0
+margin_bottom = 323.0
+text = "CANCEL"
+
+[node name="percentSpinBox" type="SpinBox" parent="TabContainer/Houses/mortgage/mortgagePanel"]
+margin_left = 440.0
+margin_top = 176.0
+margin_right = 586.0
+margin_bottom = 219.0
+min_value = 1.0
+value = 1.0
+
+[node name="Label" type="Label" parent="TabContainer/Houses/mortgage/mortgagePanel"]
+margin_left = 112.0
+margin_top = 152.0
+margin_right = 376.0
+margin_bottom = 257.0
+text = "Enter percent you want to pay with mortgage"
+autowrap = true
+
 [node name="notif" type="Control" parent="."]
 visible = false
 anchor_right = 1.0
@@ -229,6 +298,8 @@ __meta__ = {
 [connection signal="pressed" from="TabContainer/Clothing and Accessories/dogBut" to="." method="_on_dogBut_pressed"]
 [connection signal="pressed" from="TabContainer/Houses/smallHouseBut" to="." method="_on_smallHouseBut_pressed"]
 [connection signal="pressed" from="TabContainer/Houses/largeHouseBut" to="." method="_on_largeHouseBut_pressed"]
+[connection signal="pressed" from="TabContainer/Houses/mortgage/mortgagePanel/confirm" to="." method="_on_confirm_pressed"]
+[connection signal="pressed" from="TabContainer/Houses/mortgage/mortgagePanel/cancel" to="." method="_on_cancel_pressed"]
 [connection signal="pressed" from="notif/confirmation/confirmBut" to="." method="_on_confirmBut_pressed"]
 [connection signal="pressed" from="notif/confirmation/cancelBut" to="." method="_on_cancelBut_pressed"]
 [connection signal="pressed" from="notif/money/okBut" to="." method="_on_okBut_pressed"]

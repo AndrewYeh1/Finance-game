@@ -107,7 +107,14 @@ func _on_newyeartransition_transitioned() -> void:
 	if GameManager.education == "":
 		GameManager.loanStudent = GameManager.studentLoanPayback
 		GameManager.loanStudent -= GameManager.studentLoanPayback
-  GameManager.bankMoney = stepify(1.05 * GameManager.bankMoney, 0.01)
+
+	GameManager.bankMoney = stepify(1.05 * GameManager.bankMoney, 0.01)
+	GameManager.netWorth = GameManager.money + GameManager.bankMoney
+	if GameManager.largeHouse:
+		GameManager.netWorth += GameManager.largeHouseValue
+	if GameManager.smallHouse:
+		GameManager.netWorth += GameManager.smallHouseValue
+  
 	
   # availible jobs
 	var random_generator = RandomNumberGenerator.new()
