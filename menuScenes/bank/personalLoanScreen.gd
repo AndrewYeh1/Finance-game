@@ -12,11 +12,6 @@ func _ready():
 	$payApplyBut.add_item("PAY", 1)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
-
 func _on_applyBut_pressed():
 	if $applyBut.text == "APPLY":
 		GameManager.money += $applySpinBox.value

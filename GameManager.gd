@@ -10,7 +10,6 @@ var happiness = 50
 var credit = 50
 var health = 50
 var netWorth = 0
-var residence = ""
 
 # TIME
 
@@ -53,6 +52,8 @@ var rainbowShirt = false
 var blackPants = false
 var sunglasses = false
 var dog = false
+var smallApartment = true
+var largeApartment = false
 var smallHouse = false
 var largeHouse = false
 var largeHouseValue = 800000

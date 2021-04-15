@@ -73,6 +73,7 @@ func _purchase():
 			$notif/money.visible = true
 	else:
 		if GameManager.money >= price:
+			$notif.visible = true
 			$notif/confirmation.visible = true
 			$notif/confirmation/confirmationMsg.text = "Buy " + item + " for $" + str(price) + "?"
 		else:
@@ -80,6 +81,19 @@ func _purchase():
 			if item == "Small House":
 				print("HI")
 				if GameManager.money >= 25000 and GameManager.creditScore >= 200:
+					$TabContainer/Houses/mortgage/mortgagePanel/title.text = "MORTGAGE (ACCEPTED)"
+					$TabContainer/Houses/mortgage/mortgagePanel/confirm.disabled = false
+					$TabContainer/Houses/mortgage/mortgagePanel/percentSpinBox.editable = true
+					$TabContainer/Houses/mortgage/mortgagePanel/moneyLabel.text = "Credit score and/or money too low to apply for mortgage."
+					$TabContainer/Houses/mortgage/mortgagePanel/percentSpinBox.min_value = 100 - stepify(float(GameManager.money) / price * 100, 1)
+				else:
+					$TabContainer/Houses/mortgage/mortgagePanel/title.text = "MORTGAGE (DENIED)"
+					$TabContainer/Houses/mortgage/mortgagePanel/confirm.disabled = true
+					$TabContainer/Houses/mortgage/mortgagePanel/percentSpinBox.editable = false
+					$TabContainer/Houses/mortgage/mortgagePanel/moneyLabel.text = "You do not have enough money, please apply for mortgage."
+			if item == "Large House":
+				print("HI")
+				if GameManager.money >= 100000 and GameManager.creditScore >= 400:
 					$TabContainer/Houses/mortgage/mortgagePanel/title.text = "MORTGAGE (ACCEPTED)"
 					$TabContainer/Houses/mortgage/mortgagePanel/confirm.disabled = false
 					$TabContainer/Houses/mortgage/mortgagePanel/percentSpinBox.editable = true
@@ -114,10 +128,8 @@ func _on_confirmBut_pressed():
 		GameManager.happiness += 5
 		GameManager.dog = true
 	elif item == "Small House":
-		GameManager.residence = "SHouse"
 		GameManager.houseMainCost = 2500
 	elif item == "Large House":
-		GameManager.residence = "LHouse"
 		GameManager.houseMainCost = 3000
 	$notif/confirmation.hide()
 	$notif.hide()
@@ -150,8 +162,10 @@ func _on_confirm_pressed():
 	GameManager.money -= ((100 - $TabContainer/Houses/mortgage/mortgagePanel/percentSpinBox.value) / 100) * price
 	if price == 150000:
 		GameManager.houseMainCost = 2500
+		GameManager.smallHouse = true
 	if price == 800000:
 		GameManager.houseMainCost = 3000
+		GameManager.largeHouse = true
 
 
 func _on_smallApartmentBut_pressed():
@@ -168,11 +182,11 @@ func _on_CONFIRM_pressed():
 	if $TabContainer/Houses/rent/rentPanel/msg.text == "The rent will be $430/month, bills will be paid yearly.":
 		GameManager.houseRentCost = 5160
 		GameManager.houseMainCost = 1500
-		GameManager.residence = "SApartment"
+		GameManager.smallApartment = true
 	else:
 		GameManager.houseRentCost = 14400
 		GameManager.houseMainCost = 2000
-		GameManager.residence = "LApartment"
+		GameManager.largeApartment = true
 	$TabContainer/Houses/rent.hide()
 
 
