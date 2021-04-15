@@ -94,5 +94,7 @@ func _input(ev):
 			get_tree().change_scene("res://building_interior/bank/BankInt.tscn")
 		elif location == "School":
 			get_tree().change_scene("res://building_interior/school/school.tscn")
+		elif location == "Store":
+			get_tree().change_scene("res://building_interior/shop/shopInt.tscn")
 			
 
