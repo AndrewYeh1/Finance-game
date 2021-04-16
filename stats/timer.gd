@@ -22,7 +22,7 @@ func _ready() -> void:
 	random_generator.randomize()
 
 	
-	for i in range(5):
+	for i in range(4):
 		GameManager.avallow[i][0] = GameManager.lowpaying[randi() % GameManager.lowpaying.size()]
 		GameManager.avallow[i][1] = random_generator.randi_range(20,30) * 1000
 		GameManager.avallow[i][2] = random_generator.randi_range(10,20)
@@ -37,7 +37,7 @@ func _ready() -> void:
 			
 		GameManager.avallow[i][3] = degrees
 	
-	for i in range(5):
+	for i in range(4):
 		GameManager.avalmed[i][0] = GameManager.medpaying[randi() % GameManager.medpaying.size()]
 		GameManager.avalmed[i][1] = random_generator.randi_range(40,60) * 1000
 		GameManager.avalmed[i][2] = random_generator.randi_range(30,60)
@@ -54,7 +54,7 @@ func _ready() -> void:
 		GameManager.avalmed[i][3] = degrees
 	
 	
-	for i in range(5):
+	for i in range(4):
 		GameManager.avalhigh[i][0] = GameManager.highpaying[randi() % GameManager.highpaying.size()]
 		GameManager.avalhigh[i][1] = random_generator.randi_range(80,120) * 1000
 		GameManager.avalhigh[i][2] = random_generator.randi_range(70,100)
@@ -121,7 +121,7 @@ func _on_newyeartransition_transitioned() -> void:
 	random_generator.randomize()
 
 	
-	for i in range(5):
+	for i in range(4):
 		GameManager.avallow[i][0] = GameManager.lowpaying[randi() % GameManager.lowpaying.size()]
 		GameManager.avallow[i][1] = random_generator.randi_range(20000,30000)
 		GameManager.avallow[i][2] = random_generator.randi_range(10,20)
@@ -136,7 +136,7 @@ func _on_newyeartransition_transitioned() -> void:
 			
 		GameManager.avallow[i][3] = degrees
 	
-	for i in range(5):
+	for i in range(4):
 		GameManager.avalmed[i][0] = GameManager.medpaying[randi() % GameManager.medpaying.size()]
 		GameManager.avalmed[i][1] = random_generator.randi_range(40000,60000)
 		GameManager.avalmed[i][2] = random_generator.randi_range(30,60)
@@ -153,7 +153,7 @@ func _on_newyeartransition_transitioned() -> void:
 		GameManager.avalmed[i][3] = degrees
 	
 	
-	for i in range(5):
+	for i in range(4):
 		GameManager.avalhigh[i][0] = GameManager.highpaying[randi() % GameManager.highpaying.size()]
 		GameManager.avalhigh[i][1] = random_generator.randi_range(80000,120000)
 		GameManager.avalhigh[i][2] = random_generator.randi_range(70,100)
@@ -173,6 +173,9 @@ func _on_newyeartransition_transitioned() -> void:
 	print(GameManager.avallow)
 	print(GameManager.avalmed)
 	print(GameManager.avalhigh)
+	
+	
+	
 
 	# education
 	var degrees = {"Associate's": 0, "Bachelor's": 1, "Master's": 2, "phD": 3}
