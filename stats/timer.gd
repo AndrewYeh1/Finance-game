@@ -103,7 +103,7 @@ func _on_Timer_timeout() -> void:
 # NEW YEAR
 func _on_newyeartransition_transitioned() -> void:
 	GameManager.change = true
-	GameManager.second = 90
+	GameManager.second = 3
 	GameManager.year += 1
 	
 	

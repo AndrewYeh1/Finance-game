@@ -205,10 +205,10 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="CanvasLayer"]
-margin_left = 256.0
+margin_left = 272.0
 margin_top = 16.0
-margin_right = 808.0
-margin_bottom = 157.0
+margin_right = 824.0
+margin_bottom = 193.0
 theme = ExtResource( 17 )
 text = "You have to work at a job to make money, and you can gain knowledge in school to get a job. Buy clothes or live in a house to increase happiness! "
 autowrap = true
