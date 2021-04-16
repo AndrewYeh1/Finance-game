@@ -48,4 +48,14 @@ text = "ok"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Label" type="Label" parent="."]
+margin_left = 226.0
+margin_top = 143.0
+margin_right = 800.0
+margin_bottom = 157.0
+text = "“Possible reasons for death: Your health/happiness dropped to zero, or you reached age 80”"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
