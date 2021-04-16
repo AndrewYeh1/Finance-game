@@ -12,7 +12,7 @@ var happiness = 50
 var credit = 50
 var health = 50
 var netWorth = 0
-var experience = 100
+var experience = 0
 
 # TIME
 
@@ -28,10 +28,10 @@ var edyear = 0
 var studentAid = 0
 
 # BILLS
-var houseRent = 1
-var houseMain = 2
-var loans = 3
-var taxes = 4
+var houseRent = 0
+var houseMain = 0
+var loans = 0
+var taxes = 0
 var tuition = 0
 
 # LOANS
@@ -43,6 +43,7 @@ var loanPersonalInterest = 0
 var loanMortgageInterest = 0
 var studentLoanPayback = 0
 var personalLoanPayback = 0
+var mortgageLoanPayback = 0
 
 # HOUSE COSTS
 var houseRentCost = 0
@@ -55,7 +56,7 @@ var rainbowShirt = false
 var blackPants = false
 var sunglasses = false
 var dog = false
-var smallApartment = true
+var smallApartment = false
 var largeApartment = false
 var smallHouse = false
 var largeHouse = false

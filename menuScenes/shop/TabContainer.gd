@@ -52,15 +52,17 @@ func _on_dogBut_pressed():
 
 
 func _on_smallHouseBut_pressed():
-	item = "Small House"
-	price = 150000
-	_purchase()
+	if GameManager.smallHouse == false:
+		item = "Small House"
+		price = 150000
+		_purchase()
 
 
 func _on_largeHouseBut_pressed():
-	item = "Large House"
-	price = 800000
-	_purchase()
+	if GameManager.largeHouse == false:
+		item = "Large House"
+		price = 800000
+		_purchase()
 
 
 func _purchase():
@@ -128,8 +130,10 @@ func _on_confirmBut_pressed():
 		GameManager.happiness += 5
 		GameManager.dog = true
 	elif item == "Small House":
+		GameManager.smallHouse = true
 		GameManager.houseMainCost = 2500
 	elif item == "Large House":
+		GameManager.largeHouse = true
 		GameManager.houseMainCost = 3000
 	$notif/confirmation.hide()
 	$notif.hide()
@@ -160,6 +164,7 @@ func _on_confirm_pressed():
 	$TabContainer/Houses/mortgage.hide()
 	GameManager.loanMortgage += ($TabContainer/Houses/mortgage/mortgagePanel/percentSpinBox.value / 100) * price
 	GameManager.money -= ((100 - $TabContainer/Houses/mortgage/mortgagePanel/percentSpinBox.value) / 100) * price
+	GameManager.mortgageLoanPayback = stepify(GameManager.loanMortgage / 20, 1)
 	if price == 150000:
 		GameManager.houseMainCost = 2500
 		GameManager.smallHouse = true

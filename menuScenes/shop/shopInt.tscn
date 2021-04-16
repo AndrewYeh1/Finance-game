@@ -24,7 +24,6 @@ __meta__ = {
 }
 
 [node name="Clothing and Accessories" type="Tabs" parent="TabContainer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 43.0
@@ -101,6 +100,7 @@ __meta__ = {
 }
 
 [node name="Houses" type="Tabs" parent="TabContainer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 43.0

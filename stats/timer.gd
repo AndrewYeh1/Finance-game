@@ -101,7 +101,7 @@ func _on_newyeartransition_transitioned() -> void:
 	GameManager.year += 1
 	
 	# HOUSE
-	if GameManager.rent > 0:
+	if GameManager.houseRent > 0:
 		GameManager.smallApartment = false
 		GameManager.largeApartment = false
 		GameManager.smallHouse = false
@@ -115,16 +115,40 @@ func _on_newyeartransition_transitioned() -> void:
 	GameManager.houseRent = GameManager.houseRentCost
 	if GameManager.education == "":
 		if GameManager.loanStudent >= GameManager.studentLoanPayback:
-			GameManager.loan += GameManager.studentLoanPayback
+			GameManager.loans += GameManager.studentLoanPayback
 			GameManager.loanStudent -= GameManager.studentLoanPayback
 		elif GameManager.loanStudent > 0:
-			GameManager.loan += GameManager.loanStudent
+			GameManager.loans += GameManager.loanStudent
 			GameManager.loanStudent = 0
+			GameManager.studentLoanPayback = 0
 		else:
 			GameManager.loanStudent = 0
 			GameManager.studentLoanPayback = 0
+	
+	
+	if GameManager.loanMortgage >= GameManager.mortgageLoanPayback:
+		GameManager.loans += GameManager.mortgageLoanPayback
+		GameManager.loanMortgage -= GameManager.mortgageLoanPayback
+	elif GameManager.loanStudent > 0:
+		GameManager.loans += GameManager.loanMortgage
+		GameManager.loanMortgage = 0
+		GameManager.mortgageLoanPayback = 0
+	else:
+			GameManager.loanMortgage = 0
+			GameManager.mortgageLoanPayback = 0
 			
-
+	if GameManager.loanPersonal >= GameManager.personalLoanPayback:
+		GameManager.loans += GameManager.personalLoanPayback
+		GameManager.loanPersonal -= GameManager.personalLoanPayback
+	elif GameManager.loanPersonal > 0:
+		GameManager.loans += GameManager.loanPersonal
+		GameManager.loanPersonal = 0
+		GameManager.personalLoanPayback = 0
+	else:
+			GameManager.loanPersonal = 0
+			GameManager.personalLoanPayback = 0
+	
+	
 	GameManager.bankMoney = stepify(1.05 * GameManager.bankMoney, 0.01)
 	GameManager.netWorth = GameManager.money + GameManager.bankMoney
 	if GameManager.largeHouse:

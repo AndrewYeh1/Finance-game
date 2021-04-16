@@ -98,4 +98,6 @@ func _input(ev):
 			get_tree().change_scene("res://building_interior/store/storeInterior.tscn")
 		elif location == "Home":
 			get_tree().change_scene("res://building_interior/house/houseInt.tscn")
+		elif location == "Jobs":
+			get_tree().change_scene("res://building_interior/jobs/jobs.tscn")
 
