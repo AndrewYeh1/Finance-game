@@ -20,7 +20,7 @@ onready var allclothes = [dog, glasses, pants, blue, pink, rainbow]
 func _ready():
 	if GameManager.dogPet:
 		dog()
-	if GameManager.glasses:
+	if GameManager.sun:
 		glasses()
 	if GameManager.pant:
 		pants()
@@ -37,7 +37,7 @@ func dog():
 
 func glasses():
 	glasses.visible = !glasses.visible
-	GameManager.sunglasses = !GameManager.sunglasses
+	GameManager.sun = !GameManager.sun
 	
 func pants():
 	pants.visible = !pants.visible
