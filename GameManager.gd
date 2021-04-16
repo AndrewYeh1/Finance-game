@@ -6,7 +6,7 @@ var first = true
 
 # STATS
 
-var money = 1000
+var money = 100000000
 var bankMoney = 0
 var happiness = 50
 var credit = 250
