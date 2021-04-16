@@ -4,6 +4,44 @@ export var stomp_impulse: = 1000.0
 
 var location = null
 
+onready var dog = get_node("Node2D/dog")
+onready var glasses = get_node("Node2D/pants")
+onready var pants = get_node("Node2D/pants")
+
+onready var blue = get_node("Node2D/blue")
+onready var pink = get_node("Node2D/pink")
+onready var rainbow = get_node("Node2D/rainbow")
+
+onready var clothes = [blue, pink, rainbow]
+onready var allclothes = [dog, glasses, pants, blue, pink, rainbow]
+
+func dog():
+	dog.visible = !dog.visible
+
+func glasses():
+	glasses.visbile = !glasses.visible
+	
+func pants():
+	pants.visible = !pants.visible
+	
+func rainbow():
+	for c in clothes:
+		c.hide()
+	
+	rainbow.show()
+
+func pink():
+	for c in clothes:
+		c.hide()
+	
+	pink.show()
+	
+func blue():
+	for c in clothes:
+		c.hide()
+	
+	blue.show()
+	
 
 
 func _on_EnemyDetector_area_entered(area: Area2D) -> void:
@@ -62,8 +100,12 @@ func calculate_stomp_velocity(linear_velocity: Vector2, impulse: float) -> Vecto
 func ChangeDirection():
 	if Input.get_action_strength("move_right"):
 		get_node( "playerskin" ).set_flip_h( true )
+		for c in allclothes:
+			c.set_flip_h(true)
 	elif Input.get_action_strength("move_left"):
 		get_node( "playerskin" ).set_flip_h( false )
+		for c in allclothes:
+			c.set_flip_h(false)
 
 	
 # DETECTS WHICH BUILDING PLAYER CAN ENTER
@@ -72,7 +114,7 @@ func ChangeDirection():
 func _on_buildingDetector_area_shape_entered(area_id: int, area: Area2D, area_shape: int, self_shape: int) -> void:
 	print(area.get_name())
 	
-	if ["Bank", "School", "Jobs", "Home", "BankTeller", "LeftDoor", "Insurance", "Store", "LowPayingJob", "MedPayingJob", "HighPayingJob", "StoreInt"].has(area.get_name()):
+	if ["RightDoor", "Bank", "School", "Jobs", "Home", "BankTeller", "LeftDoor", "Insurance", "Store", "LowPayingJob", "MedPayingJob", "HighPayingJob", "StoreInt"].has(area.get_name()):
 		location = area.get_name()
 		$enter.show()
 	

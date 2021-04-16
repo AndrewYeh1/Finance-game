@@ -95,26 +95,18 @@ margin_right = 116.0
 margin_bottom = 68.0
 rect_scale = Vector2( 0.9, 0.9 )
 
-[node name="schoolMenu" parent="CanvasLayer" instance=ExtResource( 5 )]
-visible = false
-margin_left = 77.3716
-margin_top = 34.2096
-margin_right = 77.3716
-margin_bottom = 34.2096
-rect_scale = Vector2( 0.9, 0.9 )
-
 [node name="statsBar" parent="CanvasLayer" instance=ExtResource( 9 )]
 margin_left = 14.4442
 margin_top = 15.1285
 margin_right = 233.444
-margin_bottom = 159.129
+margin_bottom = 289.129
 
 [node name="schoolMenu" parent="CanvasLayer" instance=ExtResource( 5 )]
 visible = false
-margin_left = 77.3716
-margin_top = 34.2096
-margin_right = 77.3716
-margin_bottom = 34.2096
+margin_left = 147.341
+margin_top = 46.5673
+margin_right = 147.341
+margin_bottom = 46.5673
 rect_scale = Vector2( 0.9, 0.9 )
 [connection signal="timeout" from="CanvasLayer/time" to="CanvasLayer/newyeartransition" method="_on_time_timeout"]
 [connection signal="transitioned" from="CanvasLayer/newyeartransition" to="CanvasLayer/time" method="_on_newyeartransition_transitioned"]

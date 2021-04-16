@@ -168,8 +168,8 @@ func _on_newyeartransition_transitioned() -> void:
 	if GameManager.insurance["Health"] >=1:
 		GameManager.insurance["Health"] -= 1
 	
-	if GameManager.insurance["Unemployment"] >=1:
-		GameManager.insurance["Unemployment"] -= 1
+	if GameManager.insurance["Employment"] >=1:
+		GameManager.insurance["Employment"] -= 1
 
 	
   # availible jobs
