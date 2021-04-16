@@ -100,13 +100,30 @@ func _on_newyeartransition_transitioned() -> void:
 	GameManager.second = 10
 	GameManager.year += 1
 	
+	# HOUSE
+	if GameManager.rent > 0:
+		GameManager.smallApartment = false
+		GameManager.largeApartment = false
+		GameManager.smallHouse = false
+		GameManager.largeHouse = false
+		GameManager.houseMainCost = 0
+		GameManager.houseRentCost = 0
+	
 	
 	# finance
 	GameManager.houseMain = GameManager.houseMainCost
 	GameManager.houseRent = GameManager.houseRentCost
 	if GameManager.education == "":
-		GameManager.loanStudent = GameManager.studentLoanPayback
-		GameManager.loanStudent -= GameManager.studentLoanPayback
+		if GameManager.loanStudent >= GameManager.studentLoanPayback:
+			GameManager.loan += GameManager.studentLoanPayback
+			GameManager.loanStudent -= GameManager.studentLoanPayback
+		elif GameManager.loanStudent > 0:
+			GameManager.loan += GameManager.loanStudent
+			GameManager.loanStudent = 0
+		else:
+			GameManager.loanStudent = 0
+			GameManager.studentLoanPayback = 0
+			
 
 	GameManager.bankMoney = stepify(1.05 * GameManager.bankMoney, 0.01)
 	GameManager.netWorth = GameManager.money + GameManager.bankMoney
@@ -116,6 +133,7 @@ func _on_newyeartransition_transitioned() -> void:
 	if GameManager.smallHouse:
 		GameManager.smallHouseValue += 1.05
 		GameManager.netWorth += GameManager.smallHouseValue
+		
   
 	
   # availible jobs
