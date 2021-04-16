@@ -36,12 +36,12 @@ func _update_loan_label():
 	$currentLoanLable.text = "You currently have $" + str(GameManager.loanPersonal) + " in unpaid loans."
 	$applySpinBox.value = 0
 	if $applyBut.text == "PAY":
-		$applySpinBox.max_value = GameManager.loanStudent
+		$applySpinBox.max_value = GameManager.loanPersonal
 
 
 func _on_payApplyBut_item_selected(index):
 	if index == 1:
 		$applyBut.text = "PAY"
-		$applySpinBox.max_value = GameManager.loanStudent
+		$applySpinBox.max_value = GameManager.loanPersonal
 	else:
 		$applyBut.text = "APPLY"

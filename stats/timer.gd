@@ -107,20 +107,21 @@ func _on_newyeartransition_transitioned() -> void:
 	
 	if !GameManager.smallApartment and !GameManager.largeApartment and !GameManager.smallHouse and !GameManager.largeHouse:
 		GameManager.health -= 20
+		GameManager.happiness -= 20
 	
 	
 	if GameManager.houseRent > 0:
 		bills.create_unpaid_bill(GameManager.houseRent, "Rent", " | You have been kicked out.")
-		GameManager.creditScore -= 10
+		GameManager.creditScore -= 50
 	if GameManager.houseMain > 0:
 		bills.create_unpaid_bill(GameManager.houseMain, "Maintenance", " | You have been kicked out.")
-		GameManager.creditScore -= 10
+		GameManager.creditScore -= 50
 	if GameManager.loans > 0:
 		bills.create_unpaid_bill(GameManager.loans, "Loan", " | You have unpaid loans.")
-		GameManager.creditScore -= 10
+		GameManager.creditScore -= 50
 	if GameManager.taxes > 0:
 		bills.create_unpaid_bill(GameManager.taxes, "Taxes", " | You have unpaid taxes.")
-		GameManager.creditScore -= 10
+		GameManager.creditScore -= 50
 	
 	
 	var rng = RandomNumberGenerator.new()
