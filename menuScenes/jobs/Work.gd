@@ -47,7 +47,8 @@ func add_hours():
 	hours.text = str(hour) + "/1680 hours worked"
 	GameManager.hours = hour
 	GameManager.money += GameManager.job[1]/12
-	GameManager.taxes += stepify((GameManager.job[1]/12)*0.2,1)
+	GameManager.taxes += stepify((GameManager.job[1]/12)*0.2, 1)
+
 
 func _on_Button_pressed() -> void:
 	main.hide()

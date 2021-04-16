@@ -301,3 +301,7 @@ func _on_newyeartransition_transitioned() -> void:
 	if GameManager.health == 0:
 		get_tree().change_scene("res://Start/dead.tscn")
 
+
+
+func _on_Button_pressed() -> void:
+	GameManager.second = 0
