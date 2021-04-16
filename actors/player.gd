@@ -5,7 +5,7 @@ export var stomp_impulse: = 1000.0
 var location = null
 
 onready var dog = get_node("Node2D/dog")
-onready var glasses = get_node("Node2D/pants")
+onready var glasses = get_node("Node2D/glasses")
 onready var pants = get_node("Node2D/pants")
 
 onready var blue = get_node("Node2D/blue")
@@ -20,7 +20,7 @@ onready var allclothes = [dog, glasses, pants, blue, pink, rainbow]
 func _ready():
 	if GameManager.dog:
 		dog()
-	if GameManager.sun:
+	if GameManager.sunglasses:
 		glasses()
 	if GameManager.pant:
 		pants()
@@ -37,7 +37,7 @@ func dog():
 
 func glasses():
 	glasses.visible = !glasses.visible
-	GameManager.sun = !GameManager.sun
+	GameManager.sunglasses = !GameManager.sunglasses
 	
 func pants():
 	pants.visible = !pants.visible

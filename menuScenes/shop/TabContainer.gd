@@ -122,6 +122,7 @@ func _on_confirmBut_pressed():
 	elif item == "Sunglasses":
 		GameManager.happiness += 1
 		GameManager.sunglasses = true
+		print("sun glasses")
 		get_parent().get_parent().get_node("player").glasses()
 	elif item == "Black Pants":
 		GameManager.happiness += 1
