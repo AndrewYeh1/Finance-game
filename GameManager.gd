@@ -17,8 +17,8 @@ var experience = 15
 
 # TIME
 
-var year = 18
-var second = 3
+var year = 1
+var second = 90
 
 # SCHOOL STUFF
 

@@ -110,19 +110,16 @@ margin_bottom = 159.129
 [node name="time" parent="CanvasLayer" instance=ExtResource( 8 )]
 position = Vector2( 833.622, 13.6557 )
 
-[node name="newyeartransition" parent="CanvasLayer" instance=ExtResource( 11 )]
-visible = false
-
 [node name="icon" type="Sprite" parent="CanvasLayer"]
-position = Vector2( 924, 523 )
-scale = Vector2( 0.0976563, 0.0976562 )
+position = Vector2( 910, 513.5 )
+scale = Vector2( 0.123047, 0.126953 )
 texture = ExtResource( 15 )
 
 [node name="guide" type="Button" parent="CanvasLayer"]
-margin_left = 880.0
-margin_top = 472.0
-margin_right = 984.0
-margin_bottom = 576.0
+margin_left = 856.0
+margin_top = 448.0
+margin_right = 992.0
+margin_bottom = 584.0
 flat = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -194,10 +191,10 @@ margin_bottom = 571.0
 text = "OK"
 
 [node name="Button" type="Button" parent="CanvasLayer"]
-margin_left = 736.0
-margin_top = 504.0
-margin_right = 843.0
-margin_bottom = 547.0
+margin_left = 40.0
+margin_top = 544.0
+margin_right = 147.0
+margin_bottom = 587.0
 theme = ExtResource( 17 )
 text = "HOME"
 __meta__ = {
@@ -215,8 +212,11 @@ autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="newyeartransition" parent="CanvasLayer" instance=ExtResource( 11 )]
+visible = false
 [connection signal="timeout" from="CanvasLayer/time" to="." method="_on_time_timeout"]
-[connection signal="transitioned" from="CanvasLayer/newyeartransition" to="CanvasLayer/time" method="_on_newyeartransition_transitioned"]
 [connection signal="pressed" from="CanvasLayer/guide" to="." method="_on_guide_pressed"]
 [connection signal="pressed" from="CanvasLayer/random event/ok" to="CanvasLayer/random event" method="_on_ok_pressed"]
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_Button_pressed"]
+[connection signal="transitioned" from="CanvasLayer/newyeartransition" to="CanvasLayer/time" method="_on_newyeartransition_transitioned"]

@@ -11,7 +11,7 @@ func _ready() -> void:
 	update()
 
 func update():
-	get_node("age").text = "Age : " + str(GameManager.year)
+	get_node("age").text = "Age : " + str(GameManager.year + 17)
 	get_node("networth").text = "Networth: \n$" + str(GameManager.netWorth)
 	
 
