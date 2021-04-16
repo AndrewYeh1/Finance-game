@@ -101,7 +101,7 @@ func _on_Timer_timeout() -> void:
 # NEW YEAR
 func _on_newyeartransition_transitioned() -> void:
 	GameManager.change = true
-	GameManager.second = 10
+	GameManager.second = 60
 	GameManager.year += 1
 	
 	
@@ -122,10 +122,12 @@ func _on_newyeartransition_transitioned() -> void:
 	var rng = RandomNumberGenerator.new()
 	GameManager.event = 0
 	rng.randomize()
-	var my_random_number = stepify(rng.randf_range(1, 1), 1)
+	var my_random_number = stepify(rng.randf_range(1, 10), 1)
 	if my_random_number == 1:
 		rng.randomize()
 		GameManager.event = stepify(rng.randf_range(1, 4), 1)
+		if GameManager.event == 4 and GameManager.job == "":
+			GameManager.event = 0
 	get_parent().get_node("random event")._ready()
 	
 	
