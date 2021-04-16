@@ -62,3 +62,4 @@ func _on_ok_pressed():
 	$event4.hide()
 	$event4I.hide()
 	$ok.hide()
+	GameManager.event = 0
