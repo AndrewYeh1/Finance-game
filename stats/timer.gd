@@ -289,4 +289,10 @@ func _on_newyeartransition_transitioned() -> void:
 			GameManager.edyear = 0
 			bills.create_unpaid_bill(GameManager.tuition, "School Tuition", " | You have been unenrolled from school.")
 			GameManager.education = ""
+	
+	if GameManager.year + 18 >= 80:
+		get_tree().change_scene("res://Start/dead.tscn")
+	
+	if GameManager.health == 0:
+		get_tree().change_scene("res://Start/dead.tscn")
 

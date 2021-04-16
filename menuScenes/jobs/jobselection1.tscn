@@ -73,25 +73,29 @@ __meta__ = {
 
 [node name="job1" type="Button" parent="TabContainer/Apply/jobs"]
 margin_right = 344.0
-margin_bottom = 43.0
+margin_bottom = 37.0
+custom_fonts/font = ExtResource( 3 )
 text = "job1"
 
 [node name="job2" type="Button" parent="TabContainer/Apply/jobs"]
-margin_top = 83.0
+margin_top = 77.0
 margin_right = 344.0
-margin_bottom = 126.0
+margin_bottom = 114.0
+custom_fonts/font = ExtResource( 3 )
 text = "job1"
 
 [node name="job3" type="Button" parent="TabContainer/Apply/jobs"]
-margin_top = 166.0
+margin_top = 154.0
 margin_right = 344.0
-margin_bottom = 209.0
+margin_bottom = 191.0
+custom_fonts/font = ExtResource( 3 )
 text = "job1"
 
 [node name="job4" type="Button" parent="TabContainer/Apply/jobs"]
-margin_top = 249.0
+margin_top = 231.0
 margin_right = 344.0
-margin_bottom = 292.0
+margin_bottom = 268.0
+custom_fonts/font = ExtResource( 3 )
 text = "job1"
 
 [node name="job" type="Control" parent="TabContainer/Apply"]
