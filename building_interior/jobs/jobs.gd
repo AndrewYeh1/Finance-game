@@ -26,7 +26,17 @@ func _input(ev):
 			if $player.location == "LowPayingJob":
 				$"CanvasLayer/jobselect".visible = true
 				$"CanvasLayer/jobselect/TabContainer".show_jobs()
-				menuOpen = not menuOpen
+				menuOpen = true
+			if $player.location == "MedPayingJob":
+				$"CanvasLayer/jobselect2".visible = true
+				$"CanvasLayer/jobselect2/TabContainer".show_jobs()
+				menuOpen = true
+			if $player.location == "HighPayingJob":
+				$"CanvasLayer/jobselect3".visible = true
+				$"CanvasLayer/jobselect3/TabContainer".show_jobs()
+				menuOpen = true
 		else:
 			$"CanvasLayer/jobselect".visible = false
+			$"CanvasLayer/jobselect2".visible = false
+			$"CanvasLayer/jobselect3".visible = false
 			menuOpen = not menuOpen

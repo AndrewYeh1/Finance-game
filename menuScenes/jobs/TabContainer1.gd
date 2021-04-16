@@ -36,10 +36,10 @@ func _process(delta: float) -> void:
 
 
 func show_jobs():
-	job1.text = GameManager.avallow[0][0] + " $" + str(GameManager.avallow[0][1])
-	job2.text = GameManager.avallow[1][0] + " $" + str(GameManager.avallow[1][1])
-	job3.text = GameManager.avallow[2][0] + " $" + str(GameManager.avallow[2][1])
-	job4.text = GameManager.avallow[3][0] + " $" + str(GameManager.avallow[3][1])
+	job1.text = GameManager.avalmed[0][0] + " $" + str(GameManager.avalmed[0][1])
+	job2.text = GameManager.avalmed[1][0] + " $" + str(GameManager.avalmed[1][1])
+	job3.text = GameManager.avalmed[2][0] + " $" + str(GameManager.avalmed[2][1])
+	job4.text = GameManager.avalmed[3][0] + " $" + str(GameManager.avalmed[3][1])
 	
 	
 	#unpaid.set_name("job")
@@ -50,26 +50,26 @@ func show_jobs():
 
 
 func _on_job1_mouse_entered() -> void:
-	title.text = GameManager.avallow[0][0] + " $" + str(GameManager.avallow[0][1])
-	info.text = "Exp: " + str(GameManager.avallow[0][2]) + "\nDegrees: " + str(GameManager.avallow[0][3])
+	title.text = GameManager.avalmed[0][0] + " $" + str(GameManager.avalmed[0][1])
+	info.text = "Exp: " + str(GameManager.avalmed[0][2]) + "\nDegrees: " + str(GameManager.avalmed[0][3])
 	pass # Replace with function body.
 
 
 func _on_job2_mouse_entered() -> void:
-	title.text = GameManager.avallow[1][0] + " $" + str(GameManager.avallow[0][1])
-	info.text = "Exp: " + str(GameManager.avallow[1][2]) + "\nDegrees: " + str(GameManager.avallow[1][3])
+	title.text = GameManager.avalmed[1][0] + " $" + str(GameManager.avalmed[0][1])
+	info.text = "Exp: " + str(GameManager.avalmed[1][2]) + "\nDegrees: " + str(GameManager.avalmed[1][3])
 	pass # Replace with function body.
 
 
 func _on_job3_mouse_entered() -> void:
-	title.text = GameManager.avallow[2][0] + " $" + str(GameManager.avallow[1][1])
-	info.text = "Exp: " + str(GameManager.avallow[2][2]) + "\nDegrees: " + str(GameManager.avallow[2][3])
+	title.text = GameManager.avalmed[2][0] + " $" + str(GameManager.avalmed[1][1])
+	info.text = "Exp: " + str(GameManager.avalmed[2][2]) + "\nDegrees: " + str(GameManager.avalmed[2][3])
 	pass # Replace with function body.
 
 
 func _on_job4_mouse_entered() -> void:
-	title.text = GameManager.avallow[3][0] + " $" + str(GameManager.avallow[2][1])
-	info.text = "Exp: " + str(GameManager.avallow[3][2]) + "\nDegrees: " + str(GameManager.avallow[3][3])
+	title.text = GameManager.avalmed[3][0] + " $" + str(GameManager.avalmed[2][1])
+	info.text = "Exp: " + str(GameManager.avalmed[3][2]) + "\nDegrees: " + str(GameManager.avalmed[3][3])
 	pass # Replace with function body.
 
 
@@ -81,15 +81,15 @@ func _on_TabContainer_tab_changed(tab: int) -> void:
 
 func _on_job1_pressed() -> void:
 	if GameManager.job[0] == "":
-		if GameManager.experience >= GameManager.avallow[0][2]:
+		if GameManager.experience >= GameManager.avalmed[0][2]:
 			var has = true
-			for degree in GameManager.avallow[0][3]:
+			for degree in GameManager.avalmed[0][3]:
 				if !GameManager.degrees.has(degree):
 					has = false
 			if has:
 				title.text = "Success! You were hired!"
-				GameManager.job[0] = GameManager.avallow[0][0]
-				GameManager.job[1] = GameManager.avallow[0][1]
+				GameManager.job[0] = GameManager.avalmed[0][0]
+				GameManager.job[1] = GameManager.avalmed[0][1]
 			else:
 				title.text = "Don't have the degrees required."
 		else:
@@ -99,15 +99,15 @@ func _on_job1_pressed() -> void:
 
 func _on_job2_pressed() -> void:
 	if GameManager.job[0] == "":
-		if GameManager.experience >= GameManager.avallow[1][2]:
+		if GameManager.experience >= GameManager.avalmed[1][2]:
 			var has = true
-			for degree in GameManager.avallow[1][3]:
+			for degree in GameManager.avalmed[1][3]:
 				if !GameManager.degrees.has(degree):
 					has = false
 			if has:
 				title.text = "Success! You were hired!"
-				GameManager.job[0] = GameManager.avallow[1][0]
-				GameManager.job[1] = GameManager.avallow[1][1]
+				GameManager.job[0] = GameManager.avalmed[1][0]
+				GameManager.job[1] = GameManager.avalmed[1][1]
 			else:
 				title.text = "Don't have the degrees required."
 		else:
@@ -118,15 +118,15 @@ func _on_job2_pressed() -> void:
 
 func _on_job3_pressed() -> void:
 	if GameManager.job[0] == "":
-		if GameManager.experience >= GameManager.avallow[2][2]:
+		if GameManager.experience >= GameManager.avalmed[2][2]:
 			var has = true
-			for degree in GameManager.avallow[2][3]:
+			for degree in GameManager.avalmed[2][3]:
 				if !GameManager.degrees.has(degree):
 					has = false
 			if has:
 				title.text = "Success! You were hired!"
-				GameManager.job[0] = GameManager.avallow[2][0]
-				GameManager.job[1] = GameManager.avallow[2][1]
+				GameManager.job[0] = GameManager.avalmed[2][0]
+				GameManager.job[1] = GameManager.avalmed[2][1]
 			else:
 				title.text = "Don't have the degrees required."
 		else:
@@ -137,15 +137,15 @@ func _on_job3_pressed() -> void:
 
 func _on_job4_pressed() -> void:
 	if GameManager.job[0] == "":
-		if GameManager.experience >= GameManager.avallow[3][2]:
+		if GameManager.experience >= GameManager.avalmed[3][2]:
 			var has = true
-			for degree in GameManager.avallow[3][3]:
+			for degree in GameManager.avalmed[3][3]:
 				if !GameManager.degrees.has(degree):
 					has = false
 			if has:
 				title.text = "Success! You were hired!"
-				GameManager.job[0] = GameManager.avallow[3][0]
-				GameManager.job[1] = GameManager.avallow[3][1]
+				GameManager.job[0] = GameManager.avalmed[3][0]
+				GameManager.job[1] = GameManager.avalmed[3][1]
 			else:
 				title.text = "Don't have the degrees required."
 		else:

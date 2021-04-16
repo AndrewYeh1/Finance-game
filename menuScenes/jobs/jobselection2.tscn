@@ -1,12 +1,12 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://theme.tres" type="Theme" id=1]
-[ext_resource path="res://menuScenes/jobs/TabContainer.gd" type="Script" id=2]
+[ext_resource path="res://menuScenes/jobs/TabContainer2.gd" type="Script" id=2]
 [ext_resource path="res://renner-small.tres" type="DynamicFont" id=3]
 [ext_resource path="res://menuScenes/jobs/Work.gd" type="Script" id=4]
-[ext_resource path="res://menuScenes/jobs/memory.gd" type="Script" id=5]
+[ext_resource path="res://menuScenes/jobs/memory2.gd" type="Script" id=5]
 [ext_resource path="res://data/buttons/greenopen.png" type="Texture" id=6]
-[ext_resource path="res://menuScenes/jobs/Control.gd" type="Script" id=7]
+[ext_resource path="res://menuScenes/jobs/whack2.gd" type="Script" id=7]
 
 [node name="jobselect" type="Control"]
 anchor_right = 1.0
@@ -19,7 +19,7 @@ __meta__ = {
 [node name="TabContainer" type="TabContainer" parent="."]
 margin_left = 40.0
 margin_top = 8.0
-margin_right = 968.0
+margin_right = 952.0
 margin_bottom = 513.0
 tab_align = 0
 script = ExtResource( 2 )

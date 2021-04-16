@@ -12,6 +12,7 @@ var happiness = 50
 var credit = 50
 var health = 50
 var netWorth = 0
+var experience = 100
 
 # TIME
 
@@ -70,7 +71,8 @@ var lowpaying = ["Janitor", "Fast Food Worker", "Retail Worker", "Waiter", "Hair
 var medpaying = ["Financial Advisor", "Nurse", "Human Resource Assistant", "Laboratory Technician", "Financial Manager", "Teacher", "Paralegal", "Sales representative", "Data Scientist", "Information Technology", "Architect", "Pilot", "Accountant", "Police Officer", "Food Scientist", "Secretary", "Artist", "Animator", "Painter", "Film Direction", "Actor", "Author", "Fashion Designer", "Politician", "Chef", "Dancer", "Civil Engineer"]
 var highpaying = ["Doctor", "Lawyer", "Engineer", "Computer Engineer", "Anesthesiologist", "Biologist", "Chemist", "Dentist", "Orthodontist", "Cardiologist", "Architecture Manager", "Realtor", "Software Architect", "Petroleum Engineer", "CEO", "Sales Manager", "Quantitive Analyist", "Plant Manager", "Mathetician", "Veterinarian", "Computer Security Analyst", "Pharmacist", "Politician", "Chef", "Civil Engineer"]
 
-var avallow = [["", 0, 0, []],["", 0, 0, []],["", 0, 0, []],["", 0, 0, []],["", 0, 0, []]]
-var avalmed = [["", 0, 0, []],["", 0, 0, []],["", 0, 0, []],["", 0, 0, []],["", 0, 0, []]]
-var avalhigh = [["", 0, 0, []],["", 0, 0, []],["", 0, 0, []],["", 0, 0, []],["", 0, 0, []]]
+var avallow = [["", 0, 0, []],["", 0, 0, []],["", 0, 0, []],["", 0, 0, []]]
+var avalmed = [["", 0, 0, []],["", 0, 0, []],["", 0, 0, []],["", 0, 0, []]]
+var avalhigh = [["", 0, 0, []],["", 0, 0, []],["", 0, 0, []],["", 0, 0, []]]
 
+var hours = 0
