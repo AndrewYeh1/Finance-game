@@ -26,6 +26,7 @@ run/main_scene="res://Home/Home.tscn"
 [autoload]
 
 GameManager="*res://GameManager.gd"
+MusicController="*res://autoload/MusicController.tscn"
 
 [input]
 

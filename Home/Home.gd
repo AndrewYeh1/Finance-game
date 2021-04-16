@@ -2,6 +2,7 @@ extends Node2D
 
 
 func _ready():
+	MusicController.play_music()
 	if GameManager.first == true:
 		GameManager.first = false
 		get_tree().change_scene("res://Start/start.tscn")
