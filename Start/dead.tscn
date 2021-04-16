@@ -26,10 +26,10 @@ __meta__ = {
 }
 
 [node name="networth" type="Label" parent="."]
-margin_left = 448.0
-margin_top = 360.0
-margin_right = 591.0
-margin_bottom = 429.0
+margin_left = 445.5
+margin_top = 357.5
+margin_right = 588.5
+margin_bottom = 426.5
 custom_fonts/font = ExtResource( 2 )
 text = "Networth:
 $"
