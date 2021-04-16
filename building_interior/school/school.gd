@@ -26,6 +26,7 @@ func _input(ev):
 		menuOpen = not menuOpen
 	if Input.is_key_pressed(KEY_SPACE):
 		if menuOpen == false:
-			if $player.location == "LeftDoor":
+			if $player.location == "LeftDoor" or $player.location == "RightDoor":
+				print("asd")
 				$"CanvasLayer/schoolMenu".visible = true
 				menuOpen = not menuOpen

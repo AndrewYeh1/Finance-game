@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=13 format=2]
+[gd_resource type="Theme" load_steps=14 format=2]
 
 [ext_resource path="res://data/menu/menuTab2.PNG" type="Texture" id=1]
 [ext_resource path="res://data/menu/menuTab.PNG" type="Texture" id=2]
@@ -56,6 +56,13 @@ corner_radius_top_right = 32
 corner_radius_bottom_right = 32
 corner_radius_bottom_left = 32
 
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.0666667, 0.223529, 0.47451, 1 )
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
 [sub_resource type="StyleBoxFlat" id=6]
 bg_color = Color( 0.0666667, 0.223529, 0.47451, 1 )
 corner_radius_top_left = 30
@@ -93,6 +100,7 @@ Button/styles/hover = SubResource( 2 )
 Button/styles/normal = SubResource( 3 )
 Button/styles/pressed = SubResource( 4 )
 Panel/styles/panel = SubResource( 5 )
+PanelContainer/styles/panel = SubResource( 10 )
 SpinBox/icons/updown = null
 TabContainer/colors/font_color_bg = Color( 1, 1, 1, 1 )
 TabContainer/colors/font_color_disabled = Color( 1, 1, 1, 0.2 )
