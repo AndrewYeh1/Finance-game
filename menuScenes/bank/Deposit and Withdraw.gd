@@ -58,3 +58,7 @@ func _on_WithBackBut_pressed():
 	$Deposit.show()
 	$Withdraw.show()
 	$WithdrawPage.hide()
+
+
+func _on_applyBut_pressed():
+	pass # Replace with function body.

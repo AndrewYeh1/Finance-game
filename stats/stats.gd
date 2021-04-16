@@ -12,5 +12,5 @@ func _process(delta: float) -> void:
 	$PanelContainer/VBoxContainer/HealthBar.value = GameManager.health
 	$PanelContainer/VBoxContainer/HappinessBar.value = GameManager.happiness
 	$PanelContainer/VBoxContainer/ExperienceBar.value = GameManager.experience
-	$PanelContainer/VBoxContainer/CreditBar.value = GameManager.credit
+	$PanelContainer/VBoxContainer/CreditBar.value = GameManager.creditScore
 	
