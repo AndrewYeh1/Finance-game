@@ -81,3 +81,6 @@ var hours = 0
 # INSURANCE
 
 var insurance = {"Home": 0, "Health": 0, "Employment": 0}
+
+
+var event = 0
