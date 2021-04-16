@@ -28,6 +28,7 @@ __meta__ = {
 }
 
 [node name="Apply" type="Tabs" parent="TabContainer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 43.0
@@ -134,10 +135,9 @@ __meta__ = {
 }
 
 [node name="Work" type="Tabs" parent="TabContainer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = 24.0
+margin_top = 43.0
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -219,7 +219,7 @@ margin_left = 248.0
 margin_top = 53.0
 margin_right = 634.0
 margin_bottom = 122.0
-text = "Remember the numbers you see and write it down"
+text = "Remember the numbers you see and write it down. There will be 4 numbers."
 align = 1
 autowrap = true
 __meta__ = {
