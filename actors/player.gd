@@ -15,32 +15,60 @@ onready var rainbow = get_node("Node2D/rainbow")
 onready var clothes = [blue, pink, rainbow]
 onready var allclothes = [dog, glasses, pants, blue, pink, rainbow]
 
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _ready():
+	if GameManager.dog:
+		dog()
+	if GameManager.sun:
+		glasses()
+	if GameManager.pant:
+		pants()
+	if GameManager.rain:
+		rainbow()
+	if GameManager.heart:
+		pink()
+	if GameManager.blue:
+		blue()
+
 func dog():
 	dog.visible = !dog.visible
+	GameManager.dogPet = !GameManager.dogPet
 
 func glasses():
-	glasses.visbile = !glasses.visible
+	glasses.visible = !glasses.visible
+	GameManager.sun = !GameManager.sun
 	
 func pants():
 	pants.visible = !pants.visible
+	GameManager.pant = !GameManager.pant
 	
 func rainbow():
 	for c in clothes:
 		c.hide()
 	
+	GameManager.heart = false
+	GameManager.blue = false
 	rainbow.show()
+	GameManager.rain = true
 
 func pink():
 	for c in clothes:
 		c.hide()
 	
+	GameManager.rain = false
+	GameManager.blue = false
 	pink.show()
+	GameManager.heart = true
 	
 func blue():
 	for c in clothes:
 		c.hide()
 	
+	GameManager.rain = false
+	GameManager.heart = false
 	blue.show()
+	GameManager.blue = true
 	
 
 
@@ -142,4 +170,6 @@ func _input(ev):
 			get_tree().change_scene("res://building_interior/house/houseInt.tscn")
 		elif location == "Jobs":
 			get_tree().change_scene("res://building_interior/jobs/jobs.tscn")
+		elif location == "Insurance":
+			get_tree().change_scene("res://building_interior/insurance/insuranceint.tscn")
 

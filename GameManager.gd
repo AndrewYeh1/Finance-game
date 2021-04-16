@@ -12,7 +12,7 @@ var happiness = 50
 var credit = 50
 var health = 50
 var netWorth = 0
-var experience = 0
+var experience = 10
 
 # TIME
 
@@ -64,6 +64,15 @@ var largeHouseValue = 800000
 var smallHouseValue = 150000
 
 
+# ITEM WEARING
+var blue = false
+var heart = false
+var rain = false
+var pant = false
+var sun = false
+var dogPet = false
+
+
 # JOBS
 
 var job = ["", 0]
@@ -82,5 +91,6 @@ var hours = 0
 
 var insurance = {"Home": 0, "Health": 0, "Employment": 0}
 
+var change = true
 
 var event = 0

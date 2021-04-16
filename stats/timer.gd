@@ -83,6 +83,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	box.get_node("Year").text = "Year " + str(GameManager.year)
 	box.get_node("Age").text = str(GameManager.year + 18) + " years old"
+	if GameManager.second == 1 and GameManager.change:
+		get_tree().change_scene("res://Play/Play.tscn")
+		GameManager.change = false
 	
 
 func _on_Timer_timeout() -> void:
@@ -97,11 +100,23 @@ func _on_Timer_timeout() -> void:
 
 # NEW YEAR
 func _on_newyeartransition_transitioned() -> void:
+	GameManager.change = true
 	GameManager.second = 10
 	GameManager.year += 1
 	
 	
-	get_tree().change_scene("res://Play/Play.tscn")
+	if GameManager.houseRent > 0:
+		bills.create_unpaid_bill(GameManager.houseRent, "Rent", " | You have been kicked out.")
+		GameManager.creditScore -= 10
+	if GameManager.houseMain > 0:
+		bills.create_unpaid_bill(GameManager.houseMain, "Maintenance", " | You have been kicked out.")
+		GameManager.creditScore -= 10
+	if GameManager.loans > 0:
+		bills.create_unpaid_bill(GameManager.loans, "Loan", " | You have unpaid loans.")
+		GameManager.creditScore -= 10
+	if GameManager.taxes > 0:
+		bills.create_unpaid_bill(GameManager.taxes, "Taxes", " | You have unpaid taxes.")
+		GameManager.creditScore -= 10
 	
 	
 	var rng = RandomNumberGenerator.new()
@@ -126,6 +141,7 @@ func _on_newyeartransition_transitioned() -> void:
 	
 	
 	# finance
+	print("HI")
 	GameManager.houseMain = GameManager.houseMainCost
 	GameManager.houseRent = GameManager.houseRentCost
 	if GameManager.education == "":

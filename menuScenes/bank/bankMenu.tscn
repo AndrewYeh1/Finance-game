@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://menuScenes/bank/Deposit and Withdraw.gd" type="Script" id=1]
-[ext_resource path="res://menuScenes/bank/personalLoanScreen.gd" type="Script" id=2]
+[ext_resource path="res://guide/personalLoanScreen.gd" type="Script" id=2]
 [ext_resource path="res://menuScenes/bank/Liabilities.gd" type="Script" id=3]
 [ext_resource path="res://menuScenes/bank/Loan.gd" type="Script" id=4]
 [ext_resource path="res://theme.tres" type="Theme" id=5]
@@ -600,6 +600,9 @@ margin_top = 336.0
 margin_right = 936.0
 margin_bottom = 379.0
 text = "INFO"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="pay" type="Button" parent="BankContainer/Liabilities/viewBillsScreen"]
 margin_left = 72.0
@@ -636,18 +639,18 @@ __meta__ = {
 [connection signal="pressed" from="BankContainer/Deposit and Withdraw/DepositPage/BackBut" to="BankContainer/Deposit and Withdraw" method="_on_BackBut_pressed"]
 [connection signal="pressed" from="BankContainer/Deposit and Withdraw/WithdrawPage/WithBut" to="BankContainer/Deposit and Withdraw" method="_on_WithBut_pressed"]
 [connection signal="pressed" from="BankContainer/Deposit and Withdraw/WithdrawPage/WithBackBut" to="BankContainer/Deposit and Withdraw" method="_on_WithBackBut_pressed"]
-[connection signal="pressed" from="BankContainer/Loan/studentAid" to="BankContainer/Loan/studentAidScreen" method="_on_studentAid_pressed"]
 [connection signal="pressed" from="BankContainer/Loan/studentAid" to="BankContainer/Loan" method="_on_studentAid_pressed"]
-[connection signal="pressed" from="BankContainer/Loan/personalLoan" to="BankContainer/Loan/personalLoanScreen" method="_on_personalLoan_pressed"]
+[connection signal="pressed" from="BankContainer/Loan/studentAid" to="BankContainer/Loan/studentAidScreen" method="_on_studentAid_pressed"]
 [connection signal="pressed" from="BankContainer/Loan/personalLoan" to="BankContainer/Loan" method="_on_personalLoan_pressed"]
+[connection signal="pressed" from="BankContainer/Loan/personalLoan" to="BankContainer/Loan/personalLoanScreen" method="_on_personalLoan_pressed"]
 [connection signal="pressed" from="BankContainer/Loan/studentAidScreen/applyBut" to="BankContainer/Loan/studentAidScreen" method="_on_applyBut_pressed"]
 [connection signal="pressed" from="BankContainer/Loan/studentAidScreen/doneBut" to="BankContainer/Loan" method="_on_doneBut_pressed"]
 [connection signal="item_selected" from="BankContainer/Loan/studentAidScreen/payApplyBut" to="BankContainer/Loan/studentAidScreen" method="_on_payApplyBut_item_selected"]
 [connection signal="pressed" from="BankContainer/Loan/personalLoanScreen/applyBut" to="BankContainer/Loan/personalLoanScreen" method="_on_applyBut_pressed"]
 [connection signal="pressed" from="BankContainer/Loan/personalLoanScreen/doneBut" to="BankContainer/Loan" method="_on_doneBut_pressed"]
 [connection signal="item_selected" from="BankContainer/Loan/personalLoanScreen/payApplyBut" to="BankContainer/Loan/personalLoanScreen" method="_on_payApplyBut_item_selected"]
-[connection signal="pressed" from="BankContainer/Liabilities/View Bills" to="BankContainer/Liabilities/viewBillsScreen" method="_on_View_Bills_pressed"]
 [connection signal="pressed" from="BankContainer/Liabilities/View Bills" to="BankContainer/Liabilities" method="_on_View_Bills_pressed"]
+[connection signal="pressed" from="BankContainer/Liabilities/View Bills" to="BankContainer/Liabilities/viewBillsScreen" method="_on_View_Bills_pressed"]
 [connection signal="toggled" from="BankContainer/Liabilities/viewBillsScreen/bills/all" to="BankContainer/Liabilities/viewBillsScreen" method="_on_all_toggled"]
 [connection signal="toggled" from="BankContainer/Liabilities/viewBillsScreen/bills/rent" to="BankContainer/Liabilities/viewBillsScreen" method="_on_rent_toggled"]
 [connection signal="pressed" from="BankContainer/Liabilities/viewBillsScreen/bills/rentInfo" to="BankContainer/Liabilities/viewBillsScreen" method="_on_rentInfo_pressed"]

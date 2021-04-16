@@ -56,14 +56,14 @@ corner_radius_top_right = 32
 corner_radius_bottom_right = 32
 corner_radius_bottom_left = 32
 
-[sub_resource type="StyleBoxFlat" id=10]
+[sub_resource type="StyleBoxFlat" id=6]
 bg_color = Color( 0.0666667, 0.223529, 0.47451, 1 )
 corner_radius_top_left = 30
 corner_radius_top_right = 30
 corner_radius_bottom_right = 30
 corner_radius_bottom_left = 30
 
-[sub_resource type="StyleBoxFlat" id=6]
+[sub_resource type="StyleBoxFlat" id=7]
 bg_color = Color( 0.0666667, 0.223529, 0.47451, 1 )
 corner_radius_top_left = 30
 corner_radius_top_right = 30
@@ -71,19 +71,19 @@ corner_radius_bottom_right = 30
 corner_radius_bottom_left = 30
 expand_margin_left = 15.0
 
-[sub_resource type="StyleBoxTexture" id=7]
+[sub_resource type="StyleBoxTexture" id=8]
 texture = ExtResource( 1 )
 region_rect = Rect2( 259.264, 159.545, 152.672, 29.5578 )
 margin_left = 15.0
 margin_right = 15.0
 
-[sub_resource type="StyleBoxTexture" id=8]
+[sub_resource type="StyleBoxTexture" id=9]
 texture = ExtResource( 2 )
 region_rect = Rect2( 97.925, 160.933, 153.862, 29.3716 )
 margin_left = 15.0
 margin_right = 15.0
 
-[sub_resource type="StyleBoxFlat" id=9]
+[sub_resource type="StyleBoxFlat" id=10]
 bg_color = Color( 0.458824, 0.603922, 0.823529, 1 )
 
 [resource]
@@ -100,7 +100,7 @@ Button/styles/hover = SubResource( 2 )
 Button/styles/normal = SubResource( 3 )
 Button/styles/pressed = SubResource( 4 )
 Panel/styles/panel = SubResource( 5 )
-PanelContainer/styles/panel = SubResource( 10 )
+PanelContainer/styles/panel = SubResource( 6 )
 SpinBox/icons/updown = null
 TabContainer/colors/font_color_bg = Color( 1, 1, 1, 1 )
 TabContainer/colors/font_color_disabled = Color( 1, 1, 1, 0.2 )
@@ -117,10 +117,10 @@ TabContainer/icons/increment = null
 TabContainer/icons/increment_highlight = null
 TabContainer/icons/menu = null
 TabContainer/icons/menu_highlight = null
-TabContainer/styles/panel = SubResource( 6 )
-TabContainer/styles/tab_bg = SubResource( 7 )
+TabContainer/styles/panel = SubResource( 7 )
+TabContainer/styles/tab_bg = SubResource( 8 )
 TabContainer/styles/tab_disabled = null
-TabContainer/styles/tab_fg = SubResource( 8 )
+TabContainer/styles/tab_fg = SubResource( 9 )
 WindowDialog/colors/title_color = Color( 0, 0, 0, 1 )
 WindowDialog/constants/close_h_ofs = 18
 WindowDialog/constants/close_v_ofs = 18
@@ -129,4 +129,4 @@ WindowDialog/constants/title_height = 15
 WindowDialog/fonts/title_font = null
 WindowDialog/icons/close = null
 WindowDialog/icons/close_highlight = null
-WindowDialog/styles/panel = SubResource( 9 )
+WindowDialog/styles/panel = SubResource( 10 )
