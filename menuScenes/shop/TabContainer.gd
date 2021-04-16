@@ -150,8 +150,6 @@ func _on_cancelBut_pressed():
 
 
 func _input(ev):
-	if Input.is_key_pressed(KEY_ESCAPE):
-		get_tree().change_scene("res://Play/Play.tscn")
 	if Input.is_key_pressed(KEY_SPACE):
 		$TabContainer.show()
 

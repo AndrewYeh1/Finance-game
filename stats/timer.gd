@@ -100,6 +100,21 @@ func _on_newyeartransition_transitioned() -> void:
 	GameManager.second = 10
 	GameManager.year += 1
 	
+	
+	get_tree().change_scene("res://Play/Play.tscn")
+	
+	
+	var rng = RandomNumberGenerator.new()
+	GameManager.event = 0
+	rng.randomize()
+	var my_random_number = stepify(rng.randf_range(1, 1), 1)
+	if my_random_number == 1:
+		rng.randomize()
+		GameManager.event = stepify(rng.randf_range(1, 4), 1)
+	get_parent().get_node("random event")._ready()
+	
+	
+	
 	# HOUSE
 	if GameManager.houseRent > 0:
 		GameManager.smallApartment = false

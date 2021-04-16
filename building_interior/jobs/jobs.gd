@@ -21,6 +21,11 @@ func _ready():
 func _input(ev):
 	if Input.is_key_pressed(KEY_ESCAPE) and menuOpen == false:
 		get_tree().change_scene("res://Play/Play.tscn")
+	if Input.is_key_pressed(KEY_ESCAPE) and menuOpen == true:
+		$"CanvasLayer/jobselect".visible = false
+		$"CanvasLayer/jobselect2".visible = false
+		$"CanvasLayer/jobselect3".visible = false
+		menuOpen = not menuOpen
 	if Input.is_key_pressed(KEY_SPACE):
 		if menuOpen == false:
 			if $player.location == "LowPayingJob":
@@ -35,8 +40,3 @@ func _input(ev):
 				$"CanvasLayer/jobselect3".visible = true
 				$"CanvasLayer/jobselect3/TabContainer".show_jobs()
 				menuOpen = true
-		else:
-			$"CanvasLayer/jobselect".visible = false
-			$"CanvasLayer/jobselect2".visible = false
-			$"CanvasLayer/jobselect3".visible = false
-			menuOpen = not menuOpen
