@@ -8,11 +8,11 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	update()
 
 func update():
-	get_node("age").text = "Age : " + GameManager.year + 18
-	get_node("networth").text = "Networth: \n$" + GameManager.networth
+	get_node("age").text = "Age : " + str(GameManager.year + 18)
+	get_node("networth").text = "Networth: \n$" + str(GameManager.netWorth)
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

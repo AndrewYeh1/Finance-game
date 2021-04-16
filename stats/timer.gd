@@ -83,7 +83,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	box.get_node("Year").text = "Year " + str(GameManager.year)
 	box.get_node("Age").text = str(GameManager.year + 18) + " years old"
-	if GameManager.health == 0:
+	if GameManager.health <= 0:
 		get_tree().change_scene("res://Start/dead.tscn")
 	if GameManager.second == 1 and GameManager.change:
 		get_tree().change_scene("res://Play/Play.tscn")
