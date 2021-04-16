@@ -158,7 +158,19 @@ func _on_newyeartransition_transitioned() -> void:
 		GameManager.smallHouseValue += 1.05
 		GameManager.netWorth += GameManager.smallHouseValue
 		
-  
+
+	
+	# insurance
+	
+	if GameManager.insurance["Home"] >=1:
+		GameManager.insurance["Home"] -= 1
+	
+	if GameManager.insurance["Health"] >=1:
+		GameManager.insurance["Health"] -= 1
+	
+	if GameManager.insurance["Unemployment"] >=1:
+		GameManager.insurance["Unemployment"] -= 1
+
 	
   # availible jobs
 	var random_generator = RandomNumberGenerator.new()

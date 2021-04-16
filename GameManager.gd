@@ -77,3 +77,7 @@ var avalmed = [["", 0, 0, []],["", 0, 0, []],["", 0, 0, []],["", 0, 0, []]]
 var avalhigh = [["", 0, 0, []],["", 0, 0, []],["", 0, 0, []],["", 0, 0, []]]
 
 var hours = 0
+
+# INSURANCE
+
+var insurance = {"Home": 0, "Health": 0, "Employment": 0}

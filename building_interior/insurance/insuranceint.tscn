@@ -1,0 +1,96 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://data/buildings/ground.png" type="Texture" id=1]
+[ext_resource path="res://data/others/tileset.png" type="Texture" id=2]
+[ext_resource path="res://fade/newyear.tscn" type="PackedScene" id=3]
+[ext_resource path="res://stats/money.tscn" type="PackedScene" id=4]
+[ext_resource path="res://actors/player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://stats/timer.tscn" type="PackedScene" id=6]
+[ext_resource path="res://building_interior/insurance/insuranceint.gd" type="Script" id=7]
+[ext_resource path="res://data/buildingInterior/Untitled_Artwork 9.png" type="Texture" id=8]
+[ext_resource path="res://menuScenes/insurance/insurance.tscn" type="PackedScene" id=9]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+points = PoolVector2Array( 0, 0, 80, 0, 80, 80, 0, 80 )
+
+[sub_resource type="TileSet" id=2]
+0/name = "tileset.png 0"
+0/texture = ExtResource( 2 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 80, 80 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 1 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 1 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 13.2302, 2.86209 )
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 7 )
+
+[node name="bankInterior" type="Sprite" parent="."]
+position = Vector2( 728, 440 )
+scale = Vector2( 0.942708, 1.02222 )
+texture = ExtResource( 8 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource( 2 )
+cell_size = Vector2( 80, 80 )
+format = 1
+tile_data = PoolIntArray( 65535, 0, 0, 18, 0, 0, 131071, 0, 0, 65554, 0, 0, 196607, 0, 0, 131090, 0, 0, 262143, 0, 0, 196626, 0, 0, 327679, 0, 0, 262162, 0, 0, 393215, 0, 0, 327698, 0, 0, 458751, 0, 0, 393234, 0, 0, 524287, 0, 0, 458770, 0, 0, 589823, 0, 0, 524306, 0, 0, 655359, 0, 0, 589842, 0, 0, 720895, 0, 0, 655360, 0, 0, 655361, 0, 0, 655362, 0, 0, 655363, 0, 0, 655364, 0, 0, 655365, 0, 0, 655366, 0, 0, 655367, 0, 0, 655368, 0, 0, 655369, 0, 0, 655370, 0, 0, 655371, 0, 0, 655372, 0, 0, 655373, 0, 0, 655374, 0, 0, 655375, 0, 0, 655376, 0, 0, 655377, 0, 0, 655378, 0, 0 )
+
+[node name="ground" type="Sprite" parent="."]
+position = Vector2( 760, 528 )
+texture = ExtResource( 1 )
+
+[node name="player" parent="." instance=ExtResource( 5 )]
+position = Vector2( 182, 755 )
+scale = Vector2( 2.5, 2.5 )
+
+[node name="BankTeller" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BankTeller"]
+position = Vector2( 747.62, 589.378 )
+scale = Vector2( -31.4145, -68.6988 )
+shape = SubResource( 3 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="time" parent="CanvasLayer" instance=ExtResource( 6 )]
+position = Vector2( 833.622, 13.6557 )
+
+[node name="statsBar" parent="CanvasLayer" instance=ExtResource( 4 )]
+margin_left = 14.4442
+margin_top = 15.1285
+margin_right = 233.444
+margin_bottom = 159.129
+
+[node name="insurancemenu" parent="CanvasLayer" instance=ExtResource( 9 )]
+visible = false
+margin_left = 109.0
+margin_top = 93.0
+margin_right = 109.0
+margin_bottom = 93.0
+
+[node name="newyeartransition" parent="CanvasLayer" instance=ExtResource( 3 )]
+visible = false
+margin_top = 16.0
+margin_right = -273.0
+margin_bottom = -119.0
+[connection signal="transitioned" from="CanvasLayer/newyeartransition" to="CanvasLayer/time" method="_on_newyeartransition_transitioned"]
