@@ -42,7 +42,6 @@ func _input(event):
 			$SHouse/off.visible = not $SHouse/off.visible
 			$SHouse/on.visible = not $SHouse/on.visible
 		if $LHouse.visible:
-			$LHouse/off.visible = not $LHouse/off.visible
 			$LHouse/on.visible = not $LHouse/on.visible
 	if Input.is_key_pressed(KEY_ESCAPE):
 		get_tree().change_scene("res://Play/Play.tscn")
