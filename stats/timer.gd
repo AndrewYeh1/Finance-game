@@ -101,8 +101,12 @@ func _on_Timer_timeout() -> void:
 # NEW YEAR
 func _on_newyeartransition_transitioned() -> void:
 	GameManager.change = true
-	GameManager.second = 60
+	GameManager.second = 90
 	GameManager.year += 1
+	
+	
+	if !GameManager.smallApartment and !GameManager.largeApartment and !GameManager.smallHouse and !GameManager.largeHouse:
+		GameManager.health -= 20
 	
 	
 	if GameManager.houseRent > 0:
