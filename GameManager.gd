@@ -2,9 +2,11 @@ extends Node
 
 # THESE ARE GLOBAL VARIABLES (goes across scenes)
 
+var first = true
+
 # STATS
 
-var money = 1000
+var money = 150000
 var bankMoney = 0
 var happiness = 50
 var credit = 50
@@ -40,6 +42,7 @@ var creditScore = 200
 var loanPersonalInterest = 0
 var loanMortgageInterest = 0
 var studentLoanPayback = 0
+var personalLoanPayback = 0
 
 # HOUSE COSTS
 var houseRentCost = 0
@@ -52,6 +55,8 @@ var rainbowShirt = false
 var blackPants = false
 var sunglasses = false
 var dog = false
+var smallApartment = true
+var largeApartment = false
 var smallHouse = false
 var largeHouse = false
 var largeHouseValue = 800000

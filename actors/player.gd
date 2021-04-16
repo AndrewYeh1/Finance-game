@@ -72,7 +72,7 @@ func ChangeDirection():
 func _on_buildingDetector_area_shape_entered(area_id: int, area: Area2D, area_shape: int, self_shape: int) -> void:
 	print(area.get_name())
 	
-	if ["Bank", "School", "Jobs", "Home", "BankTeller", "LeftDoor", "Insurance", "Store", "LowPayingJob", "MedPayingJob", "HighPayingJob"].has(area.get_name()):
+	if ["Bank", "School", "Jobs", "Home", "BankTeller", "LeftDoor", "Insurance", "Store", "LowPayingJob", "MedPayingJob", "HighPayingJob", "StoreInt"].has(area.get_name()):
 		location = area.get_name()
 		$enter.show()
 	
@@ -95,6 +95,7 @@ func _input(ev):
 		elif location == "School":
 			get_tree().change_scene("res://building_interior/school/school.tscn")
 		elif location == "Store":
-			get_tree().change_scene("res://building_interior/shop/shopInt.tscn")
-			
+			get_tree().change_scene("res://building_interior/store/storeInterior.tscn")
+		elif location == "Home":
+			get_tree().change_scene("res://building_interior/house/houseInt.tscn")
 

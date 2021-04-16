@@ -111,8 +111,10 @@ func _on_newyeartransition_transitioned() -> void:
 	GameManager.bankMoney = stepify(1.05 * GameManager.bankMoney, 0.01)
 	GameManager.netWorth = GameManager.money + GameManager.bankMoney
 	if GameManager.largeHouse:
+		GameManager.largeHouseValue *= 1.05
 		GameManager.netWorth += GameManager.largeHouseValue
 	if GameManager.smallHouse:
+		GameManager.smallHouseValue += 1.05
 		GameManager.netWorth += GameManager.smallHouseValue
   
 	
