@@ -128,6 +128,7 @@ func _on_pay_pressed():
 			GameManager.houseMain = 0
 		if $bills/loans.pressed == true:
 			GameManager.loans = 0
+			GameManager.creditScore += 10
 		if $bills/taxes.pressed == true:
 			GameManager.taxes = 0
 		if $bills/tuition.pressed == true:
