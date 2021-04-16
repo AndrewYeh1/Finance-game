@@ -6,18 +6,18 @@ var first = true
 
 # STATS
 
-var money = 150000
+var money = 1000
 var bankMoney = 0
 var happiness = 50
 var credit = 50
 var health = 50
 var netWorth = 0
-var experience = 10
+var experience = 15
 
 # TIME
 
 var year = 1
-var second = 60
+var second = 90
 
 # SCHOOL STUFF
 

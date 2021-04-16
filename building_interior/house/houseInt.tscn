@@ -54,6 +54,7 @@ tile_data = PoolIntArray( -1, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -6
 [node name="SApartment" type="Node2D" parent="."]
 
 [node name="on" type="Sprite" parent="SApartment"]
+visible = false
 position = Vector2( 716.8, 420 )
 scale = Vector2( 0.933333, 0.933333 )
 texture = ExtResource( 3 )
@@ -158,6 +159,7 @@ __meta__ = {
 }
 
 [node name="homeless" type="Sprite" parent="."]
+visible = false
 position = Vector2( 716, 420 )
 scale = Vector2( 0.932292, 0.933334 )
 texture = ExtResource( 11 )

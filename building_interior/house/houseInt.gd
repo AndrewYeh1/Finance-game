@@ -8,6 +8,11 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$SApartment.hide()
+	$LApartment.hide()
+	$SHouse.hide()
+	$LHouse.hide()
+	$homeless.hide()
 	if GameManager.smallApartment:
 		$SApartment.show()
 		$SApartment/off.show()
