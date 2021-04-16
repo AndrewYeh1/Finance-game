@@ -12,17 +12,6 @@ func _ready() -> void:
 #func _process(delta: float) -> void:
 #	pass
 
-func _input(ev):
-	if Input.is_key_pressed(KEY_ESCAPE) and menuOpen == false:
-		get_tree().change_scene("res://Play/Play.tscn")
-	if Input.is_key_pressed(KEY_SPACE):
-		if menuOpen == false:
-			if $player.location == "LeftDoor":
-				$"CanvasLayer/schoolMenu".visible = true
-				menuOpen = not menuOpen
-		else:
-			$"CanvasLayer/schoolMenu".visible = false
-			menuOpen = not menuOpen
 
 func _on_time_timeout() -> void:
 	$CanvasLayer/newyeartransition.show()
