@@ -131,7 +131,7 @@ func _on_newyeartransition_transitioned() -> void:
 	if my_random_number == 1:
 		rng.randomize()
 		GameManager.event = stepify(rng.randf_range(1, 4), 1)
-		if GameManager.event == 4 and GameManager.job == "":
+		if GameManager.event == 4 and GameManager.job[0] == "":
 			GameManager.event = 0
 	get_parent().get_node("random event")._ready()
 	
@@ -304,4 +304,4 @@ func _on_newyeartransition_transitioned() -> void:
 
 
 func _on_Button_pressed() -> void:
-	GameManager.second = 0
+	GameManager.second = 1
