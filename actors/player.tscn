@@ -72,6 +72,7 @@ texture = ExtResource( 8 )
 flip_h = true
 
 [node name="dog" type="Sprite" parent="Node2D"]
+visible = false
 position = Vector2( -139.95, -43.5797 )
 scale = Vector2( 0.0686434, 0.0686434 )
 texture = ExtResource( 6 )

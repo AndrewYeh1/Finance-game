@@ -14,7 +14,6 @@ func _ready():
 
 func _input(event):
 	if Input.is_key_pressed(KEY_ESCAPE) and menuOpen == false:
-		print("AIGWDW")
 		get_tree().change_scene("res://Play/Play.tscn")
 	elif Input.is_key_pressed(KEY_ESCAPE) and menuOpen == true:
 		$CanvasLayer/menu.hide()

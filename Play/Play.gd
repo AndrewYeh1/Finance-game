@@ -28,3 +28,7 @@ func set_camera_limits():
 
 func _on_guide_pressed():
 	get_tree().change_scene("res://guide/guide.tscn")
+
+
+func _on_Button_pressed():
+	get_tree().change_scene("res://Home/Home.tscn")

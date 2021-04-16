@@ -192,7 +192,19 @@ margin_top = 528.0
 margin_right = 608.0
 margin_bottom = 571.0
 text = "OK"
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+margin_left = 736.0
+margin_top = 504.0
+margin_right = 843.0
+margin_bottom = 547.0
+theme = ExtResource( 17 )
+text = "HOME"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="timeout" from="CanvasLayer/time" to="." method="_on_time_timeout"]
 [connection signal="transitioned" from="CanvasLayer/newyeartransition" to="CanvasLayer/time" method="_on_newyeartransition_transitioned"]
 [connection signal="pressed" from="CanvasLayer/guide" to="." method="_on_guide_pressed"]
 [connection signal="pressed" from="CanvasLayer/random event/ok" to="CanvasLayer/random event" method="_on_ok_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_Button_pressed"]

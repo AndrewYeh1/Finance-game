@@ -158,9 +158,8 @@ __meta__ = {
 }
 
 [node name="homeless" type="Sprite" parent="."]
-visible = false
-position = Vector2( 512, 300 )
-scale = Vector2( 0.666667, 0.666667 )
+position = Vector2( 716, 420 )
+scale = Vector2( 0.932292, 0.933334 )
 texture = ExtResource( 11 )
 
 [node name="player" parent="." instance=ExtResource( 13 )]
