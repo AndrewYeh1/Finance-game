@@ -18,9 +18,9 @@ onready var allclothes = [dog, glasses, pants, blue, pink, rainbow]
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _ready():
-	if GameManager.dog:
+	if GameManager.dogPet:
 		dog()
-	if GameManager.sunglasses:
+	if GameManager.glasses:
 		glasses()
 	if GameManager.pant:
 		pants()

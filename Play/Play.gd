@@ -6,6 +6,9 @@ var menuOpen = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	set_camera_limits()
+	if GameManager.first1 == true:
+		get_tree().change_scene("res://guide/guide.tscn")
+		GameManager.first1 = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

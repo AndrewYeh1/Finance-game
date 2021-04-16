@@ -122,6 +122,8 @@ func _on_pay_pressed():
 		total += GameManager.tuition
 	if GameManager.money + GameManager.studentAid >= total:
 		total -= GameManager.studentAid
+		if total < 0:
+			total = 0
 		GameManager.studentAid = 0
 		GameManager.money -= total
 		if $bills/rent.pressed == true:

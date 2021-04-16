@@ -55,7 +55,6 @@ text = "20 years old"
 [node name="Timer" type="Timer" parent="."]
 
 [node name="bills" parent="." instance=ExtResource( 4 )]
-
 visible = false
 margin_left = -880.0
 margin_top = -2.08398

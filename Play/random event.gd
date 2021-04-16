@@ -10,27 +10,27 @@ func _ready():
 	if event == 1:
 		$ok.show()
 		if GameManager.insurance["Home"] >= 1:
-			$event1.show()
-		else:
 			$event1I.show()
+		else:
+			$event1.show()
 	if event == 2:
 		$ok.show()
 		if GameManager.insurance["Health"] >= 1:
-			$event2.show()
-		else:
 			$event2I.show()
+		else:
+			$event2.show()
 	if event == 3:
 		$ok.show()
 		if GameManager.insurance["Health"] >= 1:
-			$event3.show()
-		else:
 			$event3I.show()
+		else:
+			$event3.show()
 	if event == 4:
 		$ok.show()
 		if GameManager.insurance["Employment"] >= 1:
-			$event4.show()
-		else:
 			$event4I.show()
+		else:
+			$event4.show()
 
 
 

@@ -3,6 +3,7 @@ extends Node
 # THESE ARE GLOBAL VARIABLES (goes across scenes)
 
 var first = true
+var first1 = true
 
 # STATS
 
