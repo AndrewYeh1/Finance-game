@@ -31,12 +31,12 @@ func _on_Button_pressed() -> void:
 	GameManager.credit = 50
 	GameManager.health = 50
 	GameManager.netWorth = 0
-	GameManager.experience = 10
+	GameManager.experience = 15
 
 	# TIME
 
 	GameManager.year = 1
-	GameManager.second = 90
+	GameManager.second = 300
 
 	# SCHOOL STUFF
 
@@ -54,10 +54,10 @@ func _on_Button_pressed() -> void:
 	GameManager.tuition = 0
 
 	# LOANS
-	GameManager.loanStudent = 20
+	GameManager.loanStudent = 0
 	GameManager.loanMortgage = 0
 	GameManager.loanPersonal = 0
-	GameManager.creditScore = 200
+	GameManager.creditScore = 250
 	GameManager.loanPersonalInterest = 0
 	GameManager.loanMortgageInterest = 0
 	GameManager.studentLoanPayback = 0
