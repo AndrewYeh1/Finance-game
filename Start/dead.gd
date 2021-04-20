@@ -22,7 +22,7 @@ func update():
 
 func _on_Button_pressed() -> void:
 	get_tree().change_scene("res://Home/Home.tscn")
-	GameManager.money = 1000
+	GameManager.money = 3000
 	GameManager.bankMoney = 0
 	GameManager.happiness = 50
 	GameManager.credit = 50
@@ -33,7 +33,7 @@ func _on_Button_pressed() -> void:
 	# TIME
 
 	GameManager.year = 1
-	GameManager.second = 10
+	GameManager.second = 90
 
 	# SCHOOL STUFF
 

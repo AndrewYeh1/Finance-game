@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://data/buildings/ground.png" type="Texture" id=1]
 [ext_resource path="res://data/others/tileset.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://building_interior/insurance/insuranceint.gd" type="Script" id=7]
 [ext_resource path="res://data/buildingInterior/Untitled_Artwork 9.png" type="Texture" id=8]
 [ext_resource path="res://menuScenes/insurance/insurance.tscn" type="PackedScene" id=9]
+[ext_resource path="res://notifications/insurance.tscn" type="PackedScene" id=10]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 80, 0, 80, 80, 0, 80 )
@@ -48,6 +49,7 @@ scale = Vector2( 0.942708, 1.02222 )
 texture = ExtResource( 8 )
 
 [node name="TileMap" type="TileMap" parent="."]
+visible = false
 tile_set = SubResource( 2 )
 cell_size = Vector2( 80, 80 )
 format = 1
@@ -93,4 +95,8 @@ margin_left = 24.0
 margin_top = -8.0
 margin_right = 24.0
 margin_bottom = -8.0
+
+[node name="Node2D" parent="CanvasLayer" instance=ExtResource( 10 )]
+position = Vector2( 160, 80 )
+scale = Vector2( 0.75, 0.75 )
 [connection signal="transitioned" from="CanvasLayer/newyeartransition" to="CanvasLayer/time" method="_on_newyeartransition_transitioned"]

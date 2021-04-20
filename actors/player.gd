@@ -31,17 +31,31 @@ func _ready():
 	if GameManager.blue:
 		blue()
 
+func _process(delta):
+	if GameManager.dogPet:
+		dog()
+	if GameManager.sun:
+		glasses()
+	if GameManager.pant:
+		pants()
+	if GameManager.rain:
+		rainbow()
+	if GameManager.heart:
+		pink()
+	if GameManager.blue:
+		blue()
+
 func dog():
-	dog.visible = !dog.visible
-	GameManager.dogPet = !GameManager.dogPet
+	dog.visible = GameManager.dogPet
+	GameManager.dogPet = true
 
 func glasses():
-	glasses.visible = !glasses.visible
-	GameManager.sun = !GameManager.sun
-	
+	glasses.visible = GameManager.sun
+	GameManager.sun = true
+
 func pants():
-	pants.visible = !pants.visible
-	GameManager.pant = !GameManager.pant
+	pants.visible = GameManager.pant
+	GameManager.pant = true
 	
 func rainbow():
 	for c in clothes:

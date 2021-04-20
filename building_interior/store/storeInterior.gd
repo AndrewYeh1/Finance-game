@@ -10,6 +10,8 @@ var menuOpen = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$player/Camera2D.limit_right = 1520
+	if GameManager.year == 1:
+		$CanvasLayer/Node2D.show()
 
 
 func _input(event):

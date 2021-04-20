@@ -144,6 +144,8 @@ func _on_confirmBut_pressed():
 		GameManager.houseMainCost = 3000
 	$notif/confirmation.hide()
 	$notif.hide()
+	
+	
 
 
 func _on_okBut_pressed():
