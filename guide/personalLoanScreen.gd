@@ -14,16 +14,19 @@ func _ready():
 
 func _on_applyBut_pressed():
 	if $applyBut.text == "APPLY":
-		if GameManager.credit != 0:
+		if GameManager.credit > 100:
 			GameManager.money += $applySpinBox.value
 			GameManager.loanPersonal += $applySpinBox.value
 			$messageLabel.text = "Succesfully applied for $" + str($applySpinBox.value) + " in loans."
 			GameManager.personalLoanPayback += $applySpinBox.value * 0.1
+		else:
+			$messageLabel.text = "Your credit is too low, pay back some bills."
 	else:
 		if GameManager.money >= $applySpinBox.value:
 			$messageLabel.text = "Succesfully paid for $" + str($applySpinBox.value) + " from loans."
 			GameManager.money -= $applySpinBox.value
 			GameManager.loanPersonal -= $applySpinBox.value
+			GameManager.credit += 50
 	_update_loan_label()
 
 
