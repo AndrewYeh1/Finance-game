@@ -22,6 +22,9 @@ func update():
 
 func _on_Button_pressed() -> void:
 	get_tree().change_scene("res://Home/Home.tscn")
+	
+	GameManager.firstplay = false
+	
 	GameManager.money = 3000
 	GameManager.bankMoney = 0
 	GameManager.happiness = 50
