@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://building_interior/store/storeInterior.gd" type="Script" id=1]
 [ext_resource path="res://data/others/tileset.png" type="Texture" id=2]
 [ext_resource path="res://actors/player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://menuScenes/shop/shopInt.tscn" type="PackedScene" id=4]
 [ext_resource path="res://data/storePages/storeInterior.PNG" type="Texture" id=5]
+[ext_resource path="res://notifications/store.tscn" type="PackedScene" id=6]
 [ext_resource path="res://stats/money.tscn" type="PackedScene" id=8]
 [ext_resource path="res://stats/timer.tscn" type="PackedScene" id=9]
 
@@ -80,3 +81,7 @@ margin_top = 24.0
 margin_right = 48.0
 margin_bottom = 24.0
 rect_scale = Vector2( 0.9, 0.9 )
+
+[node name="Node2D" parent="CanvasLayer" instance=ExtResource( 6 )]
+position = Vector2( 104, 240 )
+scale = Vector2( 0.75, 0.75 )

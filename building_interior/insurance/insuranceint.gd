@@ -10,6 +10,8 @@ func _ready():
 	$player/Camera2D.limit_right = 1425
 	$player/Camera2D.limit_top = 0
 	$player/Camera2D.limit_bottom = 0
+	if GameManager.year == 1:
+		$CanvasLayer/Node2D.show()
 
 func _input(ev):
 	if Input.is_key_pressed(KEY_ESCAPE) and menuOpen == false:

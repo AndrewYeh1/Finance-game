@@ -197,6 +197,10 @@ func _on_newyeartransition_transitioned() -> void:
 	if GameManager.smallHouse:
 		GameManager.smallHouseValue += 1.05
 		GameManager.netWorth += GameManager.smallHouseValue
+	GameManager.netWorth -= GameManager.loanStudent
+	GameManager.netWorth -= GameManager.loanPersonal
+	GameManager.netWorth -= GameManager.loanMortgage
+	
 		
 
 	

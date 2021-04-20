@@ -6,6 +6,14 @@ var menuOpen = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	set_camera_limits()
+	if GameManager.health < 30:
+		$CanvasLayer/health.show()
+		$CanvasLayer/health/health.show()
+		$CanvasLayer/health/exit.show()
+	if GameManager.happiness < 30:
+		$CanvasLayer/happiness.show()
+		$CanvasLayer/happiness/happiness.show()
+		$CanvasLayer/happiness/exit.show()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

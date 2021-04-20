@@ -28,6 +28,10 @@ run/main_scene="res://Home/Home.tscn"
 GameManager="*res://GameManager.gd"
 MusicController="*res://autoload/MusicController.tscn"
 
+[display]
+
+window/size/resizable=false
+
 [input]
 
 move_right={

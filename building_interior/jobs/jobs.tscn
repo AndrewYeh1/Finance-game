@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://data/buildingInterior/Untitled_Artwork.png" type="Texture" id=1]
 [ext_resource path="res://building_interior/jobs/jobs.gd" type="Script" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://menuScenes/jobs/jobselection.tscn" type="PackedScene" id=8]
 [ext_resource path="res://menuScenes/jobs/jobselection1.tscn" type="PackedScene" id=9]
 [ext_resource path="res://menuScenes/jobs/jobselection2.tscn" type="PackedScene" id=10]
+[ext_resource path="res://notifications/job.tscn" type="PackedScene" id=11]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 80, 0, 80, 80, 0, 80 )
@@ -122,5 +123,9 @@ margin_top = -2.0
 margin_right = 119.0
 margin_bottom = 69.0
 rect_scale = Vector2( 0.9, 0.9 )
+
+[node name="Node2D" parent="CanvasLayer" instance=ExtResource( 11 )]
+position = Vector2( 152, 64 )
+scale = Vector2( 0.75, 0.75 )
 [connection signal="timeout" from="CanvasLayer/time" to="CanvasLayer/newyeartransition" method="_on_time_timeout"]
 [connection signal="transitioned" from="CanvasLayer/newyeartransition" to="CanvasLayer/time" method="_on_newyeartransition_transitioned"]

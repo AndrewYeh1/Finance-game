@@ -8,6 +8,8 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if GameManager.year == 1:
+		$CanvasLayer/Node2D.show()
 	$SApartment.hide()
 	$LApartment.hide()
 	$SHouse.hide()

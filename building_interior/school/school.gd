@@ -12,6 +12,8 @@ func _ready():
 	$player/Camera2D.limit_right = 1336
 	$player/Camera2D.limit_top = -5
 	$player/Camera2D.limit_bottom = -5
+	if GameManager.year == 1:
+		$CanvasLayer/Node2D.show()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
