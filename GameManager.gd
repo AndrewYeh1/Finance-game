@@ -20,7 +20,7 @@ var experience = 15
 # TIME
 
 var year = 1
-var second = 90
+var second = 300
 
 # SCHOOL STUFF
 
@@ -38,7 +38,7 @@ var taxes = 0
 var tuition = 0
 
 # LOANS
-var loanStudent = 20
+var loanStudent = 0
 var loanMortgage = 0
 var loanPersonal = 0
 var creditScore = 200

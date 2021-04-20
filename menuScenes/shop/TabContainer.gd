@@ -112,28 +112,28 @@ func _purchase():
 func _on_confirmBut_pressed():
 	GameManager.money -= price
 	if item == "Blue Shirt":
-		GameManager.happiness += 1
+		GameManager.happiness += 5
 		GameManager.blueShirt = true
 		get_parent().get_parent().get_node("player").blue()
 	elif item == "Heart Shirt":
-		GameManager.happiness += 1
+		GameManager.happiness += 5
 		GameManager.heartShirt = true
 		get_parent().get_parent().get_node("player").pink()
 	elif item == "Sunglasses":
-		GameManager.happiness += 1
+		GameManager.happiness += 5
 		GameManager.sunglasses = true
 		print("sun glasses")
 		get_parent().get_parent().get_node("player").glasses()
 	elif item == "Black Pants":
-		GameManager.happiness += 1
+		GameManager.happiness += 5
 		GameManager.blackPants = true
 		get_parent().get_parent().get_node("player").pants()
 	elif item == "Rainbow Shirt":
-		GameManager.happiness += 2
+		GameManager.happiness += 10
 		GameManager.rainbowShirt = true
 		get_parent().get_parent().get_node("player").rainbow()
 	elif item == "Dog":
-		GameManager.happiness += 5
+		GameManager.happiness += 10
 		GameManager.dog = true
 		get_parent().get_parent().get_node("player").dog()
 	elif item == "Small House":
