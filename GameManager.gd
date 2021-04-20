@@ -5,6 +5,8 @@ extends Node
 var first = true
 var first1 = true
 
+var firstplay = false
+
 # STATS
 
 var money = 3000

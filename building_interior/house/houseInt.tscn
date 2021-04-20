@@ -171,5 +171,6 @@ position = Vector2( 524.856, 445.511 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Node2D" parent="CanvasLayer" instance=ExtResource( 15 )]
+visible = false
 position = Vector2( 24, 24 )
 scale = Vector2( 0.95, 0.95 )

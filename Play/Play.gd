@@ -14,6 +14,10 @@ func _ready() -> void:
 		$CanvasLayer/happiness.show()
 		$CanvasLayer/happiness/happiness.show()
 		$CanvasLayer/happiness/exit.show()
+	
+	if GameManager.year == 1 and !GameManager.firstplay:
+		GameManager.firstplay = true
+		$CanvasLayer/Node2D.show()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

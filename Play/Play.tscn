@@ -232,6 +232,7 @@ position = Vector2( 152, 96 )
 scale = Vector2( 0.75, 0.75 )
 
 [node name="Node2D" parent="CanvasLayer" instance=ExtResource( 29 )]
+visible = false
 position = Vector2( 144, 80 )
 scale = Vector2( 0.75, 0.75 )
 [connection signal="timeout" from="CanvasLayer/time" to="." method="_on_time_timeout"]

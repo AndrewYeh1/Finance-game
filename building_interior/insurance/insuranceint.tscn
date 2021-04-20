@@ -97,6 +97,7 @@ margin_right = 24.0
 margin_bottom = -8.0
 
 [node name="Node2D" parent="CanvasLayer" instance=ExtResource( 10 )]
+visible = false
 position = Vector2( 160, 80 )
 scale = Vector2( 0.75, 0.75 )
 [connection signal="transitioned" from="CanvasLayer/newyeartransition" to="CanvasLayer/time" method="_on_newyeartransition_transitioned"]
