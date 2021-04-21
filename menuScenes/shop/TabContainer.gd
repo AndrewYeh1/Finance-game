@@ -139,9 +139,11 @@ func _on_confirmBut_pressed():
 	elif item == "Small House":
 		GameManager.smallHouse = true
 		GameManager.houseMainCost = 2500
+		GameManager.health = 75
 	elif item == "Large House":
 		GameManager.largeHouse = true
 		GameManager.houseMainCost = 3000
+		GameManager.health = 75
 	$notif/confirmation.hide()
 	$notif.hide()
 	
@@ -195,10 +197,12 @@ func _on_CONFIRM_pressed():
 		GameManager.houseRentCost = 5160
 		GameManager.houseMainCost = 1500
 		GameManager.smallApartment = true
+		GameManager.health = 75
 	else:
 		GameManager.houseRentCost = 14400
 		GameManager.houseMainCost = 2000
 		GameManager.largeApartment = true
+		GameManager.health = 75
 	$TabContainer/Houses/rent.hide()
 
 
