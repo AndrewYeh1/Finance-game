@@ -28,7 +28,7 @@ func _on_Button_pressed() -> void:
 	GameManager.money = 3000
 	GameManager.bankMoney = 0
 	GameManager.happiness = 50
-	GameManager.credit = 50
+	GameManager.credit = 250
 	GameManager.health = 50
 	GameManager.netWorth = 0
 	GameManager.experience = 15

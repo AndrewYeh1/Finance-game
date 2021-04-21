@@ -81,7 +81,7 @@ var dogPet = false
 var job = ["", 0]
 
 var lowpaying = ["Janitor", "Fast Food Worker", "Retail Worker", "Waiter", "Hairdresser", "Delivery Driver", "Lab Internship", "Plumber", "Bartender", "Cashier", "Babysitter", "Tutor", "Librarian", "Car Mechanic", "Baker", "Telemarketer", "Nail Technician", "Car Cleaner", "Garbageman", "Desk Clerk", "Coach", "Dishwasher", "Actor", "Magazine Editor", "Photographer", "Chef", "Dancer"]
-var medpaying = ["Financial Advisor", "Nurse", "Human Resource Assistant", "Laboratory Technician", "Financial Manager", "Teacher", "Paralegal", "Sales representative", "Data Scientist", "Information Technology", "Architect", "Pilot", "Accountant", "Police Officer", "Food Scientist", "Secretary", "Artist", "Animator", "Painter", "Film Direction", "Actor", "Author", "Fashion Designer", "Politician", "Chef", "Dancer", "Civil Engineer"]
+var medpaying = ["Finance Advisor", "Nurse", "HR Assistant", "Technician", "Financial Manager", "Teacher", "Paralegal", "Sales representative", "Data Scientist", "Information Technology", "Architect", "Pilot", "Accountant", "Police Officer", "Food Scientist", "Secretary", "Artist", "Animator", "Painter", "Film Direction", "Actor", "Author", "Fashion Designer", "Politician", "Chef", "Dancer", "Civil Engineer"]
 var highpaying = ["Doctor", "Lawyer", "Engineer", "Computer Engineer", "Anesthesiologist", "Biologist", "Chemist", "Dentist", "Orthodontist", "Cardiologist", "Architecture Manager", "Realtor", "Software Architect", "Petroleum Engineer", "CEO", "Sales Manager", "Quantitive Analyist", "Plant Manager", "Mathetician", "Veterinarian", "Computer Security Analyst", "Pharmacist", "Politician", "Chef", "Civil Engineer"]
 
 var avallow = [["", 0, 0, []],["", 0, 0, []],["", 0, 0, []],["", 0, 0, []]]

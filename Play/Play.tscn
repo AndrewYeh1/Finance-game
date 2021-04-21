@@ -208,6 +208,7 @@ margin_bottom = 571.0
 text = "OK"
 
 [node name="Button" type="Button" parent="CanvasLayer"]
+visible = false
 margin_left = 40.0
 margin_top = 544.0
 margin_right = 147.0
@@ -221,9 +222,9 @@ __meta__ = {
 [node name="newyeartransition" parent="CanvasLayer" instance=ExtResource( 11 )]
 visible = false
 
-[node name="health" parent="CanvasLayer" instance=ExtResource( 28 )]
+[node name="Node2D" parent="CanvasLayer" instance=ExtResource( 29 )]
 visible = false
-position = Vector2( 152, 104 )
+position = Vector2( 144, 80 )
 scale = Vector2( 0.75, 0.75 )
 
 [node name="happiness" parent="CanvasLayer" instance=ExtResource( 27 )]
@@ -231,9 +232,9 @@ visible = false
 position = Vector2( 152, 96 )
 scale = Vector2( 0.75, 0.75 )
 
-[node name="Node2D" parent="CanvasLayer" instance=ExtResource( 29 )]
+[node name="health" parent="CanvasLayer" instance=ExtResource( 28 )]
 visible = false
-position = Vector2( 144, 80 )
+position = Vector2( 152, 104 )
 scale = Vector2( 0.75, 0.75 )
 [connection signal="timeout" from="CanvasLayer/time" to="." method="_on_time_timeout"]
 [connection signal="pressed" from="CanvasLayer/guide" to="." method="_on_guide_pressed"]

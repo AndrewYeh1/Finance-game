@@ -6,14 +6,7 @@ var menuOpen = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	set_camera_limits()
-	if GameManager.health < 40:
-		$CanvasLayer/health.show()
-		$CanvasLayer/health/health.show()
-		$CanvasLayer/health/exit.show()
-	if GameManager.happiness < 40:
-		$CanvasLayer/happiness.show()
-		$CanvasLayer/happiness/happiness.show()
-		$CanvasLayer/happiness/exit.show()
+
 	
 	if GameManager.year == 1 and !GameManager.firstplay:
 		GameManager.firstplay = true

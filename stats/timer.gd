@@ -103,7 +103,7 @@ func _on_Timer_timeout() -> void:
 # NEW YEAR
 func _on_newyeartransition_transitioned() -> void:
 	GameManager.change = true
-	GameManager.second = 90
+	GameManager.second = 100
 	GameManager.year += 1
 	
 	
@@ -307,7 +307,15 @@ func _on_newyeartransition_transitioned() -> void:
 	if GameManager.health == 0:
 		get_tree().change_scene("res://Start/dead.tscn")
 
-
+	if GameManager.health < 40:
+		get_parent().get_node("health").show()
+		#$CanvasLayer/health/health.show()
+		#$CanvasLayer/health/exit.show()
+	if GameManager.happiness < 40:
+		get_parent().get_node("happiness").show()
+		#$CanvasLayer/happiness.show()
+		#$CanvasLayer/happiness/happiness.show()
+		#$CanvasLayer/happiness/exit.show()
 
 func _on_Button_pressed() -> void:
-	GameManager.second = 1
+	GameManager.second = 0
