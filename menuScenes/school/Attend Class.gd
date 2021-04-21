@@ -111,6 +111,7 @@ func button_pressed(button):
 	if button == correctmc:
 		correct.text = "correct"
 		GameManager.marks[num[GameManager.education]][GameManager.edyear-1] += cor[GameManager.education]
+		GameManager.experience += 1
 	else:
 		correct.text = "incorrect"
 		GameManager.marks[num[GameManager.education]][GameManager.edyear-1] -= incor[GameManager.education]
@@ -171,6 +172,7 @@ func _on_answer_text_entered(new_text: String) -> void:
 	if new_text == str(a):
 		correct.text = "correct"
 		GameManager.marks[num[GameManager.education]][GameManager.edyear-1] += cor[GameManager.education]
+		GameManager.experience += 1
 	else:
 		correct.text = "incorrect"
 		GameManager.marks[num[GameManager.education]][GameManager.edyear-1] -= incor[GameManager.education]

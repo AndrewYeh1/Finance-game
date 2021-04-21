@@ -35,7 +35,7 @@ func _on_Employment_mouse_entered() -> void:
 
 func _on_Home_toggled(button_pressed: bool) -> void:
 	
-	if GameManager.insurance["Home"] == 2:
+	if GameManager.insurance["Home"] >= 2:
 		error.text = "Already bought!"
 		home.pressed = false
 		return
@@ -47,7 +47,7 @@ func _on_Home_toggled(button_pressed: bool) -> void:
 
 
 func _on_Health_toggled(button_pressed: bool) -> void:
-	if GameManager.insurance["Health"] == 2:
+	if GameManager.insurance["Health"] >= 2:
 		error.text = "Already bought!"
 		health.pressed = false
 		return
@@ -59,7 +59,7 @@ func _on_Health_toggled(button_pressed: bool) -> void:
 
 
 func _on_Employment_toggled(button_pressed: bool) -> void:
-	if GameManager.insurance["Employment"] == 2:
+	if GameManager.insurance["Employment"] >= 2:
 		error.text = "Already bought!"
 		employment.pressed = false
 		return
@@ -75,13 +75,13 @@ func _on_pay_pressed() -> void:
 		GameManager.money -= cost
 		
 		if home.pressed:
-			GameManager.insurance["Home"] = 2
+			GameManager.insurance["Home"] = 4
 			home.pressed = false
 		if health.pressed:
-			GameManager.insurance["Health"] = 2
+			GameManager.insurance["Health"] = 4
 			health.pressed = false
 		if employment.pressed:
-			GameManager.insurance["Employment"] = 2
+			GameManager.insurance["Employment"] = 4
 			employment.pressed = false
 		
 		cost = 0

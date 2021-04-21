@@ -43,7 +43,7 @@ __meta__ = {
 margin_right = 416.0
 margin_bottom = 66.0
 custom_fonts/font = ExtResource( 3 )
-text = "Something financially damaging might happen, insurance can help cover some of this. The insurance works for next year."
+text = "Something financially damaging might happen, insurance can help cover some of this. The insurance works for next 3 years."
 autowrap = true
 
 [node name="Home" type="CheckBox" parent="TabContainer/Insurance/VBoxContainer"]
