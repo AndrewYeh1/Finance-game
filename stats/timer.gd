@@ -318,4 +318,4 @@ func _on_newyeartransition_transitioned() -> void:
 		#$CanvasLayer/happiness/exit.show()
 
 func _on_Button_pressed() -> void:
-	GameManager.second = 0
+	GameManager.second = 1
