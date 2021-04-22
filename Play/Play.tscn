@@ -118,6 +118,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Button2" type="Button" parent="CanvasLayer"]
+margin_left = 39.685
+margin_top = 532.573
+margin_right = 146.685
+margin_bottom = 575.573
+theme = ExtResource( 17 )
+text = "HOME"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="statsBar" parent="CanvasLayer" instance=ExtResource( 7 )]
 margin_left = 14.4442
 margin_top = 15.1285
@@ -236,6 +247,7 @@ scale = Vector2( 0.75, 0.75 )
 visible = false
 position = Vector2( 152, 104 )
 scale = Vector2( 0.75, 0.75 )
+[connection signal="pressed" from="CanvasLayer/Button2" to="." method="_on_Button2_pressed"]
 [connection signal="timeout" from="CanvasLayer/time" to="." method="_on_time_timeout"]
 [connection signal="pressed" from="CanvasLayer/guide" to="." method="_on_guide_pressed"]
 [connection signal="pressed" from="CanvasLayer/random event/ok" to="CanvasLayer/random event" method="_on_ok_pressed"]
